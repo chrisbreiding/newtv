@@ -1,43 +1,73 @@
 class TvController < ActionController::Base
 	
-	def initialize
-	end
+	layout 'application'
 	
 	def index
 		require 'open-uri'
 		
-		ids = { 
-			'New Girl' => '28304',
+		shows = { 
 			'Modern Family' => '22622',
+			'New Girl' => '28304',
+			'Game of Thrones' => '24493',
+			'30 Rock' => '11215',
 			'The Office' => '6061'
 		}
 		
-# 		@episodes = []
-# 		
-# 		url = "http://services.tvrage.com/feeds/episode_list.php?sid=28304"
-# 		
-# 		xml = Nokogiri::XML(open(url))
-# 		
-# 		xml.xpath('//episode/title').each do |title|
-# 			@episodes.push title.text
-# 		end		
-		
 		@shows = []
-		
-		ids.each do |name, id|
-		
-			episodes = []
-					
-			url = "http://services.tvrage.com/feeds/episode_list.php?sid=#{id}"
+
+ 		shows.each do |name, id|
+
+ 			url = "http://services.tvrage.com/feeds/episode_list.php?sid=#{id}"
 			
 			xml = Nokogiri::XML(open(url))
+	
+			latest_season = xml.xpath('//totalseasons').text
 			
-			xml.xpath('//episode/title').each do |title|
-				episodes.push title.text
+			xml.xpath('//Season').each do |season|
+				
+				if season.get_attribute('no') == latest_season
+				
+					episodes = []
+			
+					season.children.each do |episode|
+						
+						details = {}
+						
+						episode.children.each do |detail|
+							
+							details[detail.name] = detail.text
+							
+						end
+						
+						date = details['airdate']
+						
+						if details['title'] && Time.parse(date) > 3.days.ago
+							episodes << details
+						end
+						
+					end
+					
+					@shows << { 
+						name: name, 
+						season: latest_season, 
+						next_episode: episodes[0]['airdate'],
+						episodes: episodes 
+					}
+					
+				end
+				
 			end
-
-			@shows.push( { name: name, episodes: episodes } )
+		
+		end
+		
+		@shows.sort! do |a,b|
 			
+			a[:next_episode] <=> b[:next_episode]
+			
+		end
+				
+		respond_to do |format|
+			format.html
 		end
 				
 	end

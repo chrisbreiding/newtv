@@ -1,12 +1,27 @@
-
 <% @shows.each do |show| %>
 	
-	<h2><%= show[:name] %></h2>
+	<div class="show clearfix">
 	
-	<ul>
-		<% show[:episodes].each do |title| %>
-			<li><%= title %></li>
-		<% end %>
-	</ul>
+		<h2>
+			<%= content_tag :span, show[:name], class: 'name' %>
+			<%= pirate_link show[:name] %>
+		</h2>
+		
+		<ul>
+			<% show[:episodes].each do |episode| %>
+				<li<%= aired_or_not episode['airdate'] %>>
+					<span class="epnum"><%= show[:season] + episode['seasonnum'] %></span>
+					<span class="airdate"><%= episode['airdate'] %></span>
+					<span class="title">
+						<%= episode['title'] %>
+						<span class="file-name">
+							<%= show[:name] %> - <%= show[:season] + episode['seasonnum'] %> - <%= episode['title'] %>
+						</span>
+					</span>
+				</li>
+			<% end %>
+		</ul>
+		
+	</div>
  	
-<% end %>	
+<% end %>

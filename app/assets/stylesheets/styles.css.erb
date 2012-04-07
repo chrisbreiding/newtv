@@ -1,0 +1,120 @@
+body {
+	background: #f8f8f8;
+	color: #333;
+	font-family: 'Helvetica Neue', Arial, sans-serif;
+	font-size: 15px;
+	margin: 0 auto;
+	width: 600px;
+}
+
+.clearfix:before,.clearfix:after { content:""; display:table; }
+.clearfix:after { clear:both; }
+.clearfix { zoom:1; /* For IE 6/7 */ }
+
+a:link,
+a:visited {
+	color: #22517D;
+	text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: #22517D;
+	text-decoration: underline;
+}
+
+a:active {
+	-moz-transform: translate(0,1px);
+	-o-transform: translate(0,1px);
+	-webkit-transform: translate(0,1px);
+	transform: translate(0,1px);
+}
+
+h2 {
+	color: #000;
+	float: left;
+	font-weight: normal;
+	margin: 20px 0;
+	text-align: right;
+	width: 200px;
+}
+
+	h2 span.name {
+		display: block;
+	}
+
+	h2 span.p-bay {
+		display: block;
+		float: right;
+		margin-top: 20px;
+		width: 22px;
+	}
+	
+		h2 span a {
+			background: url(<%= asset_path('p-bay.png') %>) no-repeat;
+			display: block;
+			height: 25px;
+			outline: none;
+			text-align: left;
+			text-indent: -9999px;
+		}
+
+ul {
+	float: right;
+	list-style: none;
+	margin: 20px 0;
+	width: 360px;
+}
+
+	li {
+		height: 25px;
+		line-height: 25px;
+		margin-bottom: 5px;
+	}
+	
+	.aired {
+		opacity: 0.5;
+	}
+	
+		li span {
+			display: block;
+			float: left;
+		}
+
+		.epnum,
+		.airdate {
+			margin-right: 20px;
+		}
+		
+		.epnum {
+			background: #7E4A22;
+			-moz-border-radius: 3px;
+			-webkit-border-radius: 3px;
+			border-radius: 3px;
+			color: #FFF;
+			padding: 0 5px;
+		}
+		
+		.airdate {
+			color: #7E4A22;
+		}
+		
+		.title {
+			position: relative;
+		}
+		
+		.file-name {
+			background: #f8f8f8;
+			display: none;
+			position: absolute;
+				left: 0;
+				top: 0;
+				width: 400px;
+		}
+		
+		li:hover .file-name {
+			display: block;
+		}
+
+
