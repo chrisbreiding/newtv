@@ -6,17 +6,20 @@ class TvController < ActionController::Base
 		require 'open-uri'
 		
 		shows = { 
-			'Modern Family' => '22622',
-			'New Girl' => '28304',
-			'Game of Thrones' => '24493',
-			'30 Rock' => '11215',
-			'The Office' => '6061'
+			'Modern Family' 		=> '22622',
+			'New Girl' 				=> '28304',
+			'Game of Thrones' 		=> '24493',
+			'30 Rock' 				=> '11215',
+			'The Office' 			=> '6061',
+			'Boardwalk Empire' 		=> '23561',
+			'Curb Your Enthusiasm' 	=> '3188'
 		}
 		
 		@shows = []
+		@off_air = []
 
  		shows.each do |name, id|
-
+			
  			url = "http://services.tvrage.com/feeds/episode_list.php?sid=#{id}"
 			
 			xml = Nokogiri::XML(open(url))
@@ -47,17 +50,27 @@ class TvController < ActionController::Base
 						
 					end
 					
-					@shows << { 
-						name: name, 
-						season: latest_season, 
-						next_episode: episodes[0]['airdate'],
-						episodes: episodes 
-					}
-					
+					unless episodes.empty?
+						
+						@shows << { 
+							name: name, 
+							season: latest_season, 
+							next_episode: episodes[0]['airdate'],
+							episodes: episodes 
+						}
+						
+					end
+				
 				end
 				
 			end
 		
+			if @shows.select { |show| show[:name] == name }.empty?
+			
+				@off_air << { name: name }
+			
+			end
+				
 		end
 		
 		@shows.sort! do |a,b|

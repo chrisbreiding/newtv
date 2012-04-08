@@ -3,8 +3,6 @@ body {
 	color: #333;
 	font-family: 'Helvetica Neue', Arial, sans-serif;
 	font-size: 15px;
-	margin: 0 auto;
-	width: 600px;
 }
 
 .clearfix:before,.clearfix:after { content:""; display:table; }
@@ -31,7 +29,7 @@ a:active {
 	transform: translate(0,1px);
 }
 
-h2 {
+.show h2 {
 	color: #000;
 	float: left;
 	font-weight: normal;
@@ -40,18 +38,18 @@ h2 {
 	width: 200px;
 }
 
-	h2 span.name {
+	.show h2 span.name {
 		display: block;
 	}
 
-	h2 span.p-bay {
+	.show h2 span.p-bay {
 		display: block;
 		float: right;
 		margin-top: 20px;
 		width: 22px;
 	}
 	
-		h2 span a {
+		.show h2 span a {
 			background: url(<%= asset_path('p-bay.png') %>) no-repeat;
 			display: block;
 			height: 25px;
@@ -60,14 +58,14 @@ h2 {
 			text-indent: -9999px;
 		}
 
-ul {
-	float: right;
+.show ul {
+	float: left;
 	list-style: none;
 	margin: 20px 0;
 	width: 360px;
 }
 
-	li {
+	.show li {
 		height: 25px;
 		line-height: 25px;
 		margin-bottom: 5px;
@@ -77,7 +75,7 @@ ul {
 		opacity: 0.5;
 	}
 	
-		li span {
+		.show li span {
 			display: block;
 			float: left;
 		}
@@ -104,7 +102,7 @@ ul {
 			position: relative;
 		}
 		
-		.file-name {
+		.show li .file-name {
 			background: #f8f8f8;
 			display: none;
 			position: absolute;
@@ -113,8 +111,14 @@ ul {
 				width: 400px;
 		}
 		
-		li:hover .file-name {
+		.show li:hover .file-name {
 			display: block;
 		}
 
+.off-air {
+	background: #e3e3e3;
+	border-top: solid 1px #d3d3d3;
+	margin-top: 20px;
+	padding: 10px 20px;
+}
 

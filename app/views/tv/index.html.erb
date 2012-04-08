@@ -25,3 +25,19 @@
 	</div>
  	
 <% end %>
+
+<% if !@off_air.empty? %>
+
+	<div class="off-air">
+
+		<h2>Off Air</h2>
+		
+		<ul>
+			<% @off_air.each do |show| %>
+				<li><%= show[:name] %></li>
+			<% end %>
+		</ul>
+
+	</div>
+	
+<% end %>
