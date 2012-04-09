@@ -1,5 +1,15 @@
 == New TV
 
-=== Goal
+=== To Do (Near Future)
+	
+- ability to edit show names (hover over name and show edit button and pirate bay button)
+- ability to delete shows (include button when in "edit" mode)
+- cache shows daily
+- add button per show to display all episodes (in case one was missed)
+- set apart far future shows (like Dexter right now)
 
-	Automatically pull in upcoming TV episodes from the tvrage.com API using Nokogiri
+=== Maybes
+
+- highlight shows airing today
+- load episodes for newly added shows with ajax
+- when show is recently aired, order it by upcoming show, not recently aired show
