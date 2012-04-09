@@ -12,4 +12,5 @@
 //
 //= require jquery
 //= require jquery.select-text
+//= require underscore.min
 //= require_tree .

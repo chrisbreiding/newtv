@@ -1,0 +1,30 @@
+<script id="search-results-template" type="text/template">
+
+	<div id="search-results" class="search-results clearfix">
+	
+		{{ _.each(shows, function (show) { }}
+			
+			<dl>
+				
+				<dt>Name</dt>
+				<dd>{{= show.name }}</dd>
+				
+				<dt>Country</dt>
+				<dd>{{= show.country }}</dd>
+				
+				<dt>Started</dt>
+				<dd>{{= show.started }}</dd>
+			
+				<dt>Seasons</dt>
+				<dd>{{= show.seasons }}</dd>
+			
+				<dt>Classification</dt>
+				<dd>{{= show.classification }}</dd>
+			
+			</dl>
+			
+		{{ } }}
+		
+	</div>
+	
+</script>
