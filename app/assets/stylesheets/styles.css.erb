@@ -216,36 +216,27 @@ a.add-show {
 	color: #000;
 	float: left;
 	font-weight: normal;
-	margin: 20px 0;
+	margin: 20px 0 0;
+	padding-bottom: 5px;
+	position: relative;
 	text-align: right;
 	width: 200px;
 }
 
-	.show h2 span.name {
-		display: block;
-	}
+.show h2:hover {
+	z-index: 10;
+}
 
-	.show h2 span.p-bay {
+	.show h2 .name {
 		display: block;
-		float: right;
-		margin-top: 20px;
-		width: 22px;
 	}
-	
-		.show h2 span a {
-			background: url(<%= asset_path('p-bay.png') %>) no-repeat;
-			display: block;
-			height: 25px;
-			outline: none;
-			text-align: left;
-			text-indent: -9999px;
-		}
 
 .show ul {
 	float: left;
 	list-style: none;
 	margin: 20px 0;
-	width: 360px;
+	padding-left: 20px;
+	width: 380px;
 }
 
 	.show li {
@@ -303,11 +294,79 @@ a.add-show {
 		}
 		
 
-/* ---- Off Air ---- */
+/* ---- Options ---- */
 
-.off-air {
+.options {
+	background: #f8f8f8;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: solid 1px #d3d3d3;
+	display: none;
+	padding: 5px;
+	position: absolute;
+		top: 100%;
+		right: 0;
+	width: 60px;
 }
 
+.off-air li .options {
+	top: -10px;
+	right: auto;
+	left: 100%;
+}
+
+.show h2:hover .options,
+.off-air li:hover .options {
+	display: block;
+}
+
+	.options a {
+		background: url(<%= asset_path('sprite.png') %>) no-repeat;
+		display: block;
+		float: left;
+		margin-left: 10px;
+		outline: none;
+		text-align: left;
+		text-indent: -9999px;
+		width: 25px;
+		height: 25px;
+	}
+	
+	.options a:first-child {
+		margin-left: 0;
+	}
+	
+	.options a.p-bay {
+		background-position: 0 0;
+	}
+	
+		.options a.p-bay:hover {
+			background-position: 0 -25px;
+		}
+	
+	.options a.edit-show {
+		background-position: -25px 0;
+	}
+
+		.options a.edit-show:hover {
+			background-position: -25px -25px;
+		}
+	
+
+/* ---- Off Air ---- */
+
+.off-air li {
+	line-height: 1.5em;
+}
+
+	.off-air li > span {
+		position: relative;
+	}
+	
+	.off-air li > span:hover {
+		z-index: 10;
+	}
 
 /* ---- Notices ---- */
 

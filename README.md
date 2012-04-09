@@ -15,3 +15,4 @@ Pulls in lists of upcoming TV shows through the [TVRage API](http://services.tvr
 - highlight shows airing today
 - load episodes for newly added shows with ajax
 - when show is recently aired, order it by upcoming show, not recently aired show
+- degrade gracefully without javascript

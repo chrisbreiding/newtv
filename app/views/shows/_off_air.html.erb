@@ -1,15 +1,16 @@
 <% if !off_air.empty? %>
 
-	<div class="off-air">
-
-		<h2>Off Air</h2>
-		
-		<ul>
-			<% off_air.each do |show| %>
-				<li data-showid="<%= show[:showid] %>"><%= show[:name] %></li>
-			<% end %>
-		</ul>
-
-	</div>
+	<h2>Off Air</h2>
 	
+	<ul class="off-air">
+		<% off_air.each do |show| %>
+			<li data-showid="<%= show[:showid] %>">
+				<%= content_tag :span do %>
+					<%= show[:name] %>
+					<%= options show[:name] %>
+				<% end %>
+			</li>
+		<% end %>
+	</ul>
+
 <% end %>
