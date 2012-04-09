@@ -1,8 +1,12 @@
+<div class="main">
+	<%= render 'shows', shows: @shows %>
+</div>
+
+<div class="footer">
+	<%= render 'off_air', off_air: @off_air %>
+</div>
+
 <%= link_to 'Add Show', new_show_path, id: 'add-show', class: 'add-show' %>
-
-<%= render 'shows', shows: @shows %>
-
-<%= render 'off_air', off_air: @off_air %>
 
 <%= render 'jst_add_show' %>
 

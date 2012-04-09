@@ -16,9 +16,13 @@ jQuery(function($){
 		events : function () {
 			
 			$('.file-name').on('click', this.selectText);
+			
 			$('#add-show').on('click', this.add);
 			$(document.body).on('submit', '#show-search-form', this.search);
 			$(document.body).on('click', '.create-show', this.create);
+			
+			$(document.body).on('click', this.clear);
+			$(document.body).on('click', '#show-search-form, #search-results', this.stopClear);
 			
 		},
 		
@@ -28,6 +32,7 @@ jQuery(function($){
 		
 		add : function (e) {
 			e.preventDefault();
+			e.stopPropagation();
 			
 			var template = $('#add-show-template').html();
 			
@@ -62,9 +67,22 @@ jQuery(function($){
 		create : function (e) {
 			e.preventDefault();
 
-
+console.log('create show with id ' + $(this).closest('.results-show').data('showid') );
+		},
+		
+		clear : function () {
+			
+			$('#show-search-form').remove();
+			$('#search-results').remove();
+			
+		},
+		
+		stopClear : function (e) {
+		
+			e.stopPropagation();
+			
 		}
-	
+			
 	};
 	
 /*

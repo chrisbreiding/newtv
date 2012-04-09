@@ -8195,3 +8195,835 @@ Completed 200 OK in 939ms (Views: 3.4ms | ActiveRecord: 0.0ms)
 
 Started GET "/assets/waiting.gif" for 127.0.0.1 at 2012-04-09 08:31:32 -0400
 Served asset /waiting.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 09:34:20 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.2ms)[0m  [1mSELECT "shows".* FROM "shows" [0m
+  Rendered shows/_shows.html.erb (3.9ms)
+  Rendered shows/_off_air.html.erb (0.4ms)
+  Rendered shows/_jst_add_show.html.erb (0.2ms)
+  Rendered shows/_jst_search_results.html.erb (0.2ms)
+  Rendered shows/index.html.erb within layouts/application (38.9ms)
+Compiled normalize.css  (0ms)  (pid 898)
+Compiled styles.css  (3ms)  (pid 898)
+Compiled responsive.css  (0ms)  (pid 898)
+Compiled application.css  (53ms)  (pid 898)
+Compiled jquery.js  (1ms)  (pid 898)
+Compiled jquery.select-text.js  (0ms)  (pid 898)
+Compiled underscore.min.js  (35ms)  (pid 898)
+Compiled scripts.js  (0ms)  (pid 898)
+Compiled application.js  (92ms)  (pid 898)
+Completed 200 OK in 2562ms (Views: 284.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 09:34:23 -0400
+Served asset /application.css - 200 OK (6ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 09:34:23 -0400
+Served asset /normalize.css - 200 OK (2ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 09:34:23 -0400
+Served asset /styles.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 09:34:23 -0400
+Served asset /jquery.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 09:34:23 -0400
+Served asset /jquery.select-text.js - 200 OK (2ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 09:34:23 -0400
+Served asset /underscore.min.js - 200 OK (1ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 09:34:23 -0400
+Served asset /responsive.css - 200 OK (1ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 09:34:23 -0400
+Served asset /scripts.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 09:34:23 -0400
+Served asset /application.js - 200 OK (5ms)
+
+
+Started GET "/assets/p-bay.png" for 127.0.0.1 at 2012-04-09 09:34:23 -0400
+Served asset /p-bay.png - 200 OK (5ms)
+
+
+Started GET "/assets/search.png" for 127.0.0.1 at 2012-04-09 09:34:27 -0400
+Served asset /search.png - 200 OK (5ms)
+
+
+Started POST "/shows/search.json" for 127.0.0.1 at 2012-04-09 09:34:30 -0400
+Processing by ShowsController#search as JSON
+  Parameters: {"name"=>"30 Rock"}
+Completed 200 OK in 908ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/waiting.gif" for 127.0.0.1 at 2012-04-09 09:34:31 -0400
+Served asset /waiting.gif - 200 OK (7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 09:40:17 -0400
+Processing by ShowsController#index as HTML
+  [1m[35mShow Load (0.2ms)[0m  SELECT "shows".* FROM "shows" 
+  Rendered shows/_shows.html.erb (28.4ms)
+  Rendered shows/_off_air.html.erb (0.0ms)
+  Rendered shows/_jst_add_show.html.erb (0.0ms)
+  Rendered shows/_jst_search_results.html.erb (0.3ms)
+  Rendered shows/index.html.erb within layouts/application (31.6ms)
+Compiled styles.css  (5ms)  (pid 898)
+Compiled application.css  (2ms)  (pid 898)
+Completed 200 OK in 2155ms (Views: 58.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 09:40:19 -0400
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 09:40:19 -0400
+Served asset /styles.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 09:40:19 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 09:40:19 -0400
+Served asset /normalize.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 09:40:19 -0400
+Served asset /scripts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 09:40:19 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 09:40:19 -0400
+Served asset /underscore.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 09:40:19 -0400
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 09:40:19 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/p-bay.png" for 127.0.0.1 at 2012-04-09 09:40:19 -0400
+Served asset /p-bay.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search.png" for 127.0.0.1 at 2012-04-09 09:40:21 -0400
+Served asset /search.png - 304 Not Modified (0ms)
+
+
+Started POST "/shows/search.json" for 127.0.0.1 at 2012-04-09 09:40:24 -0400
+Processing by ShowsController#search as JSON
+  Parameters: {"name"=>"30 Rock"}
+Completed 200 OK in 625ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/waiting.gif" for 127.0.0.1 at 2012-04-09 09:40:25 -0400
+Served asset /waiting.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 09:43:35 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.2ms)[0m  [1mSELECT "shows".* FROM "shows" [0m
+  Rendered shows/_shows.html.erb (30.2ms)
+  Rendered shows/_off_air.html.erb (0.1ms)
+  Rendered shows/_jst_add_show.html.erb (0.0ms)
+  Rendered shows/_jst_search_results.html.erb (0.0ms)
+  Rendered shows/index.html.erb within layouts/application (34.7ms)
+Compiled styles.css  (4ms)  (pid 898)
+Compiled application.css  (2ms)  (pid 898)
+Completed 200 OK in 2119ms (Views: 57.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 09:43:38 -0400
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 09:43:38 -0400
+Served asset /styles.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 09:43:38 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 09:43:38 -0400
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 09:43:38 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 09:43:38 -0400
+Served asset /normalize.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 09:43:38 -0400
+Served asset /underscore.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 09:43:38 -0400
+Served asset /scripts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 09:43:38 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/p-bay.png" for 127.0.0.1 at 2012-04-09 09:43:38 -0400
+Served asset /p-bay.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 09:44:19 -0400
+Processing by ShowsController#index as HTML
+  [1m[35mShow Load (0.2ms)[0m  SELECT "shows".* FROM "shows" 
+  Rendered shows/_shows.html.erb (20.0ms)
+  Rendered shows/_off_air.html.erb (0.1ms)
+  Rendered shows/_jst_add_show.html.erb (0.0ms)
+  Rendered shows/_jst_search_results.html.erb (0.0ms)
+  Rendered shows/index.html.erb within layouts/application (23.4ms)
+Compiled styles.css  (34ms)  (pid 898)
+Compiled application.css  (2ms)  (pid 898)
+Completed 200 OK in 7993ms (Views: 78.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 09:44:28 -0400
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 09:44:28 -0400
+Served asset /normalize.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 09:44:28 -0400
+Served asset /styles.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 09:44:28 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 09:44:28 -0400
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 09:44:28 -0400
+Served asset /underscore.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 09:44:28 -0400
+Served asset /scripts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 09:44:28 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 09:44:28 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/p-bay.png" for 127.0.0.1 at 2012-04-09 09:44:28 -0400
+Served asset /p-bay.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search.png" for 127.0.0.1 at 2012-04-09 09:44:32 -0400
+Served asset /search.png - 304 Not Modified (0ms)
+
+
+Started POST "/shows/search.json" for 127.0.0.1 at 2012-04-09 09:44:35 -0400
+Processing by ShowsController#search as JSON
+  Parameters: {"name"=>"30 Rock"}
+Completed 200 OK in 509ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/waiting.gif" for 127.0.0.1 at 2012-04-09 09:44:36 -0400
+Served asset /waiting.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 09:51:32 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.2ms)[0m  [1mSELECT "shows".* FROM "shows" [0m
+  Rendered shows/_shows.html.erb (19.9ms)
+  Rendered shows/_off_air.html.erb (0.1ms)
+  Rendered shows/_jst_add_show.html.erb (0.0ms)
+  Rendered shows/_jst_search_results.html.erb (0.3ms)
+  Rendered shows/index.html.erb within layouts/application (23.3ms)
+Compiled styles.css  (6ms)  (pid 898)
+Compiled application.css  (2ms)  (pid 898)
+Completed 200 OK in 2136ms (Views: 103.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 09:51:35 -0400
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 09:51:35 -0400
+Served asset /normalize.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 09:51:35 -0400
+Served asset /styles.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 09:51:35 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 09:51:35 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 09:51:35 -0400
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 09:51:35 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 09:51:35 -0400
+Served asset /underscore.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 09:51:35 -0400
+Served asset /scripts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/p-bay.png" for 127.0.0.1 at 2012-04-09 09:51:35 -0400
+Served asset /p-bay.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search.png" for 127.0.0.1 at 2012-04-09 09:51:44 -0400
+Served asset /search.png - 304 Not Modified (0ms)
+
+
+Started POST "/shows/search.json" for 127.0.0.1 at 2012-04-09 09:51:49 -0400
+Processing by ShowsController#search as JSON
+  Parameters: {"name"=>"30 Rock"}
+Completed 200 OK in 635ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/waiting.gif" for 127.0.0.1 at 2012-04-09 09:51:49 -0400
+Served asset /waiting.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 09:54:45 -0400
+Processing by ShowsController#index as HTML
+  [1m[35mShow Load (0.2ms)[0m  SELECT "shows".* FROM "shows" 
+  Rendered shows/_shows.html.erb (4.1ms)
+  Rendered shows/_off_air.html.erb (0.2ms)
+  Rendered shows/_jst_add_show.html.erb (0.0ms)
+  Rendered shows/_jst_search_results.html.erb (0.0ms)
+  Rendered shows/index.html.erb within layouts/application (7.2ms)
+Compiled styles.css  (5ms)  (pid 898)
+Compiled application.css  (2ms)  (pid 898)
+Completed 200 OK in 2818ms (Views: 74.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 09:54:48 -0400
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 09:54:48 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 09:54:48 -0400
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 09:54:48 -0400
+Served asset /normalize.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 09:54:48 -0400
+Served asset /styles.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 09:54:48 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 09:54:48 -0400
+Served asset /scripts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 09:54:48 -0400
+Served asset /underscore.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 09:54:48 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/p-bay.png" for 127.0.0.1 at 2012-04-09 09:54:48 -0400
+Served asset /p-bay.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search.png" for 127.0.0.1 at 2012-04-09 09:54:50 -0400
+Served asset /search.png - 304 Not Modified (0ms)
+
+
+Started POST "/shows/search.json" for 127.0.0.1 at 2012-04-09 09:54:52 -0400
+Processing by ShowsController#search as JSON
+  Parameters: {"name"=>"30 Rock"}
+Completed 200 OK in 990ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/waiting.gif" for 127.0.0.1 at 2012-04-09 09:54:53 -0400
+Served asset /waiting.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 09:56:53 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.2ms)[0m  [1mSELECT "shows".* FROM "shows" [0m
+  Rendered shows/_shows.html.erb (4.1ms)
+  Rendered shows/_off_air.html.erb (0.1ms)
+  Rendered shows/_jst_add_show.html.erb (0.0ms)
+  Rendered shows/_jst_search_results.html.erb (0.3ms)
+  Rendered shows/index.html.erb within layouts/application (38.4ms)
+Compiled styles.css  (5ms)  (pid 898)
+Compiled application.css  (2ms)  (pid 898)
+Compiled scripts.js  (0ms)  (pid 898)
+Compiled application.js  (3ms)  (pid 898)
+Completed 200 OK in 3824ms (Views: 86.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 09:56:56 -0400
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 09:56:56 -0400
+Served asset /normalize.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 09:56:56 -0400
+Served asset /styles.css - 200 OK (5ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 09:56:56 -0400
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 09:56:56 -0400
+Served asset /underscore.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 09:56:56 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 09:56:56 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 09:56:57 -0400
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 09:56:57 -0400
+Served asset /scripts.js - 200 OK (2ms)
+
+
+Started GET "/assets/p-bay.png" for 127.0.0.1 at 2012-04-09 09:56:57 -0400
+Served asset /p-bay.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 09:57:18 -0400
+Processing by ShowsController#index as HTML
+  [1m[35mShow Load (0.2ms)[0m  SELECT "shows".* FROM "shows" 
+  Rendered shows/_shows.html.erb (2.7ms)
+  Rendered shows/_off_air.html.erb (0.0ms)
+  Rendered shows/_jst_add_show.html.erb (0.0ms)
+  Rendered shows/_jst_search_results.html.erb (0.3ms)
+  Rendered shows/index.html.erb within layouts/application (5.7ms)
+Compiled scripts.js  (0ms)  (pid 898)
+Compiled application.js  (3ms)  (pid 898)
+Completed 200 OK in 2373ms (Views: 28.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 09:57:20 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 09:57:20 -0400
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 09:57:20 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 09:57:20 -0400
+Served asset /styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 09:57:20 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 09:57:20 -0400
+Served asset /underscore.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 09:57:20 -0400
+Served asset /scripts.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 09:57:20 -0400
+Served asset /application.js - 304 Not Modified (41ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 09:57:20 -0400
+Served asset /normalize.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/p-bay.png" for 127.0.0.1 at 2012-04-09 09:57:20 -0400
+Served asset /p-bay.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search.png" for 127.0.0.1 at 2012-04-09 09:57:22 -0400
+Served asset /search.png - 304 Not Modified (0ms)
+
+
+Started POST "/shows/search.json" for 127.0.0.1 at 2012-04-09 09:57:24 -0400
+Processing by ShowsController#search as JSON
+  Parameters: {"name"=>"30 Rock"}
+Completed 200 OK in 544ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/waiting.gif" for 127.0.0.1 at 2012-04-09 09:57:25 -0400
+Served asset /waiting.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 09:57:49 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.2ms)[0m  [1mSELECT "shows".* FROM "shows" [0m
+  Rendered shows/_shows.html.erb (2.8ms)
+  Rendered shows/_off_air.html.erb (0.0ms)
+  Rendered shows/_jst_add_show.html.erb (0.0ms)
+  Rendered shows/_jst_search_results.html.erb (0.0ms)
+  Rendered shows/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 2402ms (Views: 10.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 09:57:52 -0400
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 09:57:52 -0400
+Served asset /normalize.css - 200 OK (0ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 09:57:52 -0400
+Served asset /styles.css - 200 OK (0ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 09:57:52 -0400
+Served asset /responsive.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 09:57:52 -0400
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 09:57:52 -0400
+Served asset /jquery.select-text.js - 200 OK (0ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 09:57:52 -0400
+Served asset /underscore.min.js - 200 OK (0ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 09:57:52 -0400
+Served asset /scripts.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 09:57:52 -0400
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/p-bay.png" for 127.0.0.1 at 2012-04-09 09:57:52 -0400
+Served asset /p-bay.png - 200 OK (0ms)
+
+
+Started GET "/assets/search.png" for 127.0.0.1 at 2012-04-09 09:57:53 -0400
+Served asset /search.png - 200 OK (0ms)
+
+
+Started POST "/shows/search.json" for 127.0.0.1 at 2012-04-09 09:58:01 -0400
+Processing by ShowsController#search as JSON
+  Parameters: {"name"=>"The Office"}
+Completed 200 OK in 1135ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/waiting.gif" for 127.0.0.1 at 2012-04-09 09:58:02 -0400
+Served asset /waiting.gif - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 09:58:39 -0400
+Processing by ShowsController#index as HTML
+  [1m[35mShow Load (0.2ms)[0m  SELECT "shows".* FROM "shows" 
+  Rendered shows/_shows.html.erb (2.5ms)
+  Rendered shows/_off_air.html.erb (0.1ms)
+  Rendered shows/_jst_add_show.html.erb (0.0ms)
+  Rendered shows/_jst_search_results.html.erb (0.0ms)
+  Rendered shows/index.html.erb within layouts/application (4.9ms)
+Compiled scripts.js  (0ms)  (pid 898)
+Compiled application.js  (3ms)  (pid 898)
+Completed 200 OK in 2428ms (Views: 56.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 09:58:42 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 09:58:42 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 09:58:42 -0400
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 09:58:42 -0400
+Served asset /normalize.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 09:58:42 -0400
+Served asset /styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 09:58:42 -0400
+Served asset /underscore.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 09:58:42 -0400
+Served asset /scripts.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 09:58:42 -0400
+Served asset /application.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 09:58:42 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/p-bay.png" for 127.0.0.1 at 2012-04-09 09:58:42 -0400
+Served asset /p-bay.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search.png" for 127.0.0.1 at 2012-04-09 10:48:19 -0400
+Served asset /search.png - 304 Not Modified (0ms)
+
+
+Started POST "/shows/search.json" for 127.0.0.1 at 2012-04-09 10:52:20 -0400
+Processing by ShowsController#search as JSON
+  Parameters: {"name"=>"The Office"}
+Completed 200 OK in 876ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/waiting.gif" for 127.0.0.1 at 2012-04-09 10:52:21 -0400
+Served asset /waiting.gif - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 10:52:46 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.2ms)[0m  [1mSELECT "shows".* FROM "shows" [0m
+  Rendered shows/_shows.html.erb (30.5ms)
+  Rendered shows/_off_air.html.erb (0.0ms)
+  Rendered shows/_jst_add_show.html.erb (0.0ms)
+  Rendered shows/_jst_search_results.html.erb (0.0ms)
+  Rendered shows/index.html.erb within layouts/application (33.4ms)
+Compiled scripts.js  (0ms)  (pid 898)
+Compiled application.js  (3ms)  (pid 898)
+Completed 200 OK in 5392ms (Views: 61.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 10:52:51 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 10:52:51 -0400
+Served asset /normalize.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 10:52:51 -0400
+Served asset /styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 10:52:51 -0400
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 10:52:51 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 10:52:51 -0400
+Served asset /underscore.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 10:52:51 -0400
+Served asset /scripts.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 10:52:51 -0400
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 10:52:51 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/p-bay.png" for 127.0.0.1 at 2012-04-09 10:52:51 -0400
+Served asset /p-bay.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search.png" for 127.0.0.1 at 2012-04-09 10:52:53 -0400
+Served asset /search.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 10:54:19 -0400
+Processing by ShowsController#index as HTML
+  [1m[35mShow Load (0.2ms)[0m  SELECT "shows".* FROM "shows" 
+  Rendered shows/_shows.html.erb (3.6ms)
+  Rendered shows/_off_air.html.erb (0.1ms)
+  Rendered shows/_jst_add_show.html.erb (0.0ms)
+  Rendered shows/_jst_search_results.html.erb (0.0ms)
+  Rendered shows/index.html.erb within layouts/application (6.9ms)
+Compiled scripts.js  (0ms)  (pid 898)
+Compiled application.js  (3ms)  (pid 898)
+Completed 200 OK in 4058ms (Views: 31.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 10:54:23 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 10:54:23 -0400
+Served asset /styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 10:54:23 -0400
+Served asset /normalize.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 10:54:23 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 10:54:23 -0400
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 10:54:23 -0400
+Served asset /scripts.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 10:54:23 -0400
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 10:54:23 -0400
+Served asset /underscore.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 10:54:23 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/p-bay.png" for 127.0.0.1 at 2012-04-09 10:54:23 -0400
+Served asset /p-bay.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 10:55:33 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.2ms)[0m  [1mSELECT "shows".* FROM "shows" [0m
+  Rendered shows/_shows.html.erb (3.6ms)
+  Rendered shows/_off_air.html.erb (0.1ms)
+  Rendered shows/_jst_add_show.html.erb (0.0ms)
+  Rendered shows/_jst_search_results.html.erb (0.0ms)
+  Rendered shows/index.html.erb within layouts/application (6.5ms)
+Compiled scripts.js  (0ms)  (pid 898)
+Compiled application.js  (3ms)  (pid 898)
+Completed 200 OK in 3208ms (Views: 29.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 10:55:37 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 10:55:37 -0400
+Served asset /normalize.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 10:55:37 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 10:55:37 -0400
+Served asset /scripts.js - 200 OK (2ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 10:55:37 -0400
+Served asset /styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 10:55:37 -0400
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 10:55:37 -0400
+Served asset /underscore.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 10:55:37 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 10:55:37 -0400
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/p-bay.png" for 127.0.0.1 at 2012-04-09 10:55:37 -0400
+Served asset /p-bay.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search.png" for 127.0.0.1 at 2012-04-09 10:55:38 -0400
+Served asset /search.png - 304 Not Modified (0ms)
+
+
+Started POST "/shows/search.json" for 127.0.0.1 at 2012-04-09 10:55:42 -0400
+Processing by ShowsController#search as JSON
+  Parameters: {"name"=>"The Office"}
+Completed 200 OK in 806ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/waiting.gif" for 127.0.0.1 at 2012-04-09 10:55:43 -0400
+Served asset /waiting.gif - 304 Not Modified (0ms)
+
+
+Started POST "/shows/search.json" for 127.0.0.1 at 2012-04-09 10:56:39 -0400
+Processing by ShowsController#search as JSON
+  Parameters: {"name"=>"The Office"}
+Completed 200 OK in 925ms (Views: 3.1ms | ActiveRecord: 0.0ms)
