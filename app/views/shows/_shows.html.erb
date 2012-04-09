@@ -1,6 +1,6 @@
 <% shows.each do |show| %>
 
-	<div class="show clearfix">
+	<div class="show clearfix" data-showid="<%= show[:showid] %>">
 	
 		<h2>
 			<%= content_tag :span, show[:name], class: 'name' %>
@@ -9,7 +9,7 @@
 		
 		<ul>
 			<% show[:episodes].each do |episode| %>
-				<li<%= aired_or_not episode['airdate'] %>>
+				<li class="clearfix<%= aired_or_not episode['airdate'] %>">
 					<span class="epnum"><%= show[:season] + episode['seasonnum'] %></span>
 					<span class="airdate"><%= episode['airdate'] %></span>
 					<span class="title">

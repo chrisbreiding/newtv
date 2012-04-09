@@ -1,7 +1,7 @@
 module TvHelper
 
 	def aired_or_not airdate
-		raw(' class="aired"') if Time.parse(airdate) < Time.now
+		raw(' aired') if Time.parse(airdate) < Time.now
 	end
 	
 	def pirate_link show_name

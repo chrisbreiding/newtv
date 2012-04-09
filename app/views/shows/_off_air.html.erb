@@ -6,7 +6,7 @@
 		
 		<ul>
 			<% off_air.each do |show| %>
-				<li><%= show[:name] %></li>
+				<li data-showid="<%= show[:showid] %>"><%= show[:name] %></li>
 			<% end %>
 		</ul>
 

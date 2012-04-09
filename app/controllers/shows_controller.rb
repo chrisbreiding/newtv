@@ -5,16 +5,6 @@ class ShowsController < ActionController::Base
 	def index
 		require 'open-uri'
 		
-# 		shows = { 
-# 			'Modern Family' 		=> '22622',
-# 			'New Girl' 				=> '28304',
-# 			'Game of Thrones' 		=> '24493',
-# 			'30 Rock' 				=> '11215',
-# 			'The Office' 			=> '6061',
-# 			'Boardwalk Empire' 		=> '23561',
-# 			'Curb Your Enthusiasm' 	=> '3188'
-# 		}
-
 		shows = Show.all
 		
 		@shows = []
@@ -56,6 +46,7 @@ class ShowsController < ActionController::Base
 						
 						@shows << { 
 							name: show[:name], 
+							showid: show[:tvrage_id],
 							season: latest_season, 
 							next_episode: episodes[0]['airdate'],
 							episodes: episodes 
@@ -69,7 +60,7 @@ class ShowsController < ActionController::Base
 		
 			if @shows.select { |s| s[:name] == show[:name] }.empty?
 			
-				@off_air << { name: show[:name] }
+				@off_air << { name: show[:name], showid: show[:tvrage_id] }
 			
 			end
 				
@@ -94,7 +85,7 @@ class ShowsController < ActionController::Base
 			
 			if @show.save
 				format.html { redirect_to @show }
-				format.json { render json: @show, status: created, location: @show }
+				format.json { render json: @show, status: :created, location: @show }
 			else
 				format.html { render action: 'new' }
 				format.json { render json: @show.errors, status: :unprocessable_entity }
