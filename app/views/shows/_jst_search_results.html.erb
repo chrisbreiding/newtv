@@ -1,13 +1,14 @@
 <script id="search-results-template" type="text/template">
-
+	
+	<h3>Results</h3>
+	
 	<div id="search-results" class="search-results clearfix">
 	
 		{{ _.each(shows, function (show) { }}
 			
+			<h4>{{= show.name }}</h4>
+			
 			<dl>
-				
-				<dt>Name</dt>
-				<dd>{{= show.name }}</dd>
 				
 				<dt>Country</dt>
 				<dd>{{= show.country }}</dd>
@@ -23,7 +24,7 @@
 			
 			</dl>
 			
-		{{ } }}
+		{{ }); }}
 		
 	</div>
 	
