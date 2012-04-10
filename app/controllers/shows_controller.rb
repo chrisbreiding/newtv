@@ -3,80 +3,11 @@ class ShowsController < ActionController::Base
 	layout 'application'
 	
 	def index
-		require 'open-uri'
+		@shows = Show.includes(:episodes).where('episodes.airdate > ?', 3.days.ago )
 		
-		shows = Show.all
-		
-		@shows = []
-		@off_air = []
-
- 		shows.each do |show|
-			
- 			url = "http://services.tvrage.com/feeds/episode_list.php?sid=#{show[:tvrage_id]}"
-			
-			xml = Nokogiri::XML(open(url))
-			
-			latest_season = xml.xpath('//totalseasons').text
-			
-			xml.xpath('//Season').each do |season|
-				
-				if season.get_attribute('no') == latest_season
-				
-					episodes = []
-			
-					season.children.each do |episode|
-						
-						details = {}
-						
-						episode.children.each do |detail|
-							
-							details[detail.name] = detail.text
-							
-						end
-						
-						date = details['airdate']
-						
-						if details['title'] && Time.parse(date) > 3.days.ago
-							episodes << details
-						end
-						
-					end
-					
-					unless episodes.empty?
-						
-						@shows << { 
-							name: show[:name], 
-							id: show[:id],
-							showid: show[:tvrage_id],
-							season: latest_season, 
-							next_episode: episodes[0]['airdate'],
-							episodes: episodes 
-						}
-						
-					end
-				
-				end
-				
-			end
-		
-			if @shows.select { |s| s[:name] == show[:name] }.empty?
-			
-				@off_air << { name: show[:name], id: show[:id], showid: show[:tvrage_id] }
-			
-			end
-				
+		@off_air = Show.all.keep_if do |show|
+			@shows.select { |s| s.name == show.name }.empty?
 		end
-		
-		@shows.sort! do |a,b|
-			
-			a[:next_episode] <=> b[:next_episode]
-			
-		end
-				
-		respond_to do |format|
-			format.html
-		end
-				
 	end
 	
 	def create

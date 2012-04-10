@@ -1,0 +1,12 @@
+<div id="show-<%= show.id %>" class="show clearfix" data-id="<%= show.id %>">
+
+	<h2>
+		<%= content_tag :span, show.name, class: 'name' %>
+		<%= options show.name %>
+	</h2>
+	
+	<ul>
+		<%= render show.episodes %>
+	</ul>
+	
+</div>

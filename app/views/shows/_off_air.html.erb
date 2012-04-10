@@ -4,10 +4,10 @@
 	
 	<ul class="off-air">
 		<% off_air.each do |show| %>
-			<li id="show-<%= show[:id] %>" class="show" data-id="<%= show[:id] %>">
+			<li id="show-<%= show.id %>" class="show" data-id="<%= show.id %>">
 				<%= content_tag :span do %>
-					<%= content_tag :span, show[:name], class: 'name' %>
-					<%= options show[:name] %>
+					<%= content_tag :span, show.name, class: 'name' %>
+					<%= options show.name %>
 				<% end %>
 			</li>
 		<% end %>

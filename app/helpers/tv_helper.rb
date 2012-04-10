@@ -12,5 +12,17 @@ module TvHelper
 			end
 		)
 	end
-
+	
+	def epnum episode
+		episode.season.to_s + pad(episode.episode_number)
+	end
+	
+	def pad num
+		if num < 10
+			num = '0' + num.to_s
+		else 
+			num = num.to_s
+		end
+		num
+	end
 end

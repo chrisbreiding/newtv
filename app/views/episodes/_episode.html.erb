@@ -1,0 +1,14 @@
+<li class="clearfix<%= aired_or_not episode.airdate.to_s %>">
+
+	<span class="epnum"><%= epnum episode %></span>
+	
+	<span class="airdate"><%= episode.airdate.to_s %></span>
+	
+	<span class="title">
+		<%= episode.title %>
+		<span class="file-name">
+			<%= episode.show.name %> - <%= epnum episode %> - <%= episode.title %>
+		</span>
+	</span>
+	
+</li>
