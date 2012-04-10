@@ -10818,3 +10818,68 @@ EOFError (end of file reached):
 Started GET "/" for 127.0.0.1 at 2012-04-09 17:04:40 -0400
 Processing by ShowsController#index as HTML
   [1m[35mShow Load (0.2ms)[0m  SELECT "shows".* FROM "shows" 
+  Rendered shows/_shows.html.erb (31.4ms)
+  Rendered shows/_off_air.html.erb (0.8ms)
+  Rendered shows/_jst_add_show.html.erb (0.0ms)
+  Rendered shows/_jst_search_results.html.erb (0.0ms)
+  Rendered shows/_jst_no_search_results.html.erb (0.0ms)
+  Rendered shows/_jst_notice.html.erb (0.0ms)
+  Rendered shows/index.html.erb within layouts/application (35.9ms)
+Compiled styles.css  (6ms)  (pid 1612)
+Compiled responsive.css  (0ms)  (pid 1612)
+Compiled application.css  (2ms)  (pid 1612)
+Completed 200 OK in 64203ms (Views: 64.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 17:05:44 -0400
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 17:05:44 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 17:05:44 -0400
+Served asset /normalize.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 17:05:44 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 17:05:44 -0400
+Served asset /styles.css - 200 OK (1ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 17:05:44 -0400
+Served asset /responsive.css - 200 OK (1ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 17:05:44 -0400
+Served asset /underscore.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 17:05:44 -0400
+Served asset /scripts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 17:05:44 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sprite.png" for 127.0.0.1 at 2012-04-09 17:05:50 -0400
+Served asset /sprite.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search.png" for 127.0.0.1 at 2012-04-09 17:06:31 -0400
+Served asset /search.png - 304 Not Modified (1ms)
+
+
+Started POST "/shows/search.json" for 127.0.0.1 at 2012-04-09 17:06:38 -0400
+Processing by ShowsController#search as JSON
+  Parameters: {"name"=>"New Girl"}
+Completed 200 OK in 4840ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/waiting.gif" for 127.0.0.1 at 2012-04-09 17:06:43 -0400
+Served asset /waiting.gif - 304 Not Modified (1ms)
