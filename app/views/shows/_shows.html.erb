@@ -1,6 +1,6 @@
 <% shows.each do |show| %>
 
-	<div class="show clearfix" data-showid="<%= show[:showid] %>">
+	<div id="show-<%= show[:id] %>" class="show clearfix" data-id="<%= show[:id] %>">
 	
 		<h2>
 			<%= content_tag :span, show[:name], class: 'name' %>

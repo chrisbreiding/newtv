@@ -10818,6 +10818,7 @@ EOFError (end of file reached):
 Started GET "/" for 127.0.0.1 at 2012-04-09 17:04:40 -0400
 Processing by ShowsController#index as HTML
   [1m[35mShow Load (0.2ms)[0m  SELECT "shows".* FROM "shows" 
+<<<<<<< HEAD
   Rendered shows/_shows.html.erb (31.4ms)
   Rendered shows/_off_air.html.erb (0.8ms)
   Rendered shows/_jst_add_show.html.erb (0.0ms)
@@ -10883,3 +10884,1362 @@ Completed 200 OK in 4840ms (Views: 3.2ms | ActiveRecord: 0.0ms)
 
 Started GET "/assets/waiting.gif" for 127.0.0.1 at 2012-04-09 17:06:43 -0400
 Served asset /waiting.gif - 304 Not Modified (1ms)
+=======
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 19:44:19 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.2ms)[0m  [1mSELECT "shows".* FROM "shows" [0m
+  Rendered shows/_shows.html.erb (4.7ms)
+  Rendered shows/_off_air.html.erb (1.0ms)
+  Rendered shows/_jst_add_show.html.erb (0.2ms)
+  Rendered shows/_jst_search_results.html.erb (0.2ms)
+  Rendered shows/_jst_no_search_results.html.erb (0.2ms)
+  Rendered shows/_jst_notice.html.erb (0.2ms)
+  Rendered shows/index.html.erb within layouts/application (38.5ms)
+Compiled styles.css  (8ms)  (pid 92751)
+Compiled responsive.css  (0ms)  (pid 92751)
+Compiled application.css  (1ms)  (pid 92751)
+Compiled scripts.js  (0ms)  (pid 92751)
+Compiled application.js  (2ms)  (pid 92751)
+Completed 200 OK in 41589ms (Views: 194.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 19:45:01 -0400
+Served asset /application.css - 304 Not Modified (27ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 19:45:01 -0400
+Served asset /normalize.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 19:45:01 -0400
+Served asset /styles.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 19:45:01 -0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 19:45:01 -0400
+Served asset /responsive.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 19:45:01 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 19:45:01 -0400
+Served asset /underscore.min.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 19:45:01 -0400
+Served asset /scripts.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 19:45:01 -0400
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/sprite.png" for 127.0.0.1 at 2012-04-09 19:45:46 -0400
+Served asset /sprite.png - 200 OK (5ms)
+
+
+Started GET "/assets/search.png" for 127.0.0.1 at 2012-04-09 20:15:17 -0400
+Served asset /search.png - 304 Not Modified (1ms)
+
+
+Started POST "/shows/search.json" for 127.0.0.1 at 2012-04-09 20:15:21 -0400
+Processing by ShowsController#search as JSON
+  Parameters: {"name"=>"30 Rock"}
+Completed 200 OK in 3396ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/waiting.gif" for 127.0.0.1 at 2012-04-09 20:15:24 -0400
+Served asset /waiting.gif - 304 Not Modified (25ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 20:24:44 -0400
+Processing by ShowsController#index as HTML
+  [1m[35mShow Load (0.2ms)[0m  SELECT "shows".* FROM "shows" 
+  Rendered shows/_shows.html.erb (23.8ms)
+  Rendered shows/_off_air.html.erb (0.6ms)
+  Rendered jst/_jst_add_show.html.erb (0.2ms)
+  Rendered jst/_jst_search_results.html.erb (0.2ms)
+  Rendered jst/_jst_no_search_results.html.erb (0.2ms)
+  Rendered jst/_jst_notice.html.erb (0.2ms)
+  Rendered shows/index.html.erb within layouts/application (29.2ms)
+Compiled styles.css  (8ms)  (pid 92751)
+Compiled application.css  (2ms)  (pid 92751)
+Compiled scripts.js  (0ms)  (pid 92751)
+Compiled application.js  (3ms)  (pid 92751)
+Completed 200 OK in 22604ms (Views: 445.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 20:25:07 -0400
+Served asset /styles.css - 200 OK (5ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 20:25:07 -0400
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 20:25:07 -0400
+Served asset /normalize.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 20:25:07 -0400
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 20:25:07 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 20:25:07 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 20:25:07 -0400
+Served asset /underscore.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 20:25:07 -0400
+Served asset /scripts.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 20:25:07 -0400
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/sprite.png" for 127.0.0.1 at 2012-04-09 20:46:45 -0400
+Served asset /sprite.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 20:53:31 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.2ms)[0m  [1mSELECT "shows".* FROM "shows" [0m
+  Rendered shows/_shows.html.erb (5.0ms)
+  Rendered shows/_off_air.html.erb (0.6ms)
+  Rendered jst/_add_show.html.erb (0.3ms)
+  Rendered jst/_edit_show.html.erb (0.2ms)
+  Rendered jst/_search_results.html.erb (0.2ms)
+  Rendered jst/_no_search_results.html.erb (0.2ms)
+  Rendered jst/_notice.html.erb (0.2ms)
+  Rendered shows/index.html.erb within layouts/application (39.6ms)
+Compiled styles.css  (5ms)  (pid 92751)
+Compiled application.css  (1ms)  (pid 92751)
+Compiled scripts.js  (0ms)  (pid 92751)
+Compiled jquery.center.js  (0ms)  (pid 92751)
+Compiled application.js  (27ms)  (pid 92751)
+Completed 200 OK in 9196ms (Views: 161.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 20:53:40 -0400
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 20:53:40 -0400
+Served asset /normalize.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 20:53:40 -0400
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 20:53:40 -0400
+Served asset /styles.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 20:53:40 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 20:53:40 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.center.js?body=1" for 127.0.0.1 at 2012-04-09 20:53:40 -0400
+Served asset /jquery.center.js - 200 OK (2ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 20:53:40 -0400
+Served asset /underscore.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 20:53:40 -0400
+Served asset /scripts.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 20:53:40 -0400
+Served asset /application.js - 200 OK (4ms)
+
+
+Started GET "/assets/sprite.png" for 127.0.0.1 at 2012-04-09 20:53:43 -0400
+Served asset /sprite.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 20:55:42 -0400
+Processing by ShowsController#index as HTML
+  [1m[35mShow Load (0.2ms)[0m  SELECT "shows".* FROM "shows" 
+  Rendered shows/_shows.html.erb (4.9ms)
+  Rendered shows/_off_air.html.erb (0.6ms)
+  Rendered jst/_add_show.html.erb (0.0ms)
+  Rendered jst/_edit_show.html.erb (0.0ms)
+  Rendered jst/_search_results.html.erb (0.0ms)
+  Rendered jst/_no_search_results.html.erb (0.0ms)
+  Rendered jst/_notice.html.erb (0.0ms)
+  Rendered shows/index.html.erb within layouts/application (8.8ms)
+Compiled jquery.center.js  (0ms)  (pid 92751)
+Compiled application.js  (3ms)  (pid 92751)
+Completed 200 OK in 14585ms (Views: 85.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 20:55:57 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 20:55:57 -0400
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 20:55:57 -0400
+Served asset /styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 20:55:57 -0400
+Served asset /normalize.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 20:55:57 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 20:55:57 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.center.js?body=1" for 127.0.0.1 at 2012-04-09 20:55:57 -0400
+Served asset /jquery.center.js - 200 OK (1ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 20:55:57 -0400
+Served asset /underscore.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 20:55:57 -0400
+Served asset /scripts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 20:55:57 -0400
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/sprite.png" for 127.0.0.1 at 2012-04-09 20:55:59 -0400
+Served asset /sprite.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 21:00:48 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.2ms)[0m  [1mSELECT "shows".* FROM "shows" [0m
+  Rendered shows/_shows.html.erb (4.9ms)
+  Rendered shows/_off_air.html.erb (0.6ms)
+  Rendered jst/_add_show.html.erb (0.0ms)
+  Rendered jst/_edit_show.html.erb (0.0ms)
+  Rendered jst/_search_results.html.erb (0.0ms)
+  Rendered jst/_no_search_results.html.erb (0.0ms)
+  Rendered jst/_notice.html.erb (0.0ms)
+  Rendered shows/index.html.erb within layouts/application (8.7ms)
+Compiled styles.css  (25ms)  (pid 92751)
+Compiled application.css  (1ms)  (pid 92751)
+Compiled scripts.js  (0ms)  (pid 92751)
+Compiled application.js  (3ms)  (pid 92751)
+Completed 200 OK in 32469ms (Views: 108.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 21:01:21 -0400
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 21:01:21 -0400
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 21:01:21 -0400
+Served asset /normalize.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 21:01:21 -0400
+Served asset /styles.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 21:01:21 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 21:01:21 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.center.js?body=1" for 127.0.0.1 at 2012-04-09 21:01:21 -0400
+Served asset /jquery.center.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 21:01:21 -0400
+Served asset /scripts.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 21:01:21 -0400
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 21:01:21 -0400
+Served asset /underscore.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sprite.png" for 127.0.0.1 at 2012-04-09 21:02:53 -0400
+Served asset /sprite.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 21:12:54 -0400
+Processing by ShowsController#index as HTML
+  [1m[35mShow Load (0.1ms)[0m  SELECT "shows".* FROM "shows" 
+  Rendered shows/_shows.html.erb (23.1ms)
+  Rendered shows/_off_air.html.erb (0.6ms)
+  Rendered jst/_add_show.html.erb (0.0ms)
+  Rendered jst/_edit_show.html.erb (0.0ms)
+  Rendered jst/_search_results.html.erb (0.0ms)
+  Rendered jst/_no_search_results.html.erb (0.0ms)
+  Rendered jst/_notice.html.erb (0.0ms)
+  Rendered shows/index.html.erb within layouts/application (27.2ms)
+Compiled styles.css  (5ms)  (pid 92751)
+Compiled application.css  (1ms)  (pid 92751)
+Compiled scripts.js  (0ms)  (pid 92751)
+Compiled application.js  (3ms)  (pid 92751)
+Completed 200 OK in 73515ms (Views: 61.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 21:14:07 -0400
+Served asset /normalize.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 21:14:07 -0400
+Served asset /styles.css - 200 OK (1ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 21:14:07 -0400
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 21:14:07 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 21:14:07 -0400
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 21:14:07 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.center.js?body=1" for 127.0.0.1 at 2012-04-09 21:14:07 -0400
+Served asset /jquery.center.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 21:14:07 -0400
+Served asset /underscore.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 21:14:07 -0400
+Served asset /scripts.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 21:14:07 -0400
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/sprite.png" for 127.0.0.1 at 2012-04-09 21:15:15 -0400
+Served asset /sprite.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 21:16:16 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.2ms)[0m  [1mSELECT "shows".* FROM "shows" [0m
+  Rendered shows/_shows.html.erb (4.1ms)
+  Rendered shows/_off_air.html.erb (0.5ms)
+  Rendered jst/_add_show.html.erb (0.0ms)
+  Rendered jst/_edit_show.html.erb (0.0ms)
+  Rendered jst/_search_results.html.erb (0.0ms)
+  Rendered jst/_no_search_results.html.erb (0.0ms)
+  Rendered jst/_notice.html.erb (0.0ms)
+  Rendered shows/index.html.erb within layouts/application (7.7ms)
+Compiled scripts.js  (0ms)  (pid 92751)
+Compiled application.js  (3ms)  (pid 92751)
+Completed 200 OK in 64591ms (Views: 26.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 21:17:21 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 21:17:21 -0400
+Served asset /normalize.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 21:17:21 -0400
+Served asset /styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 21:17:21 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 21:17:21 -0400
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 21:17:21 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.center.js?body=1" for 127.0.0.1 at 2012-04-09 21:17:21 -0400
+Served asset /jquery.center.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 21:17:21 -0400
+Served asset /underscore.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 21:17:21 -0400
+Served asset /scripts.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 21:17:21 -0400
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/sprite.png" for 127.0.0.1 at 2012-04-09 21:17:25 -0400
+Served asset /sprite.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 21:18:56 -0400
+Processing by ShowsController#index as HTML
+  [1m[35mShow Load (0.2ms)[0m  SELECT "shows".* FROM "shows" 
+  Rendered shows/_shows.html.erb (4.2ms)
+  Rendered shows/_off_air.html.erb (0.6ms)
+  Rendered jst/_add_show.html.erb (0.0ms)
+  Rendered jst/_edit_show.html.erb (0.0ms)
+  Rendered jst/_search_results.html.erb (0.0ms)
+  Rendered jst/_no_search_results.html.erb (0.0ms)
+  Rendered jst/_notice.html.erb (0.0ms)
+  Rendered shows/index.html.erb within layouts/application (7.9ms)
+Compiled scripts.js  (0ms)  (pid 92751)
+Compiled application.js  (3ms)  (pid 92751)
+Completed 200 OK in 70634ms (Views: 26.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 21:20:07 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 21:20:07 -0400
+Served asset /styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 21:20:07 -0400
+Served asset /normalize.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 21:20:07 -0400
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 21:20:07 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 21:20:07 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.center.js?body=1" for 127.0.0.1 at 2012-04-09 21:20:07 -0400
+Served asset /jquery.center.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 21:20:07 -0400
+Served asset /underscore.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 21:20:07 -0400
+Served asset /scripts.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 21:20:07 -0400
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/sprite.png" for 127.0.0.1 at 2012-04-09 21:20:45 -0400
+Served asset /sprite.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 21:54:42 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.2ms)[0m  [1mSELECT "shows".* FROM "shows" [0m
+Completed 500 Internal Server Error in 128470ms
+
+Timeout::Error (Timeout::Error):
+  app/controllers/shows_controller.rb:17:in `block in index'
+  app/controllers/shows_controller.rb:13:in `each'
+  app/controllers/shows_controller.rb:13:in `index'
+
+
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 21:57:29 -0400
+Processing by ShowsController#index as HTML
+  [1m[35mShow Load (0.2ms)[0m  SELECT "shows".* FROM "shows" 
+Completed 500 Internal Server Error in 97075ms
+
+EOFError (end of file reached):
+  app/controllers/shows_controller.rb:17:in `block in index'
+  app/controllers/shows_controller.rb:13:in `each'
+  app/controllers/shows_controller.rb:13:in `index'
+
+
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 22:01:25 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.2ms)[0m  [1mSELECT "shows".* FROM "shows" [0m
+Completed 500 Internal Server Error in 124204ms
+
+EOFError (end of file reached):
+  app/controllers/shows_controller.rb:17:in `block in index'
+  app/controllers/shows_controller.rb:13:in `each'
+  app/controllers/shows_controller.rb:13:in `index'
+
+
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.6ms)
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.3ms)
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 22:45:36 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (11.2ms)[0m  [1mSELECT "shows".* FROM "shows" [0m
+  Rendered shows/_shows.html.erb (21.2ms)
+  Rendered shows/_off_air.html.erb (1.1ms)
+  Rendered jst/_add_show.html.erb (0.5ms)
+  Rendered jst/_edit_show.html.erb (0.4ms)
+  Rendered jst/_search_results.html.erb (0.3ms)
+  Rendered jst/_no_search_results.html.erb (0.2ms)
+  Rendered jst/_notice.html.erb (0.2ms)
+  Rendered shows/index.html.erb within layouts/application (137.1ms)
+Compiled styles.css  (5ms)  (pid 93301)
+Compiled application.css  (1ms)  (pid 93301)
+Compiled scripts.js  (0ms)  (pid 93301)
+Compiled application.js  (20ms)  (pid 93301)
+Completed 200 OK in 75943ms (Views: 1185.5ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 22:46:54 -0400
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 22:46:54 -0400
+Served asset /normalize.css - 304 Not Modified (25ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 22:46:54 -0400
+Served asset /styles.css - 200 OK (2ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 22:46:54 -0400
+Served asset /responsive.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 22:46:54 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.center.js?body=1" for 127.0.0.1 at 2012-04-09 22:46:54 -0400
+Served asset /jquery.center.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 22:46:54 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 22:46:54 -0400
+Served asset /underscore.min.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 22:46:54 -0400
+Served asset /scripts.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 22:46:54 -0400
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/sprite.png" for 127.0.0.1 at 2012-04-09 22:56:10 -0400
+Served asset /sprite.png - 304 Not Modified (32ms)
+
+
+Started POST "/shows/update/.json" for 127.0.0.1 at 2012-04-09 22:56:15 -0400
+
+ActionController::RoutingError (No route matches [POST] "/shows/update/.json"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/chrisbreiding/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/chrisbreiding/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/chrisbreiding/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 22:59:49 -0400
+Processing by ShowsController#index as HTML
+  [1m[35mShow Load (0.2ms)[0m  SELECT "shows".* FROM "shows" 
+  Rendered shows/_shows.html.erb (6.3ms)
+  Rendered shows/_off_air.html.erb (0.7ms)
+  Rendered jst/_add_show.html.erb (0.0ms)
+  Rendered jst/_edit_show.html.erb (0.0ms)
+  Rendered jst/_search_results.html.erb (0.1ms)
+  Rendered jst/_no_search_results.html.erb (0.0ms)
+  Rendered jst/_notice.html.erb (0.0ms)
+  Rendered shows/index.html.erb within layouts/application (38.3ms)
+Completed 200 OK in 64412ms (Views: 468.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 23:00:53 -0400
+Served asset /styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 23:00:53 -0400
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 23:00:53 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 23:00:53 -0400
+Served asset /normalize.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 23:00:53 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 23:00:53 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.center.js?body=1" for 127.0.0.1 at 2012-04-09 23:00:53 -0400
+Served asset /jquery.center.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 23:00:53 -0400
+Served asset /underscore.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 23:00:53 -0400
+Served asset /scripts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 23:00:53 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 23:01:16 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.2ms)[0m  [1mSELECT "shows".* FROM "shows" [0m
+Completed 500 Internal Server Error in 45728ms
+
+EOFError (end of file reached):
+  app/controllers/shows_controller.rb:17:in `block in index'
+  app/controllers/shows_controller.rb:13:in `each'
+  app/controllers/shows_controller.rb:13:in `index'
+
+
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.0ms)
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 23:04:31 -0400
+Processing by ShowsController#index as HTML
+  [1m[35mShow Load (0.2ms)[0m  SELECT "shows".* FROM "shows" 
+  Rendered shows/_shows.html.erb (26.0ms)
+  Rendered shows/_off_air.html.erb (0.8ms)
+  Rendered jst/_add_show.html.erb (0.0ms)
+  Rendered jst/_edit_show.html.erb (0.0ms)
+  Rendered jst/_search_results.html.erb (0.0ms)
+  Rendered jst/_no_search_results.html.erb (0.0ms)
+  Rendered jst/_notice.html.erb (0.0ms)
+  Rendered shows/index.html.erb within layouts/application (30.7ms)
+Completed 200 OK in 119013ms (Views: 35.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 23:06:30 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 23:06:30 -0400
+Served asset /normalize.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 23:06:30 -0400
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 23:06:30 -0400
+Served asset /styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 23:06:30 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 23:06:30 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.center.js?body=1" for 127.0.0.1 at 2012-04-09 23:06:30 -0400
+Served asset /jquery.center.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 23:06:30 -0400
+Served asset /underscore.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 23:06:30 -0400
+Served asset /scripts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 23:06:30 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sprite.png" for 127.0.0.1 at 2012-04-09 23:07:54 -0400
+Served asset /sprite.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 23:09:27 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.7ms)[0m  [1mSELECT "shows".* FROM "shows" [0m
+  Rendered shows/_shows.html.erb (4.8ms)
+ERROR: compiling _app_views_shows__off_air_html_erb___4233705125364549423_70210139202200 RAISED /Users/chrisbreiding/Sites/newtv.crbapps.com/newtv/app/views/shows/_off_air.html.erb:8: syntax error, unexpected tLABEL
+...ut_buffer.append=  content_tag:span do @output_buffer.safe_c...
+...                               ^
+Function body:           def _app_views_shows__off_air_html_erb___4233705125364549423_70210139202200(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "shows/_off_air";_old_output_buffer = @output_buffer;off_air = local_assigns[:off_air];off_air = local_assigns[:off_air];;@output_buffer = output_buffer || ActionView::OutputBuffer.new; if !off_air.empty? 
+@output_buffer.safe_concat('
+	<h2>Off Air</h2>
+	
+	<ul class="off-air">
+');		 off_air.each do |show| 
+@output_buffer.safe_concat('			<li id="show-');@output_buffer.append= ( show[:id] );@output_buffer.safe_concat('" class="show" data-id="');@output_buffer.append= ( show[:id] );@output_buffer.safe_concat('">
+				');@output_buffer.append=  content_tag:span do @output_buffer.safe_concat('
+');@output_buffer.safe_concat('					');@output_buffer.append= ( content_tag :span, show[:name], class: 'name' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('					');@output_buffer.append= ( options show[:name] );@output_buffer.safe_concat('
+');				 end 
+@output_buffer.safe_concat('			</li>
+');		 end 
+@output_buffer.safe_concat('	</ul>
+
+'); end ;@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_view/template.rb:285:in `module_eval'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_view/template.rb:285:in `compile'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_view/template.rb:233:in `compile!'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_view/template.rb:142:in `block in render'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/activesupport-3.2.2/lib/active_support/notifications.rb:125:in `instrument'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_view/template.rb:141:in `render'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_view/renderer/partial_renderer.rb:257:in `render_partial'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_view/renderer/partial_renderer.rb:230:in `block in render'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/activesupport-3.2.2/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/activesupport-3.2.2/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/activesupport-3.2.2/lib/active_support/notifications.rb:123:in `instrument'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_view/renderer/partial_renderer.rb:229:in `render'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_view/renderer/renderer.rb:41:in `render_partial'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_view/helpers/rendering_helper.rb:27:in `render'
+/Users/chrisbreiding/Sites/newtv.crbapps.com/newtv/app/views/shows/index.html.erb:6:in `_app_views_shows_index_html_erb__987067078225766869_70210140200260'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_view/template.rb:143:in `block in render'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/activesupport-3.2.2/lib/active_support/notifications.rb:125:in `instrument'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_view/template.rb:141:in `render'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_view/renderer/template_renderer.rb:42:in `block (2 levels) in render_template'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/activesupport-3.2.2/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/activesupport-3.2.2/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/activesupport-3.2.2/lib/active_support/notifications.rb:123:in `instrument'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_view/renderer/template_renderer.rb:41:in `block in render_template'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_view/renderer/template_renderer.rb:49:in `render_with_layout'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_view/renderer/template_renderer.rb:40:in `render_template'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_view/renderer/template_renderer.rb:13:in `render'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_view/renderer/renderer.rb:17:in `render'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/abstract_controller/rendering.rb:109:in `_render_template'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/abstract_controller/rendering.rb:88:in `render'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_controller/metal/rendering.rb:16:in `render'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/activesupport-3.2.2/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/chrisbreiding/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/activesupport-3.2.2/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/activerecord-3.2.2/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_controller/metal/mime_responds.rb:196:in `respond_to'
+/Users/chrisbreiding/Sites/newtv.crbapps.com/newtv/app/controllers/shows_controller.rb:76:in `index'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/abstract_controller/base.rb:167:in `process_action'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:403:in `_run__1247170921297553629__process_action__1879141911301640937__callbacks'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/activesupport-3.2.2/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/activesupport-3.2.2/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/activesupport-3.2.2/lib/active_support/notifications.rb:123:in `instrument'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_controller/metal/params_wrapper.rb:205:in `process_action'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/activerecord-3.2.2/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/abstract_controller/base.rb:121:in `process'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/abstract_controller/rendering.rb:45:in `process'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_controller/metal.rb:203:in `dispatch'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_controller/metal.rb:246:in `block in action'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/routing/route_set.rb:67:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/routing/route_set.rb:30:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/journey-1.0.3/lib/journey/router.rb:68:in `block in call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/journey-1.0.3/lib/journey/router.rb:56:in `each'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/journey-1.0.3/lib/journey/router.rb:56:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/routing/route_set.rb:594:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/rack-1.4.1/lib/rack/etag.rb:23:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/rack-1.4.1/lib/rack/conditionalget.rb:25:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:205:in `context'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:200:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/cookies.rb:338:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/activerecord-3.2.2/lib/active_record/query_cache.rb:64:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/activerecord-3.2.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:443:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:405:in `_run__4210979659776988696__call__204699428115323601__callbacks'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/railties-3.2.2/lib/rails/rack/logger.rb:26:in `call_app'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/railties-3.2.2/lib/rails/rack/logger.rb:16:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/activesupport-3.2.2/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/static.rb:61:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/railties-3.2.2/lib/rails/engine.rb:479:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/railties-3.2.2/lib/rails/application.rb:220:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/railties-3.2.2/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in `service'
+/Users/chrisbreiding/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/Users/chrisbreiding/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/Users/chrisbreiding/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+  Rendered shows/_off_air.html.erb (385.6ms)
+  Rendered shows/index.html.erb within layouts/application (391.5ms)
+Completed 500 Internal Server Error in 72166ms
+
+ActionView::Template::Error (/Users/chrisbreiding/Sites/newtv.crbapps.com/newtv/app/views/shows/_off_air.html.erb:8: syntax error, unexpected tLABEL
+...ut_buffer.append=  content_tag:span do @output_buffer.safe_c...
+...                               ^):
+    5: 	<ul class="off-air">
+    6: 		<% off_air.each do |show| %>
+    7: 			<li id="show-<%= show[:id] %>" class="show" data-id="<%= show[:id] %>">
+    8: 				<%= content_tag:span do %>
+    9: 					<%= content_tag :span, show[:name], class: 'name' %>
+    10: 					<%= options show[:name] %>
+    11: 				<% end %>
+  app/views/shows/index.html.erb:6:in `_app_views_shows_index_html_erb__987067078225766869_70210140200260'
+  app/controllers/shows_controller.rb:76:in `index'
+
+
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.5ms)
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 23:11:16 -0400
+Processing by ShowsController#index as HTML
+  [1m[35mShow Load (0.2ms)[0m  SELECT "shows".* FROM "shows" 
+  Rendered shows/_shows.html.erb (5.8ms)
+  Rendered shows/_off_air.html.erb (1.5ms)
+  Rendered jst/_add_show.html.erb (0.0ms)
+  Rendered jst/_edit_show.html.erb (0.0ms)
+  Rendered jst/_search_results.html.erb (0.0ms)
+  Rendered jst/_no_search_results.html.erb (0.0ms)
+  Rendered jst/_notice.html.erb (0.0ms)
+  Rendered shows/index.html.erb within layouts/application (10.9ms)
+Compiled scripts.js  (0ms)  (pid 93301)
+Compiled application.js  (19ms)  (pid 93301)
+Completed 200 OK in 58309ms (Views: 300.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 23:12:15 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 23:12:15 -0400
+Served asset /styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 23:12:15 -0400
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 23:12:15 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 23:12:15 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 23:12:15 -0400
+Served asset /normalize.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.center.js?body=1" for 127.0.0.1 at 2012-04-09 23:12:15 -0400
+Served asset /jquery.center.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 23:12:15 -0400
+Served asset /underscore.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 23:12:15 -0400
+Served asset /scripts.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 23:12:15 -0400
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/sprite.png" for 127.0.0.1 at 2012-04-09 23:12:19 -0400
+Served asset /sprite.png - 304 Not Modified (0ms)
+
+
+Started PUT "/shows/update/5.json" for 127.0.0.1 at 2012-04-09 23:12:43 -0400
+
+ActionController::RoutingError (No route matches [PUT] "/shows/update/5.json"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/chrisbreiding/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/chrisbreiding/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/chrisbreiding/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 23:13:51 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.2ms)[0m  [1mSELECT "shows".* FROM "shows" [0m
+  Rendered shows/_shows.html.erb (5.3ms)
+  Rendered shows/_off_air.html.erb (0.7ms)
+  Rendered jst/_add_show.html.erb (0.0ms)
+  Rendered jst/_edit_show.html.erb (0.0ms)
+  Rendered jst/_search_results.html.erb (0.0ms)
+  Rendered jst/_no_search_results.html.erb (0.0ms)
+  Rendered jst/_notice.html.erb (0.0ms)
+  Rendered shows/index.html.erb within layouts/application (9.4ms)
+Compiled scripts.js  (0ms)  (pid 93301)
+Compiled application.js  (3ms)  (pid 93301)
+Completed 200 OK in 45870ms (Views: 47.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 23:14:36 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 23:14:36 -0400
+Served asset /styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 23:14:36 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 23:14:36 -0400
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 23:14:36 -0400
+Served asset /normalize.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 23:14:36 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.center.js?body=1" for 127.0.0.1 at 2012-04-09 23:14:36 -0400
+Served asset /jquery.center.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 23:14:36 -0400
+Served asset /underscore.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 23:14:36 -0400
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 23:14:37 -0400
+Served asset /scripts.js - 200 OK (1ms)
+
+
+Started GET "/assets/sprite.png" for 127.0.0.1 at 2012-04-09 23:14:40 -0400
+Served asset /sprite.png - 304 Not Modified (0ms)
+
+
+Started PUT "/shows/5.json" for 127.0.0.1 at 2012-04-09 23:14:44 -0400
+Processing by ShowsController#update as JSON
+  Parameters: {"id"=>"5", "name"=>"The Office"}
+  [1m[35mShow Load (0.2ms)[0m  SELECT "shows".* FROM "shows" WHERE "shows"."id" = ? LIMIT 1  [["id", "5"]]
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `update_attributes' for nil:NilClass):
+  app/controllers/shows_controller.rb:100:in `block in update'
+  app/controllers/shows_controller.rb:99:in `update'
+
+
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 23:15:25 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.2ms)[0m  [1mSELECT "shows".* FROM "shows" [0m
+  Rendered shows/_shows.html.erb (5.1ms)
+  Rendered shows/_off_air.html.erb (0.6ms)
+  Rendered jst/_add_show.html.erb (0.0ms)
+  Rendered jst/_edit_show.html.erb (0.0ms)
+  Rendered jst/_search_results.html.erb (0.0ms)
+  Rendered jst/_no_search_results.html.erb (0.0ms)
+  Rendered jst/_notice.html.erb (0.0ms)
+  Rendered shows/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 58350ms (Views: 13.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 23:16:24 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 23:16:24 -0400
+Served asset /normalize.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 23:16:24 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 23:16:24 -0400
+Served asset /styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 23:16:24 -0400
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 23:16:24 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.center.js?body=1" for 127.0.0.1 at 2012-04-09 23:16:24 -0400
+Served asset /jquery.center.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 23:16:24 -0400
+Served asset /underscore.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 23:16:24 -0400
+Served asset /scripts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 23:16:24 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sprite.png" for 127.0.0.1 at 2012-04-09 23:16:26 -0400
+Served asset /sprite.png - 304 Not Modified (0ms)
+
+
+Started PUT "/shows/5.json" for 127.0.0.1 at 2012-04-09 23:16:31 -0400
+Processing by ShowsController#update as JSON
+  Parameters: {"id"=>"5", "name"=>"The Office"}
+  [1m[35mShow Load (0.2ms)[0m  SELECT "shows".* FROM "shows" WHERE "shows"."id" = ? LIMIT 1  [["id", "5"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 204 No Content in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 23:22:39 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.2ms)[0m  [1mSELECT "shows".* FROM "shows" [0m
+  Rendered shows/_shows.html.erb (22.9ms)
+  Rendered shows/_off_air.html.erb (0.7ms)
+  Rendered jst/_add_show.html.erb (0.0ms)
+  Rendered jst/_edit_show.html.erb (0.0ms)
+  Rendered jst/_search_results.html.erb (0.0ms)
+  Rendered jst/_no_search_results.html.erb (0.0ms)
+  Rendered jst/_notice.html.erb (0.0ms)
+  Rendered shows/index.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 32672ms (Views: 32.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 23:23:12 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 23:23:12 -0400
+Served asset /styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 23:23:12 -0400
+Served asset /normalize.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 23:23:12 -0400
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 23:23:12 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 23:23:12 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.center.js?body=1" for 127.0.0.1 at 2012-04-09 23:23:12 -0400
+Served asset /jquery.center.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 23:23:12 -0400
+Served asset /scripts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 23:23:12 -0400
+Served asset /underscore.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 23:23:12 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sprite.png" for 127.0.0.1 at 2012-04-09 23:26:42 -0400
+Served asset /sprite.png - 304 Not Modified (0ms)
+
+
+Started PUT "/shows/5.json" for 127.0.0.1 at 2012-04-09 23:26:46 -0400
+
+SyntaxError (/Users/chrisbreiding/Sites/newtv.crbapps.com/newtv/app/controllers/shows_controller.rb:100: syntax error, unexpected '}', expecting tASSOC
+			if @show.update_attributes({ params[:name] })
+			                                            ^
+/Users/chrisbreiding/Sites/newtv.crbapps.com/newtv/app/controllers/shows_controller.rb:103: syntax error, unexpected keyword_else, expecting keyword_end
+/Users/chrisbreiding/Sites/newtv.crbapps.com/newtv/app/controllers/shows_controller.rb:149: syntax error, unexpected keyword_end, expecting $end):
+  activesupport (3.2.2) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.2) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.2) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.2) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.2) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.2) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.2) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.2) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.2) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.2) lib/active_support/inflector/methods.rb:229:in `block in constantize'
+  activesupport (3.2.2) lib/active_support/inflector/methods.rb:228:in `each'
+  activesupport (3.2.2) lib/active_support/inflector/methods.rb:228:in `constantize'
+  activesupport (3.2.2) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:63:in `controller_reference'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:48:in `controller'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:26:in `call'
+  journey (1.0.3) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.3) lib/journey/router.rb:56:in `each'
+  journey (1.0.3) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:594:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:35:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  activerecord (3.2.2) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:443:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:405:in `_run__4210979659776988696__call__204699428115323601__callbacks'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/chrisbreiding/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/chrisbreiding/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/chrisbreiding/.rvm/rubies/ruby-1.9.3-p125/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.0ms)
+
+
+Started PUT "/shows/5.json" for 127.0.0.1 at 2012-04-09 23:27:34 -0400
+Processing by ShowsController#update as JSON
+  Parameters: {"id"=>"5", "name"=>"The Office"}
+  [1m[35mShow Load (0.2ms)[0m  SELECT "shows".* FROM "shows" WHERE "shows"."id" = ? LIMIT 1  [["id", "5"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  UPDATE "shows" SET "name" = 'The Office', "updated_at" = '2012-04-10 03:27:34.734884' WHERE "shows"."id" = 5
+  [1m[36m (66.3ms)[0m  [1mcommit transaction[0m
+Completed 204 No Content in 77ms (ActiveRecord: 66.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-09 23:27:55 -0400
+Processing by ShowsController#index as HTML
+  [1m[35mShow Load (0.2ms)[0m  SELECT "shows".* FROM "shows" 
+  Rendered shows/_shows.html.erb (4.9ms)
+  Rendered shows/_off_air.html.erb (0.6ms)
+  Rendered jst/_add_show.html.erb (0.0ms)
+  Rendered jst/_edit_show.html.erb (0.0ms)
+  Rendered jst/_search_results.html.erb (0.0ms)
+  Rendered jst/_no_search_results.html.erb (0.0ms)
+  Rendered jst/_notice.html.erb (0.0ms)
+  Rendered shows/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 22848ms (Views: 13.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-09 23:28:18 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-09 23:28:18 -0400
+Served asset /normalize.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-09 23:28:18 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-09 23:28:18 -0400
+Served asset /styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-09 23:28:18 -0400
+Served asset /responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-09 23:28:18 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.center.js?body=1" for 127.0.0.1 at 2012-04-09 23:28:18 -0400
+Served asset /jquery.center.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-09 23:28:18 -0400
+Served asset /scripts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-09 23:28:18 -0400
+Served asset /underscore.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-09 23:28:18 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sprite.png" for 127.0.0.1 at 2012-04-09 23:28:28 -0400
+Served asset /sprite.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search.png" for 127.0.0.1 at 2012-04-09 23:28:37 -0400
+Served asset /search.png - 304 Not Modified (60ms)
+>>>>>>> 9c55c130ce359e40294332ab84b8e57ec27a131b

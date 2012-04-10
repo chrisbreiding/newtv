@@ -46,6 +46,165 @@ a:active {
 	padding: 10px 20px;
 }
 
+/* ---- Active Shows ---- */
+
+.main h2 {
+	color: #000;
+	float: left;
+	font-weight: normal;
+	margin: 20px 0 0;
+	padding-bottom: 5px;
+	position: relative;
+	text-align: right;
+	width: 200px;
+}
+
+.main h2:hover {
+	z-index: 10;
+}
+
+	.main h2 .name {
+		display: block;
+	}
+
+.main ul {
+	float: left;
+	list-style: none;
+	margin: 20px 0;
+	padding-left: 20px;
+	width: 380px;
+}
+
+	.main li {
+		margin-bottom: 5px;
+	}
+	
+	.aired {
+		opacity: 0.5;
+	}
+	
+		.main li span {
+			display: block;
+			float: left;
+		}
+
+		.epnum,
+		.airdate {
+			margin-right: 20px;
+		}
+		
+		.airdate, 
+		.title,
+		.file-name {
+			padding-top: 3px;
+		}
+		
+		.epnum {
+			background: #7E4A22;
+			-moz-border-radius: 3px;
+			-webkit-border-radius: 3px;
+			border-radius: 3px;
+			color: #FFF;
+			padding: 3px 5px;
+		}
+		
+		.airdate {
+			color: #7E4A22;
+		}
+		
+		.title {
+			position: relative;
+		}
+		
+		.main li .file-name {
+			background: #f8f8f8;
+			display: none;
+			position: absolute;
+				left: 0;
+				top: 0;
+				width: 400px;
+		}
+		
+		.main li .title:hover .file-name {
+			display: block;
+		}
+		
+
+/* ---- Off Air ---- */
+
+.off-air li {
+	line-height: 1.5em;
+}
+
+	.off-air li > span {
+		position: relative;
+	}
+	
+	.off-air li > span:hover {
+		z-index: 10;
+	}
+	
+
+/* ---- Options ---- */
+
+.options {
+	background: #f8f8f8;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: solid 1px #d3d3d3;
+	display: none;
+	padding: 5px;
+	position: absolute;
+		top: 100%;
+		right: 0;
+	width: 60px;
+}
+
+.off-air li .options {
+	top: -10px;
+	right: auto;
+	left: 100%;
+}
+
+.show h2:hover .options,
+.off-air li:hover .options {
+	display: block;
+}
+
+	.options a {
+		background: url(<%= asset_path('sprite.png') %>) no-repeat;
+		display: block;
+		float: left;
+		margin-left: 10px;
+		outline: none;
+		text-align: left;
+		text-indent: -9999px;
+		width: 25px;
+		height: 25px;
+	}
+	
+	.options a:first-child {
+		margin-left: 0;
+	}
+	
+	.options a.p-bay {
+		background-position: 0 0;
+	}
+	
+		.options a.p-bay:hover {
+			background-position: 0 -25px;
+		}
+	
+	.options a.edit-show {
+		background-position: -25px 0;
+	}
+
+		.options a.edit-show:hover {
+			background-position: -25px -25px;
+		}
+	
+
 /* ---- Add Show ---- */
 
 a.add-show {
@@ -210,163 +369,64 @@ a.add-show {
 	margin-bottom: 0;
 }
 
-/* ---- Active Shows ---- */
 
-.show h2 {
-	color: #000;
-	float: left;
-	font-weight: normal;
-	margin: 20px 0 0;
-	padding-bottom: 5px;
-	position: relative;
-	text-align: right;
-	width: 200px;
-}
+/* ---- Edit Show ---- */
 
-.show h2:hover {
-	z-index: 10;
-}
-
-	.show h2 .name {
-		display: block;
-	}
-
-.show ul {
-	float: left;
-	list-style: none;
-	margin: 20px 0;
-	padding-left: 20px;
-	width: 380px;
-}
-
-	.show li {
-		margin-bottom: 5px;
-	}
-	
-	.aired {
-		opacity: 0.5;
-	}
-	
-		.show li span {
-			display: block;
-			float: left;
-		}
-
-		.epnum,
-		.airdate {
-			margin-right: 20px;
-		}
-		
-		.airdate, 
-		.title,
-		.file-name {
-			padding-top: 3px;
-		}
-		
-		.epnum {
-			background: #7E4A22;
-			-moz-border-radius: 3px;
-			-webkit-border-radius: 3px;
-			border-radius: 3px;
-			color: #FFF;
-			padding: 3px 5px;
-		}
-		
-		.airdate {
-			color: #7E4A22;
-		}
-		
-		.title {
-			position: relative;
-		}
-		
-		.show li .file-name {
-			background: #f8f8f8;
-			display: none;
-			position: absolute;
-				left: 0;
-				top: 0;
-				width: 400px;
-		}
-		
-		.show li .title:hover .file-name {
-			display: block;
-		}
-		
-
-/* ---- Options ---- */
-
-.options {
-	background: #f8f8f8;
+.edit-show-form {
+	background: #e3e3e3;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
-	border: solid 1px #d3d3d3;
-	display: none;
-	padding: 5px;
-	position: absolute;
-		top: 100%;
-		right: 0;
-	width: 60px;
+	border: solid 1px #c7c7c7;
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	margin-left: -200px;
+	padding: 50px;
+	position: fixed;
+		top: 50%;
+		left: 50%;
+	width: 300px;
 }
 
-.off-air li .options {
-	top: -10px;
-	right: auto;
-	left: 100%;
-}
-
-.show h2:hover .options,
-.off-air li:hover .options {
-	display: block;
-}
-
-	.options a {
-		background: url(<%= asset_path('sprite.png') %>) no-repeat;
+	.edit-show-form label {
 		display: block;
-		float: left;
-		margin-left: 10px;
-		outline: none;
-		text-align: left;
-		text-indent: -9999px;
-		width: 25px;
-		height: 25px;
+		font-weight: bold;
+		margin-bottom: 5px;
 	}
 	
-	.options a:first-child {
-		margin-left: 0;
+	.edit-show-form input[type=text] {
+		background: #FFF;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		border-radius: 3px;
+		border: solid 1px #d3d3d3;
+		margin-bottom: 20px;
+		padding: 10px;
+		width: 280px;
 	}
 	
-	.options a.p-bay {
-		background-position: 0 0;
-	}
-	
-		.options a.p-bay:hover {
-			background-position: 0 -25px;
-		}
-	
-	.options a.edit-show {
-		background-position: -25px 0;
+	.edit-show-form button {
+		background: #333;
+		background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#333));
+		background: -moz-linear-gradient(top, #666, #333);
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		border-radius: 3px;
+		border: solid 1px #333;
+		color: #e3e3e3;
+		display: block;
+		float: right;
+		padding: 7px 10px 5px;
 	}
 
-		.options a.edit-show:hover {
-			background-position: -25px -25px;
-		}
-	
-
-/* ---- Off Air ---- */
-
-.off-air li {
-	line-height: 1.5em;
-}
-
-	.off-air li > span {
-		position: relative;
+	.edit-show-form button:hover,
+	.edit-show-form button:focus {
+		background: #444;
+		background: -webkit-gradient(linear, left top, left bottom, from(#777), to(#444));
+		background: -moz-linear-gradient(top, #777, #444);
 	}
-	
-	.off-air li > span:hover {
-		z-index: 10;
-	}
+
 
 /* ---- Notices ---- */
 

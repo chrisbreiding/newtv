@@ -1,0 +1,15 @@
+<script id="edit-show-template" type="text/template">
+
+	<form id="edit-show-form" class="edit-show-form clearfix">
+		
+		<input type="hidden" name="_method" value="put" />
+		<input type="hidden" name="id" value="{{= id }}" id="id" />
+		
+		<label for="name">Show Name</label>
+		<input type="text" name="name" placeholder="Show name" value="{{= name }}" id="name" />
+		
+		<button type="submit">Save</button>
+		
+	</form>
+	
+</script>
