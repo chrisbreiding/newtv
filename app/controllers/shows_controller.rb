@@ -46,6 +46,7 @@ class ShowsController < ActionController::Base
 						
 						@shows << { 
 							name: show[:name], 
+							id: show[:id],
 							showid: show[:tvrage_id],
 							season: latest_season, 
 							next_episode: episodes[0]['airdate'],
@@ -60,7 +61,7 @@ class ShowsController < ActionController::Base
 		
 			if @shows.select { |s| s[:name] == show[:name] }.empty?
 			
-				@off_air << { name: show[:name], showid: show[:tvrage_id] }
+				@off_air << { name: show[:name], id: show[:id], showid: show[:tvrage_id] }
 			
 			end
 				
@@ -82,15 +83,27 @@ class ShowsController < ActionController::Base
 		@show = Show.new(params[:show])
 		
 		respond_to do |format|
-			
 			if @show.save
 				format.html { redirect_to @show }
 				format.json { render json: @show, status: :created, location: @show }
 			else
-				format.html { render action: 'new' }
+				format.html { render :new }
 				format.json { render json: @show.errors, status: :unprocessable_entity }
 			end
-			
+		end
+	end
+	
+	def update
+		@show = Show.find(params[:id])
+	
+		respond_to do |format|
+			if @show.update_attributes({ name: params[:name] })
+				format.html  { redirect_to @show }
+				format.json  { head :no_content }
+			else
+				format.html  { render :edit }
+				format.json  { render json: @show.errors, status: :unprocessable_entity }
+			end
 		end
 	end
 	

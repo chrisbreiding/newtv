@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery.select-text
+//= require jquery.center
 //= require underscore.min
 //= require_tree .

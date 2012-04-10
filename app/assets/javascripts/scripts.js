@@ -12,15 +12,20 @@ jQuery(function($){
 		},
 		
 		events : function () {
-			$('.file-name').on('click', this.selectText);
-			
 			$('#add-show').on('click', this.add);
-			$(document.body).on('submit', '#show-search-form', this.search);
-			$(document.body).on('click', '.create-show', this.create);
-			$(document.body).on('click', '#close-results', this.closeResults);
 			
-			$(document.body).on('click', this.clear);
-			$(document.body).on('click', '#show-search-form, #search-results', this.stopClear);			
+			$(document.body)
+				.on('click', '.file-name', this.selectText)
+				
+				.on('submit', '#show-search-form', this.search)
+				.on('click', '.create-show', this.create)
+				.on('click', '#close-results', this.closeResults)
+			
+				.on('click', '.edit-show', this.edit)
+				.on('submit', '#edit-show-form', this.update)
+			
+				.on('click', this.clear)
+				.on('click', '#add-show, #show-search-form, #search-results, .edit-show, #edit-show-form', this.stopClear);
 		},
 		
 		selectText : function () {
@@ -29,10 +34,8 @@ jQuery(function($){
 		
 		add : function (e) {
 			e.preventDefault();
-			e.stopPropagation();
 			
 			var template = $('#add-show-template').html();
-			
 			$(document.body).append( _.template(template) );
 		},
 		
@@ -60,7 +63,7 @@ jQuery(function($){
 						return;
 					}
 										
-					$( _.template( template, { shows : results } ) )
+					$( _.template(template, { shows : results }) )
 						.hide()
 						.appendTo( $(document.body) )
 						.slideDown();
@@ -112,9 +115,47 @@ jQuery(function($){
 
 		},
 		
+		edit : function (e) {
+			e.preventDefault();
+			
+			$('#edit-show-form').remove();
+			
+			var $this = $(this),
+				template = $('#edit-show-template').html(),
+				data = {
+					name : $this.parent().siblings('.name').text(),
+					id : $this.closest('.show').data('id')
+				};
+				
+			$( _.template(template, data) )
+				.hide()
+				.appendTo( $(document.body) ) 
+				.center()
+				.fadeIn('fast');
+		},
+		
+		update : function (e) {
+			e.preventDefault();
+			
+			var $this = $(this),
+				id = $('#id').val();
+			
+			$.ajax({
+				url : '/shows/' + id + '.json',
+				type: 'POST',
+				dataType : 'json',
+				data : $this.serialize(),
+				success : function (results) {
+					$('#show-' + id).find('.name').html( $('#name').val() );
+					$('#edit-show-form').remove();
+				}
+			});	
+		},
+		
 		clear : function () {
 			$('#show-search-form').remove();
 			$('#search-results').remove();
+			$('#edit-show-form').remove();
 		},
 		
 		stopClear : function (e) {
