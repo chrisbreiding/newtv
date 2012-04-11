@@ -23,6 +23,8 @@ jQuery(function($){
 			
 				.on('click', '.edit-show', this.edit)
 				.on('submit', '#edit-show-form', this.update)
+
+				.on('click', '#delete-show', this.destroy)
 			
 				.on('click', this.clear)
 				.on('click', '#add-show, #show-search-form, #search-results, .edit-show, #edit-show-form', this.stopClear);
@@ -150,6 +152,35 @@ jQuery(function($){
 					$('#edit-show-form').remove();
 				}
 			});	
+		},
+		
+		destroy : function (e) {
+			e.preventDefault();
+			
+			var $form = $('#edit-show-form'),
+				id = $('#id').val(),
+				name = $('#show-' + id).find('.name').text();
+			
+			if( confirm('Are you sure you wish to delete ' + name + '?') ) {
+				$('#_method').val('delete');
+				
+				$.ajax({
+					url : '/shows/' + id + '.json',
+					type: 'POST',
+					dataType : 'json',
+					data : $form.serialize(),
+					success : function (results) {
+						$('#show-' + id).fadeOut(function (){
+							$(this).remove();
+						});
+						$('#edit-show-form').remove();
+						App.notice({
+							notice : name + ' has been deleted.',
+							type : 'message'
+						});
+					}
+				});	
+			}
 		},
 		
 		clear : function () {

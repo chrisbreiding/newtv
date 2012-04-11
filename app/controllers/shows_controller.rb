@@ -81,4 +81,17 @@ class ShowsController < ActionController::Base
 				
 	end
 	
+	def destroy
+		@show = Show.find(params[:id])
+		
+		respond_to do |format|
+			if @show.destroy
+				format.html  { redirect_to @show }
+				format.json  { head :no_content }
+			else
+				format.html  { render :edit }
+				format.json  { render json: @show.errors, status: :unprocessable_entity }
+			end
+		end
+	end	
 end

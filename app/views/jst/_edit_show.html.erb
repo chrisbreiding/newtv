@@ -2,11 +2,13 @@
 
 	<form id="edit-show-form" class="edit-show-form clearfix">
 		
-		<input type="hidden" name="_method" value="put" />
+		<input type="hidden" name="_method" value="put" id="_method" />
 		<input type="hidden" name="id" value="{{= id }}" id="id" />
 		
 		<label for="name">Show Name</label>
 		<input type="text" name="name" placeholder="Show name" value="{{= name }}" id="name" />
+		
+		<a href="#" id="delete-show" class="delete-show">Delete show</a>
 		
 		<button type="submit">Save</button>
 		
