@@ -1,7 +1,7 @@
 module TvHelper
 
 	def aired_or_not airdate
-		raw(' aired') if Time.parse(airdate) < Time.now
+		raw(' aired') if Time.parse(airdate) < 1.day.ago
 	end
 	
 	def options show_name

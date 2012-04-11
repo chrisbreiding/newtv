@@ -3,7 +3,7 @@ class ShowsController < ActionController::Base
 	layout 'application'
 	
 	def index
-		@shows = Show.includes(:episodes).where('episodes.airdate > ?', 3.days.ago )
+		@shows = Show.includes(:episodes).where('episodes.airdate > ?', 3.days.ago ).order('airdate ASC')
 		
 		@off_air = Show.all.keep_if do |show|
 			@shows.select { |s| s.name == show.name }.empty?
@@ -11,7 +11,11 @@ class ShowsController < ActionController::Base
 	end
 	
 	def create
+		require 'tvrage'
+	
 		@show = Show.new(params[:show])
+		
+		TvRage.sync @show
 		
 		respond_to do |format|
 			if @show.save
@@ -40,7 +44,7 @@ class ShowsController < ActionController::Base
 	
 	def search
 		
-		require 'uri'
+		require 'open-uri'
 		
 		show_name = params[:name]
 		
