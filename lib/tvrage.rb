@@ -30,7 +30,7 @@ module TvRage
 					Episode.create(
 						show_id:		show[:id],
 						season: 		season_no,
-						episode_number: details['seasonnum'].to_i,
+						episode_number: details['seasonnum'],
 						title: 			details['title'],
 						airdate: 		details['airdate']
 					) unless details['title'].nil?

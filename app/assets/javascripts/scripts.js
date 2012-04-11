@@ -25,9 +25,11 @@ jQuery(function($){
 				.on('submit', '#edit-show-form', this.update)
 
 				.on('click', '#delete-show', this.destroy)
+
+				.on('click', '.show-all-episodes', this.all)
 			
 				.on('click', this.clear)
-				.on('click', '#add-show, #show-search-form, #search-results, .edit-show, #edit-show-form', this.stopClear);
+				.on('click', '#add-show, #show-search-form, #search-results, .edit-show, #edit-show-form, #all-episodes', this.stopClear);
 		},
 		
 		selectText : function () {
@@ -80,6 +82,13 @@ jQuery(function($){
 					console && console.log(results);
 				}
 			});
+		},
+		
+		closeResults : function (e) {
+			e.preventDefault();
+			
+			$('#search-results').remove();
+			$('#show-search-form').removeClass('waiting').find('input').select();
 		},
 		
 		create : function (e) {
@@ -144,7 +153,7 @@ jQuery(function($){
 			
 			$.ajax({
 				url : '/shows/' + id + '.json',
-				type: 'POST',
+				type: 'PUT',
 				dataType : 'json',
 				data : $this.serialize(),
 				success : function (results) {
@@ -161,12 +170,10 @@ jQuery(function($){
 				id = $('#id').val(),
 				name = $('#show-' + id).find('.name').text();
 			
-			if( confirm('Are you sure you wish to delete ' + name + '?') ) {
-				$('#_method').val('delete');
-				
+			if( confirm('Are you sure you wish to delete ' + name + '?') ) {				
 				$.ajax({
 					url : '/shows/' + id + '.json',
-					type: 'POST',
+					type: 'DELETE',
 					dataType : 'json',
 					data : $form.serialize(),
 					success : function (results) {
@@ -183,21 +190,44 @@ jQuery(function($){
 			}
 		},
 		
+		all : function (e) {
+			e.preventDefault();
+			
+			$('.active').removeClass('active');
+			$('#all-episodes').remove();
+			
+			var $this = $(this),
+				template = $('#all-episodes-template').html(),
+				id = $this.closest('.show').data('id');
+				
+			$.ajax({
+				url : '/shows/' + id + '.json',
+				type: 'GET',
+				dataType : 'json',
+				success : function (results) {
+					var data = {
+						show : $('#show-' + id).addClass('active').find('.name').text(),
+						episodes : results
+					}
+					
+					$( _.template( template, data) )
+						.hide()
+						.appendTo( $(document.body).addClass('fade') )
+						.slideDown();
+				}
+			});	
+		},
+		
 		clear : function () {
 			$('#show-search-form').remove();
 			$('#search-results').remove();
 			$('#edit-show-form').remove();
+			$('#all-episodes').remove();
+			$(document.body).removeClass('fade');
 		},
 		
 		stopClear : function (e) {
 			e.stopPropagation();
-		},
-		
-		closeResults : function (e) {
-			e.preventDefault();
-			
-			$('#search-results').remove();
-			$('#show-search-form').removeClass('waiting').find('input').select();
 		}
 		
 	};

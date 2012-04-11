@@ -59,6 +59,14 @@ a:active {
 	width: 200px;
 }
 
+.fade .main h2 {
+	opacity: 0.2;
+}
+
+.fade .active h2 {
+	opacity: 1;
+}
+
 .main h2:hover {
 	z-index: 10;
 }
@@ -67,7 +75,8 @@ a:active {
 		display: block;
 	}
 
-.main ul {
+.main ul,
+.all-episodes {
 	float: left;
 	list-style: none;
 	margin: 20px 0;
@@ -75,28 +84,28 @@ a:active {
 	width: 380px;
 }
 
-	.main li {
+	.main li,
+	.all-episodes li {
 		margin-bottom: 5px;
 	}
 	
-	.aired {
-		opacity: 0.5;
-	}
-	
-		.main li span {
+		.main li span,
+		.all-episodes li span {
 			display: block;
 			float: left;
 		}
 
-		.epnum,
-		.airdate {
-			margin-right: 20px;
+		.airdate,
+		.title,
+		.file-name {
+			padding-left: 20px;
 		}
 		
 		.airdate, 
 		.title,
 		.file-name {
 			padding-top: 3px;
+			padding-bottom: 3px;
 		}
 		
 		.epnum {
@@ -113,22 +122,61 @@ a:active {
 		}
 		
 		.title {
+			padding-right: 10px;
 			position: relative;
 		}
 		
-		.main li .file-name {
+		.main li .file-name,
+		.all-episodes li .file-name {
 			background: #f8f8f8;
 			display: none;
+			padding-right: 10px;
 			position: absolute;
 				left: 0;
 				top: 0;
 				width: 400px;
 		}
 		
-		.main li .title:hover .file-name {
+		.main li .title:hover .file-name,
+		.all-episodes li .title:hover .file-name {
 			display: block;
 		}
+
+	.aired {
+		opacity: 0.5;
+	}
+	
+		.airs-today .epnum {
+			-moz-border-radius: 3px 0 0 3px;
+			-webkit-border-radius: 3px 0 0 3px;
+			border-radius: 3px 0 0 3px;
+		}
 		
+		.airs-today .airdate,
+		.airs-today .title,
+		.main .airs-today .file-name {
+			background: #EBD6C7;
+		}
+	
+		.airs-today .title,
+		.main .airs-today .file-name {
+			-moz-border-radius: 0 3px 3px 0;
+			-webkit-border-radius: 0 3px 3px 0;
+			border-radius: 0 3px 3px 0;
+		}
+		
+		.far-future .epnum {
+			background: #999;
+		}
+		
+		.far-future .airdate,
+		.far-future .title,
+		.main .far-future .file-name {
+			color: #999;
+		}
+	
+
+
 
 /* ---- Off Air ---- */
 
@@ -145,6 +193,30 @@ a:active {
 	}
 	
 
+/* ---- All Episodes ---- */
+
+.all-episodes {
+	background: #e3e3e3;
+	border-left: solid 1px #c7c7c7;
+	border-right: solid 1px #c7c7c7;
+	float: none;
+	margin: 0;
+	padding: 20px;
+	position: absolute;
+		top: 0;
+		left: 210px;
+	width: 480px;
+}
+
+	.all-episodes li .title:hover {
+		color: #e3e3e3;
+	}
+	
+		.all-episodes li .title:hover .file-name {
+			background: none;
+			color: #333;
+		}
+
 /* ---- Options ---- */
 
 .options {
@@ -158,7 +230,7 @@ a:active {
 	position: absolute;
 		top: 100%;
 		right: 0;
-	width: 60px;
+	width: 95px;
 }
 
 .off-air li .options {
@@ -202,6 +274,14 @@ a:active {
 
 		.options a.edit-show:hover {
 			background-position: -25px -25px;
+		}
+	
+	.options a.show-all-episodes {
+		background-position: -50px 0;
+	}
+
+		.options a.show-all-episodes:hover {
+			background-position: -50px -25px;
 		}
 	
 
