@@ -5,6 +5,10 @@ body {
 	font-size: 14px;
 }
 
+.showing-all {
+	overflow: hidden;
+}
+
 a:link,
 a:visited {
 	color: #22517D;
@@ -59,11 +63,11 @@ a:active {
 	width: 200px;
 }
 
-.fade .main h2 {
+.showing-all .main h2 {
 	opacity: 0.2;
 }
 
-.fade .active h2 {
+.showing-all .active h2 {
 	opacity: 1;
 }
 
@@ -155,7 +159,7 @@ a:active {
 		.airs-today .airdate,
 		.airs-today .title,
 		.main .airs-today .file-name {
-			background: #EBD6C7;
+			background: #e3e3e3;
 		}
 	
 		.airs-today .title,
@@ -198,14 +202,14 @@ a:active {
 .all-episodes {
 	background: #e3e3e3;
 	border-left: solid 1px #c7c7c7;
-	border-right: solid 1px #c7c7c7;
 	float: none;
 	margin: 0;
-	padding: 20px;
-	position: absolute;
+	overflow-y: auto;
+	padding: 15px 20px 10px;
+	position: fixed;
 		top: 0;
 		left: 210px;
-	width: 480px;
+	width: 500px;
 }
 
 	.all-episodes li .title:hover {
@@ -325,7 +329,9 @@ a.add-show {
 
 .waiting {
 	background: #e3e3e3 url(<%= asset_path('waiting.gif') %>) 50% 50% no-repeat;
-	height: 40px;
+	color: #666;
+	height: 60px;
+	text-align: center;
 }
 
 	.add-show-form label {

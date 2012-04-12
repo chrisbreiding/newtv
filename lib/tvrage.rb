@@ -3,7 +3,7 @@ module TvRage
 	def self.sync(new_show = nil)
 		require 'open-uri'
 
-		Episode.delete_all if new_show.nil?
+#		Episode.delete_all if new_show.nil?
 		
 		shows = new_show ? [new_show] : Show.all
 

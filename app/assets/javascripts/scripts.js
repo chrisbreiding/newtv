@@ -3,7 +3,7 @@ _.templateSettings = {
 	evaluate: /\{\{(.+?)\}\}/g
 };
 
-jQuery(function($){
+$(function(){
 
 	var Shows = {
 	
@@ -30,6 +30,7 @@ jQuery(function($){
 			
 				.on('click', this.clear)
 				.on('click', '#add-show, #show-search-form, #search-results, .edit-show, #edit-show-form, #all-episodes', this.stopClear);
+
 		},
 		
 		selectText : function () {
@@ -47,6 +48,7 @@ jQuery(function($){
 			e.preventDefault();
 			
 			$('#show-search-form').addClass('waiting');
+			$('#search-notice').html('searching&hellip;');
 			
 			$.ajax({
 				url : '/shows/search.json',
@@ -95,6 +97,10 @@ jQuery(function($){
 			e.preventDefault();
 			
 			var $this = $(this);
+
+			$('#search-results').slideUp();
+			$('#show-search-form').addClass('waiting');
+			$('#search-notice').html('adding show and episodes&hellip;');
 			
 			$.ajax({
 				url : '/shows.json',
@@ -212,7 +218,11 @@ jQuery(function($){
 					
 					$( _.template( template, data) )
 						.hide()
-						.appendTo( $(document.body).addClass('fade') )
+						.appendTo( $(document.body).addClass('showing-all') )
+						.css({ 
+							width : $(window).width() - 251,
+							height : $(window).height() - 25
+						})
 						.slideDown();
 				}
 			});	
@@ -223,7 +233,7 @@ jQuery(function($){
 			$('#search-results').remove();
 			$('#edit-show-form').remove();
 			$('#all-episodes').remove();
-			$(document.body).removeClass('fade');
+			$(document.body).removeClass('showing-all');
 		},
 		
 		stopClear : function (e) {
@@ -236,23 +246,30 @@ jQuery(function($){
 	
 		init : function () {
 			this.noticeTemplate = $('#notice-template').html();
-		
+			this.$window = $(window);
+			
 			Shows.init();
 			this.events();
 		},
 		
 		events : function () {
-			$(document.body).on('click', '.close-notice', this.closeNotice);
-			$(document.body).on('click', '.refresh-page', this.refresh);
+			var self = this;
+		
+			$(document.body)
+				.on('click', '.close-notice', this.closeNotice)
+				.on('click', '.refresh-page', this.refresh);
+			
+			$(window).resize(function() {
+				self.resize();
+			});
 		},
 		
 		notice : function (config) {
-					
+			var self = this;
 			$( _.template( this.noticeTemplate, config) )
 				.hide()
 				.appendTo($(document.body))
 				.slideDown();
-					
 		},
 		
 		closeNotice : function (e) {
@@ -266,6 +283,13 @@ jQuery(function($){
 		refresh : function (e) {
 			e.preventDefault();
 			window.location.reload(true);
+		},
+		
+		resize : function () {
+			$('#all-episodes').css({ 
+				width : this.$window.width() - 251,
+				height : this.$window.height() - 25
+			});
 		}
 						
 	};
