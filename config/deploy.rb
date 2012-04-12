@@ -1,5 +1,5 @@
 set :application, "newtv"
-set :repository,  "git@github.com:chrisbreiding/newtv.git"
+set :repository,  "git://github.com/chrisbreiding/newtv.git"
 
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
