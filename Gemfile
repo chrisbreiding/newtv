@@ -39,4 +39,6 @@ gem 'jquery-rails'
 
 # for XML parsing
 gem 'nokogiri'
-gem 'xml-simple'
+
+# cron jobs
+gem 'whenever', :require => false
