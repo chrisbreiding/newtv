@@ -23,6 +23,9 @@ set :user, "root"
 set :scm_username, "chrisbreiding"
 set :use_sudo, false
 
+set :stages, ["production"]
+set :default_stage, "production"
+
 # set :rvm_ruby_string, "ruby-1.9.3-p125@newtv"
 # set :rvm_type, :user
 # set :rvm_type, :system
