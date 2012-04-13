@@ -1,11 +1,11 @@
+require "bundler/capistrano"
+
 $:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory to the load path.
 require "rvm/capistrano" # Load RVM's capistrano plugin.
-require "bundler/capistrano"
 
 # whenever cron jobs
 set :whenever_command, "bundle exec whenever"
 require "whenever/capistrano"
-
 
 set :application, "newtv"
 set :repository,  "git://github.com/chrisbreiding/newtv.git"
@@ -18,7 +18,6 @@ set :deploy_to, "/srv/www/newtv.crbapps.com"
 role :web, "chrisbreiding.com"                          # Your HTTP server, Apache/etc
 role :app, "chrisbreiding.com"                          # This may be the same as your `Web` server
 role :db,  "chrisbreiding.com", :primary => true # This is where Rails migrations will run
-# role :db,  "your slave db-server here"
 
 set :user, "root"
 set :scm_username, "chrisbreiding"
