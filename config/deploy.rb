@@ -28,6 +28,8 @@ set :use_sudo, false
 # set :rvm_type, :user
 # set :rvm_type, :system
 
+after 'deploy:symlink', 'deploy:cleanup' # makes sure there's only 3 deployments, deletes the extras
+
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
   task :start do ; end
