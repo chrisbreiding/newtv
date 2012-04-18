@@ -24,6 +24,7 @@ a:active {
 
 a:active {
 	-moz-transform: translate(0,1px);
+	-ms-transform: translate(0,1px);
 	-o-transform: translate(0,1px);
 	-webkit-transform: translate(0,1px);
 	transform: translate(0,1px);
@@ -85,14 +86,14 @@ a:active {
 	list-style: none;
 	margin: 20px 0;
 	padding-left: 20px;
-	width: 380px;
+	width: 420px;
 }
 
 	.main li,
 	.all-episodes li {
 		margin-bottom: 5px;
 	}
-	
+
 		.main li span,
 		.all-episodes li span {
 			display: block;
@@ -104,14 +105,14 @@ a:active {
 		.file-name {
 			padding-left: 20px;
 		}
-		
-		.airdate, 
+
+		.airdate,
 		.title,
 		.file-name {
 			padding-top: 3px;
 			padding-bottom: 3px;
 		}
-		
+
 		.epnum {
 			background: #7E4A22;
 			-moz-border-radius: 3px;
@@ -120,16 +121,16 @@ a:active {
 			color: #FFF;
 			padding: 3px 5px;
 		}
-		
+
 		.airdate {
 			color: #7E4A22;
 		}
-		
+
 		.title {
 			padding-right: 10px;
 			position: relative;
 		}
-		
+
 		.main li .file-name,
 		.all-episodes li .file-name {
 			background: #f8f8f8;
@@ -140,7 +141,7 @@ a:active {
 				top: 0;
 				width: 400px;
 		}
-		
+
 		.main li .title:hover .file-name,
 		.all-episodes li .title:hover .file-name {
 			display: block;
@@ -149,36 +150,36 @@ a:active {
 	.aired {
 		opacity: 0.5;
 	}
-	
+
 		.airs-today .epnum {
 			-moz-border-radius: 3px 0 0 3px;
 			-webkit-border-radius: 3px 0 0 3px;
 			border-radius: 3px 0 0 3px;
 		}
-		
+
 		.airs-today .airdate,
 		.airs-today .title,
 		.main .airs-today .file-name {
 			background: #e3e3e3;
 		}
-	
+
 		.airs-today .title,
 		.main .airs-today .file-name {
 			-moz-border-radius: 0 3px 3px 0;
 			-webkit-border-radius: 0 3px 3px 0;
 			border-radius: 0 3px 3px 0;
 		}
-		
+
 		.far-future .epnum {
 			background: #999;
 		}
-		
+
 		.far-future .airdate,
 		.far-future .title,
 		.main .far-future .file-name {
 			color: #999;
 		}
-	
+
 
 
 
@@ -191,11 +192,11 @@ a:active {
 	.off-air li > span {
 		position: relative;
 	}
-	
+
 	.off-air li > span:hover {
 		z-index: 10;
 	}
-	
+
 
 /* ---- All Episodes ---- */
 
@@ -215,7 +216,7 @@ a:active {
 	.all-episodes li .title:hover {
 		color: #e3e3e3;
 	}
-	
+
 		.all-episodes li .title:hover .file-name {
 			background: none;
 			color: #333;
@@ -259,19 +260,19 @@ a:active {
 		width: 25px;
 		height: 25px;
 	}
-	
+
 	.options a:first-child {
 		margin-left: 0;
 	}
-	
+
 	.options a.p-bay {
 		background-position: 0 0;
 	}
-	
+
 		.options a.p-bay:hover {
 			background-position: 0 -25px;
 		}
-	
+
 	.options a.edit-show {
 		background-position: -25px 0;
 	}
@@ -279,7 +280,7 @@ a:active {
 		.options a.edit-show:hover {
 			background-position: -25px -25px;
 		}
-	
+
 	.options a.show-all-episodes {
 		background-position: -50px 0;
 	}
@@ -287,7 +288,7 @@ a:active {
 		.options a.show-all-episodes:hover {
 			background-position: -50px -25px;
 		}
-	
+
 
 /* ---- Add Show ---- */
 
@@ -338,7 +339,7 @@ a.add-show {
 		position: absolute;
 		left: -9999px;
 	}
-	
+
 	.add-show-form input[type=text] {
 		background: #FFF;
 		-moz-border-radius: 3px 0 0 3px;
@@ -375,7 +376,7 @@ a.add-show {
 		background: url(<%= asset_path('search.png') %>) no-repeat, -webkit-gradient(linear, left top, left bottom, from(#777), to(#444));
 		background: url(<%= asset_path('search.png') %>) no-repeat, -moz-linear-gradient(top, #777, #444);
 	}
-	
+
 	.waiting input,
 	.waiting button {
 		display: none !important;
@@ -395,31 +396,31 @@ a.add-show {
 	.search-results h3 {
 		margin-top: 0;
 	}
-	
+
 	.results-show {
 		border-top: solid 1px #d3d3d3;
 		padding-top: 1px;
 		position: relative;
 	}
-	
+
 		.search-results h4 {
 			color: #7E4A22;
 		}
-		
+
 		.search-results dl {
 			font-size: .9em;
 		}
-		
+
 			.search-results dt {
 				font-weight: bold;
 				float: left;
 				width: 110px;
 			}
-			
+
 			.search-results dd {
 				margin-bottom: 5px;
 			}
-			
+
 		a.create-show {
 			background: #7E4A22;
 			background: -moz-linear-gradient(top, #7E4A22, #583215);
@@ -440,17 +441,21 @@ a.add-show {
 				right: 5px;
 			text-decoration: none;
 		}
-		
+
 			.create-show:before {
 				content: '+ ';
 			}
-			
+
 		a.create-show:hover {
 			background: #995D2F;
-			background: -moz-linear-gradient(top, #995D2F, #794924);
 			background: -webkit-gradient(linear, left top, left bottom, from(#995D2F), to(#794924));
+			background: -webkit-linear-gradient(top, #995D2F, #794924);
+			background: -moz-linear-gradient(top, #995D2F, #794924);
+			background: -o-linear-gradient(top, #995D2F, #794924);
+			background: -ms-linear-gradient(top, #995D2F, #794924);
+			background: linear-gradient(top, #995D2F, #794924);
 		}
-		
+
 .no-search-results p {
 	margin-bottom: 0;
 }
@@ -480,7 +485,7 @@ a.add-show {
 		font-weight: bold;
 		margin-bottom: 5px;
 	}
-	
+
 	.edit-show-form input[type=text] {
 		background: #FFF;
 		-moz-border-radius: 3px;
@@ -491,15 +496,20 @@ a.add-show {
 		padding: 10px;
 		width: 280px;
 	}
-	
+
 	a.delete-show {
 		color: #900;
 	}
-	
+
 	.edit-show-form button {
 		background: #333;
+
 		background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#333));
+		background: -webkit-linear-gradient(top, #666, #333);
 		background: -moz-linear-gradient(top, #666, #333);
+		background: -o-linear-gradient(top, #666, #333);
+		background: -ms-linear-gradient(top, #666, #333);
+		background: linear-gradient(top, #666, #333);
 		-moz-border-radius: 3px;
 		-webkit-border-radius: 3px;
 		border-radius: 3px;
@@ -514,7 +524,11 @@ a.add-show {
 	.edit-show-form button:focus {
 		background: #444;
 		background: -webkit-gradient(linear, left top, left bottom, from(#777), to(#444));
+		background: -webkit-linear-gradient(top, #777, #444);
 		background: -moz-linear-gradient(top, #777, #444);
+		background: -o-linear-gradient(top, #777, #444);
+		background: -ms-linear-gradient(top, #777, #444);
+		background: linear-gradient(top, #777, #444);
 	}
 
 
@@ -530,10 +544,6 @@ a.add-show {
 	width: 100%;
 }
 
-	.notice a {
-		
-	}
-	
 .message {
 	background: #F8F5E8;
 	border-color: #726B4A;
