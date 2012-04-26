@@ -12750,3 +12750,103 @@ Processing by ShowsController#show as JSON
   [1m[35mShow Load (0.1ms)[0m  SELECT "shows".* FROM "shows" WHERE "shows"."id" = ? LIMIT 1  [["id", "6"]]
   [1m[36mEpisode Load (1.0ms)[0m  [1mSELECT "episodes".* FROM "episodes" WHERE "episodes"."show_id" = 6[0m
 Completed 200 OK in 67ms (Views: 65.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-26 15:01:30 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mSQL (7.9ms)[0m  [1mSELECT "shows"."id" AS t0_r0, "shows"."name" AS t0_r1, "shows"."tvrage_id" AS t0_r2, "shows"."created_at" AS t0_r3, "shows"."updated_at" AS t0_r4, "shows"."seasons" AS t0_r5, "episodes"."id" AS t1_r0, "episodes"."season" AS t1_r1, "episodes"."episode_number" AS t1_r2, "episodes"."title" AS t1_r3, "episodes"."show_id" AS t1_r4, "episodes"."airdate" AS t1_r5, "episodes"."created_at" AS t1_r6, "episodes"."updated_at" AS t1_r7 FROM "shows" LEFT OUTER JOIN "episodes" ON "episodes"."show_id" = "shows"."id" WHERE (episodes.airdate > '2012-04-23 19:01:31.246201') ORDER BY airdate ASC[0m
+  [1m[35mShow Load (0.2ms)[0m  SELECT "shows".* FROM "shows" 
+  [1m[36mShow Load (0.2ms)[0m  [1mSELECT "shows".* FROM "shows" WHERE "shows"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "shows".* FROM "shows" WHERE "shows"."id" = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "shows".* FROM "shows" WHERE "shows"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "shows".* FROM "shows" WHERE "shows"."id" = 6 LIMIT 1
+  Rendered episodes/_episode.html.erb (12.2ms)
+  [1m[36mShow Load (0.1ms)[0m  [1mSELECT "shows".* FROM "shows" WHERE "shows"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "shows".* FROM "shows" WHERE "shows"."id" = 5 LIMIT 1
+  Rendered episodes/_episode.html.erb (1.7ms)
+  [1m[36mShow Load (0.1ms)[0m  [1mSELECT "shows".* FROM "shows" WHERE "shows"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "shows".* FROM "shows" WHERE "shows"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "shows".* FROM "shows" WHERE "shows"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "shows".* FROM "shows" WHERE "shows"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "shows".* FROM "shows" WHERE "shows"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "shows".* FROM "shows" WHERE "shows"."id" = 3 LIMIT 1
+  Rendered episodes/_episode.html.erb (4.7ms)
+  [1m[36mShow Load (0.1ms)[0m  [1mSELECT "shows".* FROM "shows" WHERE "shows"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "shows".* FROM "shows" WHERE "shows"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "shows".* FROM "shows" WHERE "shows"."id" = 2 LIMIT 1[0m
+  Rendered episodes/_episode.html.erb (2.8ms)
+  [1m[35mShow Load (0.2ms)[0m  SELECT "shows".* FROM "shows" WHERE "shows"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "shows".* FROM "shows" WHERE "shows"."id" = 1 LIMIT 1[0m
+  Rendered episodes/_episode.html.erb (2.0ms)
+  [1m[35mShow Load (0.1ms)[0m  SELECT "shows".* FROM "shows" WHERE "shows"."id" = 8 LIMIT 1
+  Rendered episodes/_episode.html.erb (0.9ms)
+  [1m[36mShow Load (0.1ms)[0m  [1mSELECT "shows".* FROM "shows" WHERE "shows"."id" = 9 LIMIT 1[0m
+  Rendered episodes/_episode.html.erb (1.0ms)
+  Rendered shows/_show.html.erb (95.1ms)
+  Rendered shows/_off_air.html.erb (3.9ms)
+  Rendered shows/index.html.erb within layouts/application (138.1ms)
+Completed 200 OK in 636ms (Views: 469.2ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-26 15:01:32 -0400
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2012-04-26 15:01:32 -0400
+Served asset /normalize.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2012-04-26 15:01:32 -0400
+Served asset /styles.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/responsive.css?body=1" for 127.0.0.1 at 2012-04-26 15:01:32 -0400
+Served asset /responsive.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-26 15:01:32 -0400
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.select-text.js?body=1" for 127.0.0.1 at 2012-04-26 15:01:32 -0400
+Served asset /jquery.select-text.js - 304 Not Modified (30ms)
+
+
+Started GET "/assets/jquery.center.js?body=1" for 127.0.0.1 at 2012-04-26 15:01:32 -0400
+Served asset /jquery.center.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/templates/add_show.js?body=1" for 127.0.0.1 at 2012-04-26 15:01:32 -0400
+Served asset /templates/add_show.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/underscore.min.js?body=1" for 127.0.0.1 at 2012-04-26 15:01:32 -0400
+Served asset /underscore.min.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/templates/all_episodes.js?body=1" for 127.0.0.1 at 2012-04-26 15:01:32 -0400
+Served asset /templates/all_episodes.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/templates/no_search_results.js?body=1" for 127.0.0.1 at 2012-04-26 15:01:32 -0400
+Served asset /templates/no_search_results.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/templates/edit_show.js?body=1" for 127.0.0.1 at 2012-04-26 15:01:32 -0400
+Served asset /templates/edit_show.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/templates/search_results.js?body=1" for 127.0.0.1 at 2012-04-26 15:01:32 -0400
+Served asset /templates/search_results.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scripts.js?body=1" for 127.0.0.1 at 2012-04-26 15:01:32 -0400
+Served asset /scripts.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-26 15:01:32 -0400
+Served asset /application.js - 304 Not Modified (17ms)
+
+
+Started GET "/assets/templates/notice.js?body=1" for 127.0.0.1 at 2012-04-26 15:01:32 -0400
+Served asset /templates/notice.js - 304 Not Modified (1ms)
