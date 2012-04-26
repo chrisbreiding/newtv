@@ -1,10 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.2'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'sqlite3'
 
 # group :production do
@@ -21,7 +17,6 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer'
-
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -29,6 +24,9 @@ gem 'execjs'
 gem 'therubyracer', require: "v8"
 
 gem 'jquery-rails'
+
+# JS templates
+gem 'ejs'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -41,9 +39,6 @@ gem 'jquery-rails'
 
 # Deploy with Capistrano
 gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
 
 # for XML parsing
 gem 'nokogiri'
