@@ -10218,3 +10218,67 @@ Served asset /scripts.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-25 22:16:55 -0400
 Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-26 00:04:56 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mSQL (1.3ms)[0m  [1mSELECT "shows"."id" AS t0_r0, "shows"."name" AS t0_r1, "shows"."tvrage_id" AS t0_r2, "shows"."created_at" AS t0_r3, "shows"."updated_at" AS t0_r4, "shows"."seasons" AS t0_r5, "episodes"."id" AS t1_r0, "episodes"."season" AS t1_r1, "episodes"."episode_number" AS t1_r2, "episodes"."title" AS t1_r3, "episodes"."show_id" AS t1_r4, "episodes"."airdate" AS t1_r5, "episodes"."created_at" AS t1_r6, "episodes"."updated_at" AS t1_r7 FROM "shows" LEFT OUTER JOIN "episodes" ON "episodes"."show_id" = "shows"."id" WHERE (episodes.airdate > '2012-04-23 04:04:56.785909') ORDER BY airdate ASC[0m
+Completed 500 Internal Server Error in 89ms
+
+NoMethodError (undefined method `airdate' for nil:NilClass):
+  app/models/show.rb:8:in `next_episode'
+  app/controllers/shows_controller.rb:9:in `block in index'
+  app/controllers/shows_controller.rb:8:in `index'
+
+
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-26 00:09:12 -0400
+Processing by ShowsController#index as HTML
+  [1m[35mSQL (1.1ms)[0m  SELECT "shows"."id" AS t0_r0, "shows"."name" AS t0_r1, "shows"."tvrage_id" AS t0_r2, "shows"."created_at" AS t0_r3, "shows"."updated_at" AS t0_r4, "shows"."seasons" AS t0_r5, "episodes"."id" AS t1_r0, "episodes"."season" AS t1_r1, "episodes"."episode_number" AS t1_r2, "episodes"."title" AS t1_r3, "episodes"."show_id" AS t1_r4, "episodes"."airdate" AS t1_r5, "episodes"."created_at" AS t1_r6, "episodes"."updated_at" AS t1_r7 FROM "shows" LEFT OUTER JOIN "episodes" ON "episodes"."show_id" = "shows"."id" WHERE (episodes.airdate > '2012-04-23 04:09:12.621097') ORDER BY airdate ASC
+Completed 500 Internal Server Error in 35ms
+
+NoMethodError (undefined method `airdate' for nil:NilClass):
+  app/models/show.rb:8:in `next_episode'
+  app/controllers/shows_controller.rb:9:in `block in index'
+  app/controllers/shows_controller.rb:8:in `index'
+
+
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-26 00:15:31 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mSQL (1.1ms)[0m  [1mSELECT "shows"."id" AS t0_r0, "shows"."name" AS t0_r1, "shows"."tvrage_id" AS t0_r2, "shows"."created_at" AS t0_r3, "shows"."updated_at" AS t0_r4, "shows"."seasons" AS t0_r5, "episodes"."id" AS t1_r0, "episodes"."season" AS t1_r1, "episodes"."episode_number" AS t1_r2, "episodes"."title" AS t1_r3, "episodes"."show_id" AS t1_r4, "episodes"."airdate" AS t1_r5, "episodes"."created_at" AS t1_r6, "episodes"."updated_at" AS t1_r7 FROM "shows" LEFT OUTER JOIN "episodes" ON "episodes"."show_id" = "shows"."id" WHERE (episodes.airdate > '2012-04-23 04:15:31.184225') ORDER BY airdate ASC[0m
+Completed 500 Internal Server Error in 5ms
+
+NoMethodError (undefined method `airdate' for nil:NilClass):
+  app/models/show.rb:8:in `next_episode'
+  app/controllers/shows_controller.rb:9:in `block in index'
+  app/controllers/shows_controller.rb:8:in `index'
+
+
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-26 00:15:37 -0400
+Processing by ShowsController#index as HTML
+  [1m[35mSQL (1.2ms)[0m  SELECT "shows"."id" AS t0_r0, "shows"."name" AS t0_r1, "shows"."tvrage_id" AS t0_r2, "shows"."created_at" AS t0_r3, "shows"."updated_at" AS t0_r4, "shows"."seasons" AS t0_r5, "episodes"."id" AS t1_r0, "episodes"."season" AS t1_r1, "episodes"."episode_number" AS t1_r2, "episodes"."title" AS t1_r3, "episodes"."show_id" AS t1_r4, "episodes"."airdate" AS t1_r5, "episodes"."created_at" AS t1_r6, "episodes"."updated_at" AS t1_r7 FROM "shows" LEFT OUTER JOIN "episodes" ON "episodes"."show_id" = "shows"."id" WHERE (episodes.airdate > '2012-04-23 04:15:37.768515') ORDER BY airdate ASC
+Completed 500 Internal Server Error in 6ms
+
+NoMethodError (undefined method `airdate' for nil:NilClass):
+  app/models/show.rb:8:in `next_episode'
+  app/controllers/shows_controller.rb:9:in `block in index'
+  app/controllers/shows_controller.rb:8:in `index'
+
+
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/chrisbreiding/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.8ms)
