@@ -6,7 +6,7 @@ class ShowsController < ActionController::Base
 		@shows = Show.includes(:episodes).where('episodes.airdate > ?', 3.days.ago ).order('airdate ASC')
 
 		@shows.sort! do |a,b|
-			a.next_episode <=> b.next_episode
+			a.next_episodes_airdate <=> b.next_episodes_airdate
 		end
 
 		@off_air = Show.all.keep_if do |show|

@@ -14,4 +14,5 @@
 //= require jquery.select-text
 //= require jquery.center
 //= require underscore.min
-//= require_tree .
+//= require_directory ./templates
+//= require scripts

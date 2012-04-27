@@ -1,10 +1,5 @@
-_.templateSettings = {
-	interpolate: /\{\{\=(.+?)\}\}/g,
-	evaluate: /\{\{(.+?)\}\}/g
-};
-
-$(function(){
-
+(function () {
+	
 	var Shows = {
 	
 		init : function () {
@@ -39,9 +34,7 @@ $(function(){
 		
 		add : function (e) {
 			e.preventDefault();
-			
-			var template = $('#add-show-template').html();
-			$(document.body).append( _.template(template) );
+			$(document.body).append( JST['templates/add_show'] );
 		},
 		
 		search : function (e) {
@@ -57,10 +50,10 @@ $(function(){
 				data : $(this).serialize(),
 				success : function (results) {
 					
-					var template = $('#search-results-template').html();
+					var template = JST['templates/search_results'];
 					
 					if( !results.length ) {
-						template = $('#no-search-results-template').html();
+						template = JST['templates/no_search_results'];
 						$(template)
 							.hide()
 							.appendTo( $(document.body) )
@@ -69,7 +62,7 @@ $(function(){
 						return;
 					}
 										
-					$( _.template(template, { shows : results }) )
+					$(template({ shows : results }))
 						.hide()
 						.appendTo( $(document.body) )
 						.slideDown();
@@ -138,13 +131,13 @@ $(function(){
 			$('#edit-show-form').remove();
 			
 			var $this = $(this),
-				template = $('#edit-show-template').html(),
+				template = JST['templates/edit_show'],
 				data = {
 					name : $this.parent().siblings('.name').text(),
 					id : $this.closest('.show').data('id')
 				};
-				
-			$( _.template(template, data) )
+
+			$(template(data))
 				.hide()
 				.appendTo( $(document.body) ) 
 				.center()
@@ -203,7 +196,7 @@ $(function(){
 			$('#all-episodes').remove();
 			
 			var $this = $(this),
-				template = $('#all-episodes-template').html(),
+				template = JST['templates/all_episodes'],
 				id = $this.closest('.show').data('id');
 				
 			$.ajax({
@@ -216,7 +209,7 @@ $(function(){
 						episodes : results
 					}
 					
-					$( _.template( template, data) )
+					$(template(data))
 						.hide()
 						.appendTo( $(document.body).addClass('showing-all') )
 						.css({ 
@@ -242,10 +235,10 @@ $(function(){
 		
 	};
 	
-	var App = {
+	window.App = {
 	
 		init : function () {
-			this.noticeTemplate = $('#notice-template').html();
+			this.noticeTemplate = JST['templates/notice'];
 			this.$window = $(window);
 			
 			Shows.init();
@@ -266,7 +259,7 @@ $(function(){
 		
 		notice : function (config) {
 			var self = this;
-			$( _.template( this.noticeTemplate, config) )
+			$(this.noticeTemplate(config))
 				.hide()
 				.appendTo($(document.body))
 				.slideDown();
@@ -293,6 +286,10 @@ $(function(){
 		}
 						
 	};
+
+}());
+
+$(function() {
 
 	App.init();
 
