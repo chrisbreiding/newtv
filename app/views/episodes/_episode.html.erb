@@ -5,8 +5,8 @@
 	<span class="airdate"><%= episode.airdate.to_s %></span>
 
 	<span class="title">
-		<%= episode.title %>
-		<span class="file-name"><%= episode.show.name %> - <%= epnum episode %> - <%= episode.title %></span>
+		<%= titlecase episode.title %>
+		<span class="file-name"><%= episode.show.name %> - <%= epnum episode %> - <%= filesafe titlecase(episode.title) %></span>
 	</span>
 
 </li>
