@@ -9,21 +9,10 @@
 	<%= csrf_meta_tags %>
 </head>
 <body>
+  <%= flash_notice(notice, 'message') if notice %>
+  <%= flash_notice(alert, 'error') if alert %>
+
 	<%= yield %>
-
-	<% if notice %>
-		<div class="notice message clearfix">
-			<p><%= notice %></p>
-			<p><a href="#" class="close-notice">Close</a></p>
-		</div>
-	<% end %>
-
-	<% if alert %>
-		<div class="notice error clearfix">
-			<p><%= alert %></p>
-			<p><a href="#" class="close-notice">Close</a></p>
-		</div>
-	<% end %>
 
 	<%= javascript_include_tag "application" %>
 </body>
