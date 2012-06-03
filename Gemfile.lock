@@ -29,6 +29,7 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.2)
+    bcrypt-ruby (3.0.1)
     builder (3.0.0)
     capistrano (2.11.2)
       highline
@@ -37,6 +38,11 @@ GEM
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
     chronic (0.6.7)
+    devise (2.1.0)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.0.7)
+      railties (~> 3.1)
+      warden (~> 1.1.1)
     ejs (1.0.0)
     erubis (2.7.0)
     execjs (1.3.0)
@@ -64,6 +70,7 @@ GEM
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
     nokogiri (1.5.2)
+    orm_adapter (0.0.7)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -106,6 +113,8 @@ GEM
     uglifier (1.2.4)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
+    warden (1.1.1)
+      rack (>= 1.0)
     whenever (0.7.3)
       activesupport (>= 2.3.4)
       chronic (~> 0.6.3)
@@ -115,6 +124,7 @@ PLATFORMS
 
 DEPENDENCIES
   capistrano
+  devise
   ejs
   execjs
   jquery-rails

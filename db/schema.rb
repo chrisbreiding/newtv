@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120411174200) do
+ActiveRecord::Schema.define(:version => 20120602235759) do
 
   create_table "episodes", :force => true do |t|
     t.integer  "season"
@@ -32,5 +32,15 @@ ActiveRecord::Schema.define(:version => 20120411174200) do
     t.datetime "updated_at", :null => false
     t.integer  "seasons"
   end
+
+  create_table "users", :force => true do |t|
+    t.string   "email",               :default => "", :null => false
+    t.string   "encrypted_password",  :default => "", :null => false
+    t.datetime "remember_created_at"
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
 end

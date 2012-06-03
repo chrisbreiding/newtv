@@ -2,11 +2,11 @@
 
 	<h2>
 		<%= content_tag :span, show.name, class: 'name' %>
-		<%= options show %>
+		<%= options show if user_signed_in? %>
 	</h2>
-	
+
 	<ul>
 		<%= render show.episodes %>
 	</ul>
-	
+
 </div>

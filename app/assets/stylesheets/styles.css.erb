@@ -5,8 +5,13 @@ body {
 	font-size: 14px;
 }
 
-.showing-all {
+
+body.showing-all {
 	overflow: hidden;
+}
+
+h2 {
+	text-shadow: 0 1px 2px #FFF;
 }
 
 a:link,
@@ -37,8 +42,12 @@ a:active {
 .clearfix:after { clear:both; }
 .clearfix { zoom:1; /* For IE 6/7 */ }
 
-
 /* ---- Layout ---- */
+
+.container {
+	margin: 0 auto;
+	width: 340px;
+}
 
 .main {
 	background: #f8f8f8;
@@ -569,3 +578,81 @@ a.add-show {
 	color: #8A3838;
 }
 
+
+/* ---- Login ---- */
+
+.login-container h2 {
+	text-align: center;
+}
+
+.new_user {
+	background: #f8f8f8;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: solid 1px #c7c7c7;
+	margin: 10px auto 20px;
+	padding: 20px;
+}
+
+	.new_user div {
+		margin: 8px 0;
+	}
+
+		.text-input label {
+			display: block;
+			float: left;
+			height: 32px;
+			line-height: 32px;
+			width: 70px;
+			text-align: right;
+		}
+
+		.text-input input {
+			background: #FFF;
+			border: solid 1px #d3d3d3;
+			-moz-border-radius: 3px;
+			-webkit-border-radius: 3px;
+			border-radius: 3px;
+			display: block;
+			float: left;
+			height: 22px;
+			line-height: 22px;
+			margin-left: 10px;
+			padding: 5px 10px;
+			width: 196px;
+		}
+
+		.text-input input:focus {
+			border-color: #b3b3b3;
+		}
+
+	.checkbox-input {
+		padding-left: 80px;
+	}
+
+		.checkbox-input label {
+			margin-left: 3px;
+		}
+
+	.submit input {
+		background: #44414B;
+		background: -webkit-gradient(linear, left top, left bottom, from(#5D5A64), to(#44414B));
+		background: -moz-linear-gradient(top, #5D5A64, #44414B);
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		border-radius: 3px;
+		border: solid 1px #d3d3d3;
+		color: #FFF;
+		float: right;
+		margin-top: 10px;
+		padding: 10px 14px;
+	}
+
+	.submit input:hover,
+	.submit input:focus {
+		background: #5E5B64;
+		background: -webkit-gradient(linear, left top, left bottom, from(#726F7A), to(#5B5763));
+		background: -moz-linear-gradient(top, #726F7A, #5B5763);
+		cursor: pointer;
+	}
