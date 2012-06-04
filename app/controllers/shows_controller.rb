@@ -8,7 +8,7 @@ class ShowsController < ActionController::Base
 			a.next_episodes_airdate <=> b.next_episodes_airdate
 		end
 
-		@off_air = Show.all.keep_if do |show|
+		@off_air = Show.order('name').keep_if do |show|
 			@shows.select { |s| s.name == show.name }.empty?
 		end
 	end
