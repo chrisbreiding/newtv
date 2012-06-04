@@ -1,9 +1,8 @@
 class ShowsController < ActionController::Base
-
 	layout 'application'
 
 	def index
-		@shows = Show.includes(:episodes).where('episodes.airdate > ?', 3.days.ago ).order('airdate ASC')
+		@shows = Show.includes(:episodes).where('episodes.airdate > ?', 3.days.ago.to_date)
 
 		@shows.sort! do |a,b|
 			a.next_episodes_airdate <=> b.next_episodes_airdate
@@ -70,14 +69,11 @@ class ShowsController < ActionController::Base
 	end
 
 	def search
-
 		require 'open-uri'
 
 		show_name = params[:name]
 
-		uri_safe = URI.escape show_name
-
-		url = "http://services.tvrage.com/feeds/search.php?show=#{uri_safe}"
+		url = "http://services.tvrage.com/feeds/search.php?show=#{URI.escape(show_name)}"
 
 		xml = Nokogiri::XML(open(url))
 
@@ -86,26 +82,21 @@ class ShowsController < ActionController::Base
 		@results = []
 
 		xml.xpath('//show').each do |show|
-
 			details = {}
 
 			show.children.each do |detail|
-
 				if tags.index detail.name
 					details[detail.name] = detail.text
 				end
-
 			end
 
 			@results << details
-
 		end
 
 		respond_to do |format|
 			format.html
 			format.json { render json: @results }
 		end
-
 	end
 
 end

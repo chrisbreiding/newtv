@@ -4,11 +4,11 @@ class Show < ActiveRecord::Base
 
   def next_episodes_airdate
     i = 0
-    while self.episodes[i] && Time.parse(self.episodes[i].airdate.to_s) < 1.day.ago
+    while episodes[i] && episodes[i].airdate < 1.day.ago.to_date
       # if there was a recently aired episode, but no scheduled future episodes
-      return Time.parse 1.month.from_now.to_s if !self.episodes[i + 1]
+      return 1.month.from_now.to_date if !episodes[i + 1]
       i += 1
     end
-    Time.parse self.episodes[i].airdate.to_s
+    episodes[i].airdate
   end
 end
