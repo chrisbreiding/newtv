@@ -9,16 +9,6 @@ module TvHelper
       )
   end
 
-	def episode_status airdate
-		if Time.now.strftime("%Y-%m-%d") == airdate
-			raw(' airs-today')
-		elsif Time.parse(airdate) < 1.day.ago
-			raw(' aired')
-		elsif Time.parse(airdate) > 2.months.from_now
-			raw(' far-future')
-		end
-	end
-
 	def options show
 		raw(
 			content_tag(:span, class: 'options') do
@@ -29,34 +19,14 @@ module TvHelper
 		)
 	end
 
-	def epnum episode
-		episode.season.to_s + episode.episode_number
-	end
-
-	def pad num
-		if num < 10
-			num = '0' + num.to_s
-		else
-			num = num.to_s
-		end
-		num
-	end
-
-  def titlecase title
-    lowercase = %w{Of of Etc etc And and By by The the For for Is is At at To to But but Nor nor Or or A a An an Via via}
-    uppercase = %{TBA tba}
-    title.split(' ').each_with_index.collect { |word, i|
-    	if lowercase.include?(word) && i > 0
-    		word.downcase
-    	elsif uppercase.include?(word)
-    		word.upcase
-    	else
-    		word.capitalize
-    	end
-    }.join(' ')
+  def episode_status_class airdate
+    if Time.now.to_date == airdate
+      ' airs-today'
+    elsif airdate < 1.day.ago.to_date
+      ' aired'
+    elsif airdate > 2.months.from_now.to_date
+      ' far-future'
+    end
   end
 
-  def filesafe title
-    	title.gsub(/[\.\!\?\@\#\$\%\^\&\*]/, '')
-  end
 end
