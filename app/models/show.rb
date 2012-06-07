@@ -1,6 +1,7 @@
 class Show < ActiveRecord::Base
 	validates_presence_of :name, :tvrage_id
 	has_many :episodes, dependent: :destroy
+  attr_accessible :name, :tvrage_id, :seasons
 
   def next_episodes_airdate
     i = 0

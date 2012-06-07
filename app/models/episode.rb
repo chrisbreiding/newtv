@@ -1,5 +1,6 @@
 class Episode < ActiveRecord::Base
 	belongs_to :show
+  attr_accessible :season, :episode_number, :title, :show_id, :airdate
 
   def epnum
     season.to_s + episode_number
