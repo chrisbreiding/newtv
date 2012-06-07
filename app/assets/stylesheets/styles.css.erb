@@ -204,8 +204,6 @@ a:active {
 		}
 
 
-
-
 /* ---- Off Air ---- */
 
 .off-air li {
@@ -226,24 +224,42 @@ a:active {
 .all-episodes {
 	background: #e3e3e3;
 	border-left: solid 1px #c7c7c7;
-	float: none;
-	margin: 0;
 	overflow-y: auto;
-	padding: 15px 20px 10px;
+	margin: 0;
+	padding: 15px 15px 10px;
 	position: fixed;
 		top: 0;
 		left: 210px;
 	width: 500px;
 }
 
-	.all-episodes li .title:hover {
-		color: #e3e3e3;
+	.all-episodes h3 {
+		border-top: solid 1px #c7c7c7;
+		margin: 0;
+		padding-top: 10px;
 	}
 
-		.all-episodes li .title:hover .file-name {
-			background: none;
-			color: #333;
+	.all-episodes h3:first-child {
+		border-top: none;
+		padding-top: 0;
+	}
+
+	.all-episodes ul {
+		float: none;
+		list-style: none;
+		margin: 5px 0;
+		padding: 5px 0;
+	}
+
+		.all-episodes li .title:hover {
+			color: #e3e3e3;
 		}
+
+			.all-episodes li .title:hover .file-name {
+				background: none;
+				color: #333;
+			}
+
 
 /* ---- Options ---- */
 

@@ -14,7 +14,7 @@ class ShowsController < ActionController::Base
 	end
 
 	def show
-		@episodes = Show.find(params[:id]).episodes
+		@episodes = Show.find(params[:id]).episodes.group_by { |ep| ep.season }
 
 		respond_to do |format|
 			format.html

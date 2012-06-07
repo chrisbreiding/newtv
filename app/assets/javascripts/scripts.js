@@ -204,7 +204,7 @@
 				success : function (results) {
 					var data = {
 						show : $('#show-' + id).addClass('active').find('.name').text(),
-						episodes : results
+						seasons : results
 					};
 
 					$(template(data))

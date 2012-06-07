@@ -2,32 +2,32 @@
 
 	<h3>Results</h3>
 
-	<% _.each(shows, function (show) { %>
-		
+	<% for(var i = 0, len = shows.length; i < len; i++) { var show = shows[i]; %>
+
 		<div class="results-show" data-showid="<%= show.showid %>">
-		
+
 			<h4><%= show.name %></h4>
-			
+
 			<dl>
-				
+
 				<dt>Country</dt>
 				<dd><%= show.country %></dd>
-				
+
 				<dt>Started</dt>
 				<dd><%= show.started %></dd>
-			
+
 				<dt>Seasons</dt>
 				<dd><%= show.seasons %></dd>
-			
+
 				<dt>Classification</dt>
 				<dd><%= show.classification %></dd>
-			
+
 			</dl>
-			
+
 			<a class="create-show" href="#">Add Show</a>
-		
-		</div>			
-		
-	<% }); %>
-	
+
+		</div>
+
+	<% } %>
+
 </div>
