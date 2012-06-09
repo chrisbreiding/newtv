@@ -15,6 +15,10 @@ class Show < ActiveRecord::Base
     end
   end
 
+  def self.all_episodes show_id
+    find(show_id).episodes.group_by { |ep| ep.season }
+  end
+
   def self.search show_name
     require 'open-uri'
 
