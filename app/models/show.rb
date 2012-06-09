@@ -3,6 +3,42 @@ class Show < ActiveRecord::Base
 	has_many :episodes, dependent: :destroy
   attr_accessible :name, :tvrage_id, :seasons
 
+  def self.upcoming
+    includes(:episodes).where('episodes.airdate > ?', 3.days.ago.to_date).sort! do |a,b|
+      a.next_episodes_airdate <=> b.next_episodes_airdate
+    end
+  end
+
+  def self.off_air upcoming_shows
+    @off_air = Show.order('name').keep_if do |show|
+      upcoming_shows.select { |s| s.name == show.name }.empty?
+    end
+  end
+
+  def self.search show_name
+    require 'open-uri'
+
+    url = "http://services.tvrage.com/feeds/search.php?show=#{URI.escape(show_name)}"
+
+    xml = Nokogiri::XML(open(url))
+
+    tags = %w{showid country name started seasons classification}
+
+    results = xml.xpath('//show').collect do |show|
+      details = {}
+
+      show.children.each do |detail|
+        if tags.index detail.name
+          details[detail.name] = detail.text
+        end
+      end
+
+      details
+    end
+
+    results
+  end
+
   def next_episodes_airdate
     i = 0
     while episodes[i] && episodes[i].airdate < 1.day.ago.to_date

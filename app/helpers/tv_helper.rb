@@ -20,7 +20,7 @@ module TvHelper
 	end
 
   def episode_status_class airdate
-    today = Time.now.to_date
+    today = Date.today
     if airdate == today
       ' airs-today'
     elsif airdate < today
