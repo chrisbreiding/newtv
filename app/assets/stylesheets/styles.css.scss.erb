@@ -32,11 +32,41 @@
 	box-shadow: $settings;
 }
 
+
+/* ---- Variables ---- */
+
+$light-gray-1: #f8f8f8;
+$light-gray-2: #e3e3e3;
+$light-gray-3: #d3d3d3;
+$light-gray-4: #c7c7c7;
+
+$dark-gray-1: #333;
+
+$brown: #7E4A22;
+
+$single-border: solid 1px;
+
+
+/* ---- Parents ---- */
+
+.rounded {
+	@include radius(3px);
+}
+
+.rounded-left {
+	@include radius(3px 0 0 3px);
+}
+
+.rounded-right {
+	@include radius(0 3px 3px 0);
+}
+
+
 /* ---- General ---- */
 
 body {
-	background: #e3e3e3;
-	color: #333;
+	background: $light-gray-2;
+	color: $dark-gray-1;
 	font: {
 		family: "Helvetica Neue", Arial, sans-serif;
 		size: 14px;
@@ -52,18 +82,16 @@ h2 {
 }
 
 a {
+	color: #22517D;
+
 	&:link,
 	&:visited {
-		color: #22517D;
 		text-decoration: none;
 	}
-}
 
-a {
 	&:hover,
 	&:focus,
 	&:active {
-		color: #22517D;
 		text-decoration: underline;
 	}
 
@@ -75,7 +103,6 @@ a {
 		transform: translate(0,1px);
 	}
 }
-
 
 
 /* ---- Helper Classes ---- */
@@ -95,14 +122,14 @@ a {
 }
 
 .main {
-	background: #f8f8f8;
-	border-top: solid 2px #333;
+	background: $light-gray-1;
+	border-top: solid 2px $dark-gray-1;
 	padding-bottom: 20px;
 }
 
 .footer {
-	background: #e3e3e3;
-	border-top: solid 1px #d3d3d3;
+	background: $light-gray-2;
+	border-top: $single-border $light-gray-3;
 	padding: 10px 20px;
 }
 
@@ -179,8 +206,8 @@ a {
 		}
 
 		.epnum {
-			background: #7E4A22;
-			@include radius(3px);
+			background: $brown;
+			@extend .rounded;
 			color: #FFF;
 			padding: 3px 0;
 			text-align: center;
@@ -188,7 +215,7 @@ a {
 		}
 
 		.airdate {
-			color: #7E4A22;
+			color: $brown;
 			width: 75px;
 		}
 
@@ -201,7 +228,7 @@ a {
 	.main li,
 	.all-episodes li {
 		.file-name {
-			background: #f8f8f8;
+			background: $light-gray-1;
 			display: none;
 			padding-right: 10px;
 			position: absolute;
@@ -220,18 +247,19 @@ a {
 	}
 
 		.airs-today .epnum {
-			@include radius(3px 0 0 3px);
+			@extend .rounded-left;
 		}
 
 		.airs-today .airdate,
 		.airs-today .title,
 		.main .airs-today .file-name {
-			background: #e3e3e3;
+			background: $light-gray-2;
 		}
 
 		.airs-today .title,
 		.main .airs-today .file-name {
-			@include radius(0 3px 3px 0);
+			@extend .rounded-right;
+	@include radius(0 3px 3px 0);
 		}
 
 		.far-future .epnum {
@@ -263,8 +291,8 @@ a {
 /* ---- All Episodes ---- */
 
 .all-episodes {
-	background: #e3e3e3;
-	border-left: solid 1px #c7c7c7;
+	background: $light-gray-2;
+	border-left: $single-border $light-gray-4;
 	overflow-y: auto;
 	margin: 0;
 	padding: 15px 20px 10px;
@@ -274,7 +302,7 @@ a {
 	width: 500px;
 
 	h3 {
-		border-top: solid 1px #c7c7c7;
+		border-top: $single-border $light-gray-4;
 		margin: 0;
 		padding-top: 10px;
 
@@ -293,11 +321,11 @@ a {
 
 		li .title {
 			&:hover {
-				color: #e3e3e3;
+				color: $light-gray-2;
 
 				.file-name {
 					background: none;
-					color: #333;
+					color: $dark-gray-1;
 				}
 			}
 		}
@@ -307,9 +335,9 @@ a {
 /* ---- Options ---- */
 
 .options {
-	background: #f8f8f8;
-	@include radius(3px);
-	border: solid 1px #d3d3d3;
+	background: $light-gray-1;
+	@extend .rounded;
+	border: $single-border $light-gray-3;
 	display: none;
 	padding: 5px;
 	position: absolute;
@@ -405,10 +433,10 @@ a.add-show {
 }
 
 .add-show-form {
-	background: #e3e3e3;
+	background: $light-gray-2;
 	border: {
-		left: solid 1px #d3d3d3;
-		bottom: solid 1px #d3d3d3;
+		left: $single-border $light-gray-3;
+		bottom: $single-border $light-gray-3;
 	}
 	padding: 20px;
 	position: absolute;
@@ -425,8 +453,8 @@ a.add-show {
 
 	input[type=text] {
 		background: #FFF;
-		@include radius(3px 0 0 3px);
-		border: solid 1px #c7c7c7;
+		@extend .rounded-left;
+		border: $single-border $light-gray-4;
 		border-right: none;
 		display: block;
 		float: left;
@@ -437,9 +465,10 @@ a.add-show {
 	}
 
 	button {
-		@include gradient-with-image(#666, #333, #333, url(<%= asset_path('sprite.png') %>) -48px -49px no-repeat);
-		@include radius(0 3px 3px 0);
-		border: solid 1px #333;
+		@include gradient-with-image(#666, $dark-gray-1, $dark-gray-1, url(<%= asset_path('sprite.png') %>) -48px -49px no-repeat);
+		@extend .rounded-right;
+	@include radius(0 3px 3px 0);
+		border: $single-border $dark-gray-1;
 		display: block;
 		float: left;
 		text-indent: -9999px;
@@ -454,7 +483,7 @@ a.add-show {
 }
 
 .waiting {
-	background: #e3e3e3 url(<%= asset_path('waiting.gif') %>) 50% 65% no-repeat;
+	background: $light-gray-2 url(<%= asset_path('waiting.gif') %>) 50% 65% no-repeat;
 	color: #666;
 	height: 60px;
 	text-align: center;
@@ -466,10 +495,10 @@ a.add-show {
 }
 
 .search-results {
-	background: #e3e3e3;
+	background: $light-gray-2;
 	border: {
-		left: solid 1px #d3d3d3;
-		bottom: solid 1px #d3d3d3;
+		left: $single-border $light-gray-3;
+		bottom: $single-border $light-gray-3;
 	}
 	padding: 20px;
 	position: absolute;
@@ -482,13 +511,13 @@ a.add-show {
 	}
 
 	.results-show {
-		border-top: solid 1px #d3d3d3;
+		border-top: $single-border $light-gray-3;
 		padding-top: 1px;
 		position: relative;
 	}
 
 		h4 {
-			color: #7E4A22;
+			color: $brown;
 		}
 
 		dl {
@@ -507,9 +536,9 @@ a.add-show {
 }
 
 		a.create-show {
-			@include gradient( #7E4A22, #7E4A22, #583215);
-			@include radius(3px);
-			border: solid 1px #7E4A22;
+			@include gradient( $brown, $brown, #583215);
+			@extend .rounded;
+			border: $single-border $brown;
 			@include shadow(inset 0 0 2px rgba(255,255,255,0.8));
 			color: #FFF;
 			display: block;
@@ -537,9 +566,9 @@ a.add-show {
 /* ---- Edit Show ---- */
 
 .edit-show-form {
-	background: #e3e3e3;
-	@include radius(3px);
-	border: solid 1px #c7c7c7;
+	background: $light-gray-2;
+	@extend .rounded;
+	border: $single-border $light-gray-4;
 	@include shadow(0 0 10px rgba(0,0,0,0.5));
 	margin-left: -200px;
 	padding: 50px;
@@ -556,8 +585,8 @@ a.add-show {
 
 	input[type=text] {
 		background: #FFF;
-		@include radius(3px);
-		border: solid 1px #d3d3d3;
+		@extend .rounded;
+		border: $single-border $light-gray-3;
 		margin-bottom: 20px;
 		padding: 10px;
 		width: 280px;
@@ -568,10 +597,10 @@ a.add-show {
 	}
 
 	button {
-		@include gradient(#666, #333, #333);
-		@include radius(3px);
-		border: solid 1px #333;
-		color: #e3e3e3;
+		@include gradient(#666, $dark-gray-1, $dark-gray-1);
+		@extend .rounded;
+		border: $single-border $dark-gray-1;
+		color: $light-gray-2;
 		display: block;
 		float: right;
 		padding: 7px 10px 5px;
@@ -588,8 +617,8 @@ a.add-show {
 
 .notice {
 	background: #555;
-	border-bottom: solid 2px #333;
-	color: #e3e3e3;
+	border-bottom: solid 2px $dark-gray-1;
+	color: $light-gray-2;
 	padding: 12px 0;
 	position: relative;
 	width: 100%;
@@ -644,9 +673,9 @@ a.add-show {
 }
 
 .new_user {
-	background: #f8f8f8;
-	@include radius(3px);
-	border: solid 1px #c7c7c7;
+	background: $light-gray-1;
+	@extend .rounded;
+	border: $single-border $light-gray-4;
 	margin: 10px auto 20px;
 	padding: 20px;
 
@@ -667,8 +696,8 @@ a.add-show {
 
 			input {
 				background: #FFF;
-				border: solid 1px #d3d3d3;
-				@include radius(3px);
+				border: $single-border $light-gray-3;
+				@extend .rounded;
 				display: block;
 				float: left;
 				height: 22px;
@@ -693,8 +722,8 @@ a.add-show {
 
 	.submit input {
 		@include gradient(#5D5A64, #44414B, #44414B);
-		@include radius(3px);
-		border: solid 1px #d3d3d3;
+		@extend .rounded;
+		border: $single-border $light-gray-3;
 		color: #FFF;
 		float: right;
 		margin-top: 10px;
