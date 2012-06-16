@@ -30,6 +30,9 @@ set :default_stage, "production"
 # set :rvm_type, :user
 # set :rvm_type, :system
 
+# fixes issue with assets precompile
+default_run_options[:pty] = true
+
 after 'deploy:symlink', 'deploy:cleanup' # makes sure there's only 3 deployments, deletes the extras
 
 # If you are using Passenger mod_rails uncomment this:
