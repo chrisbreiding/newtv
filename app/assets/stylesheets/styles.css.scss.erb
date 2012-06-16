@@ -1,8 +1,46 @@
+/* ---- Mixins ---- */
+
+@mixin radius($rad) {
+	-moz-border-radius: $rad;
+	-webkit-border-radius: $rad;
+	border-radius: $rad;
+}
+
+@mixin gradient($top, $middle, $bottom) {
+	background: $middle;
+	background: -webkit-gradient(linear, left top, left bottom, from($top), to($bottom));
+	background: -webkit-linear-gradient(top, $top, $bottom);
+	background: -moz-linear-gradient(top, $top, $bottom);
+	background: -o-linear-gradient(top, $top, $bottom);
+	background: -ms-linear-gradient(top, $top, $bottom);
+	background: linear-gradient(top, $top, $bottom);
+}
+
+@mixin gradient-with-image($top, $middle, $bottom, $image) {
+	background: $middle $image;
+	background: $image, -webkit-gradient(linear, left top, left bottom, from($top), to($bottom));
+	background: $image, -webkit-linear-gradient(top, $top, $bottom);
+	background: $image, -moz-linear-gradient(top, $top, $bottom);
+	background: $image, -o-linear-gradient(top, $top, $bottom);
+	background: $image, -ms-linear-gradient(top, $top, $bottom);
+	background: $image, linear-gradient(top, $top, $bottom);
+}
+
+@mixin shadow($settings) {
+	-moz-box-shadow: $settings;
+	-webkit-box-shadow: $settings;
+	box-shadow: $settings;
+}
+
+/* ---- General ---- */
+
 body {
 	background: #e3e3e3;
 	color: #333;
-	font-family: "Helvetica Neue", Arial, sans-serif;
-	font-size: 14px;
+	font: {
+		family: "Helvetica Neue", Arial, sans-serif;
+		size: 14px;
+	}
 
 	&.showing-all {
 		overflow: hidden;
@@ -134,15 +172,15 @@ a {
 		.airdate,
 		.title,
 		.file-name {
-			padding-top: 3px;
-			padding-bottom: 3px;
+			padding: {
+				top: 3px;
+				bottom: 3px;
+			}
 		}
 
 		.epnum {
 			background: #7E4A22;
-			-moz-border-radius: 3px;
-			-webkit-border-radius: 3px;
-			border-radius: 3px;
+			@include radius(3px);
 			color: #FFF;
 			padding: 3px 0;
 			text-align: center;
@@ -169,7 +207,7 @@ a {
 			position: absolute;
 				left: 0;
 				top: 0;
-				width: 250px;
+			width: 250px;
 		}
 
 		.title:hover .file-name {
@@ -182,9 +220,7 @@ a {
 	}
 
 		.airs-today .epnum {
-			-moz-border-radius: 3px 0 0 3px;
-			-webkit-border-radius: 3px 0 0 3px;
-			border-radius: 3px 0 0 3px;
+			@include radius(3px 0 0 3px);
 		}
 
 		.airs-today .airdate,
@@ -195,9 +231,7 @@ a {
 
 		.airs-today .title,
 		.main .airs-today .file-name {
-			-moz-border-radius: 0 3px 3px 0;
-			-webkit-border-radius: 0 3px 3px 0;
-			border-radius: 0 3px 3px 0;
+			@include radius(0 3px 3px 0);
 		}
 
 		.far-future .epnum {
@@ -274,9 +308,7 @@ a {
 
 .options {
 	background: #f8f8f8;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
+	@include radius(3px);
 	border: solid 1px #d3d3d3;
 	display: none;
 	padding: 5px;
@@ -306,8 +338,10 @@ a {
 		float: left;
 		margin-left: 10px;
 		outline: none;
-		text-align: left;
-		text-indent: -9999px;
+		text: {
+			align: left;
+			indent: -9999px;
+		}
 		width: 25px;
 		height: 25px;
 
@@ -355,8 +389,10 @@ a.add-show {
 	&:before {
 		content: '+';
 		display: block;
-		font-size: 2em;
-		font-weight: bold;
+		font: {
+			size: 2em;
+			weight: bold;
+		}
 		text-align: right;
 		width: 2em;
 		height: 2em;
@@ -370,8 +406,10 @@ a.add-show {
 
 .add-show-form {
 	background: #e3e3e3;
-	border-left: solid 1px #d3d3d3;
-	border-bottom: solid 1px #d3d3d3;
+	border: {
+		left: solid 1px #d3d3d3;
+		bottom: solid 1px #d3d3d3;
+	}
 	padding: 20px;
 	position: absolute;
 		top: 0;
@@ -387,9 +425,7 @@ a.add-show {
 
 	input[type=text] {
 		background: #FFF;
-		-moz-border-radius: 3px 0 0 3px;
-		-webkit-border-radius: 3px 0 0 3px;
-		border-radius: 3px 0 0 3px;
+		@include radius(3px 0 0 3px);
 		border: solid 1px #c7c7c7;
 		border-right: none;
 		display: block;
@@ -401,12 +437,8 @@ a.add-show {
 	}
 
 	button {
-		background: #333 url(<%= asset_path('sprite.png') %>) -48px -49px no-repeat;
-		background: url(<%= asset_path('sprite.png') %>) -48px -49px no-repeat, -webkit-gradient(linear, left top, left bottom, from(#666), to(#333));
-		background: url(<%= asset_path('sprite.png') %>) -48px -49px no-repeat, -moz-linear-gradient(top, #666, #333);
-		-moz-border-radius: 0 3px 3px 0;
-		-webkit-border-radius: 0 3px 3px 0;
-		border-radius: 0 3px 3px 0;
+		@include gradient-with-image(#666, #333, #333, url(<%= asset_path('sprite.png') %>) -48px -49px no-repeat);
+		@include radius(0 3px 3px 0);
 		border: solid 1px #333;
 		display: block;
 		float: left;
@@ -416,9 +448,7 @@ a.add-show {
 
 		&:hover,
 		&:focus {
-			background-color: #444;
-			background: url(<%= asset_path('sprite.png') %>) -48px -49px no-repeat, -webkit-gradient(linear, left top, left bottom, from(#777), to(#444));
-			background: url(<%= asset_path('sprite.png') %>) -48px -49px no-repeat, -moz-linear-gradient(top, #777, #444);
+			@include gradient-with-image(#777, #444, #444, url(<%= asset_path('sprite.png') %>) -48px -49px no-repeat);
 		}
 	}
 }
@@ -437,8 +467,10 @@ a.add-show {
 
 .search-results {
 	background: #e3e3e3;
-	border-left: solid 1px #d3d3d3;
-	border-bottom: solid 1px #d3d3d3;
+	border: {
+		left: solid 1px #d3d3d3;
+		bottom: solid 1px #d3d3d3;
+	}
 	padding: 20px;
 	position: absolute;
 		top: 0;
@@ -475,16 +507,10 @@ a.add-show {
 }
 
 		a.create-show {
-			background: #7E4A22;
-			background: -moz-linear-gradient(top, #7E4A22, #583215);
-			background: -webkit-gradient(linear, left top, left bottom, from(#7E4A22), to(#583215));
-			-moz-border-radius: 3px;
-			-webkit-border-radius: 3px;
-			border-radius: 3px;
+			@include gradient( #7E4A22, #7E4A22, #583215);
+			@include radius(3px);
 			border: solid 1px #7E4A22;
-			-moz-box-shadow: inset 0 0 2px rgba(255,255,255,0.8);
-			-webkit-box-shadow: inset 0 0 2px rgba(255,255,255,0.8);
-			box-shadow: inset 0 0 2px rgba(255,255,255,0.8);
+			@include shadow(inset 0 0 2px rgba(255,255,255,0.8));
 			color: #FFF;
 			display: block;
 			font-size: .7em;
@@ -499,13 +525,7 @@ a.add-show {
 			}
 
 			&:hover {
-				background: #995D2F;
-				background: -webkit-gradient(linear, left top, left bottom, from(#995D2F), to(#794924));
-				background: -webkit-linear-gradient(top, #995D2F, #794924);
-				background: -moz-linear-gradient(top, #995D2F, #794924);
-				background: -o-linear-gradient(top, #995D2F, #794924);
-				background: -ms-linear-gradient(top, #995D2F, #794924);
-				background: linear-gradient(top, #995D2F, #794924);
+				@include gradient(#995D2F, #995D2F, #794924);
 			}
 		}
 
@@ -518,13 +538,9 @@ a.add-show {
 
 .edit-show-form {
 	background: #e3e3e3;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
+	@include radius(3px);
 	border: solid 1px #c7c7c7;
-	-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
-	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.5);
-	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	@include shadow(0 0 10px rgba(0,0,0,0.5));
 	margin-left: -200px;
 	padding: 50px;
 	position: fixed;
@@ -540,9 +556,7 @@ a.add-show {
 
 	input[type=text] {
 		background: #FFF;
-		-moz-border-radius: 3px;
-		-webkit-border-radius: 3px;
-		border-radius: 3px;
+		@include radius(3px);
 		border: solid 1px #d3d3d3;
 		margin-bottom: 20px;
 		padding: 10px;
@@ -554,17 +568,8 @@ a.add-show {
 	}
 
 	button {
-		background: #333;
-
-		background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#333));
-		background: -webkit-linear-gradient(top, #666, #333);
-		background: -moz-linear-gradient(top, #666, #333);
-		background: -o-linear-gradient(top, #666, #333);
-		background: -ms-linear-gradient(top, #666, #333);
-		background: linear-gradient(top, #666, #333);
-		-moz-border-radius: 3px;
-		-webkit-border-radius: 3px;
-		border-radius: 3px;
+		@include gradient(#666, #333, #333);
+		@include radius(3px);
 		border: solid 1px #333;
 		color: #e3e3e3;
 		display: block;
@@ -573,13 +578,7 @@ a.add-show {
 
 		&:hover,
 		&:focus {
-			background: #444;
-			background: -webkit-gradient(linear, left top, left bottom, from(#777), to(#444));
-			background: -webkit-linear-gradient(top, #777, #444);
-			background: -moz-linear-gradient(top, #777, #444);
-			background: -o-linear-gradient(top, #777, #444);
-			background: -ms-linear-gradient(top, #777, #444);
-			background: linear-gradient(top, #777, #444);
+			@include gradient(#777, #444, #444);
 		}
 	}
 }
@@ -599,8 +598,10 @@ a.add-show {
 	p {
 		border-left: solid 5px;
 		margin: 0 20px;
-		padding-right: 20px;
-		padding-left: 8px;
+		padding: {
+			right: 20px;
+			left: 8px;
+		}
 	}
 
 		a {
@@ -644,9 +645,7 @@ a.add-show {
 
 .new_user {
 	background: #f8f8f8;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
+	@include radius(3px);
 	border: solid 1px #c7c7c7;
 	margin: 10px auto 20px;
 	padding: 20px;
@@ -669,9 +668,7 @@ a.add-show {
 			input {
 				background: #FFF;
 				border: solid 1px #d3d3d3;
-				-moz-border-radius: 3px;
-				-webkit-border-radius: 3px;
-				border-radius: 3px;
+				@include radius(3px);
 				display: block;
 				float: left;
 				height: 22px;
@@ -695,12 +692,8 @@ a.add-show {
 	}
 
 	.submit input {
-		background: #44414B;
-		background: -webkit-gradient(linear, left top, left bottom, from(#5D5A64), to(#44414B));
-		background: -moz-linear-gradient(top, #5D5A64, #44414B);
-		-moz-border-radius: 3px;
-		-webkit-border-radius: 3px;
-		border-radius: 3px;
+		@include gradient(#5D5A64, #44414B, #44414B);
+		@include radius(3px);
 		border: solid 1px #d3d3d3;
 		color: #FFF;
 		float: right;
@@ -709,9 +702,7 @@ a.add-show {
 
 		&:hover,
 		&:focus {
-			background: #5E5B64;
-			background: -webkit-gradient(linear, left top, left bottom, from(#726F7A), to(#5B5763));
-			background: -moz-linear-gradient(top, #726F7A, #5B5763);
+			@include gradient(#726F7A, #5E5B64, #5B5763);
 			cursor: pointer;
 		}
 	}
