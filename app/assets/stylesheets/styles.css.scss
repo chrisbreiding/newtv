@@ -116,7 +116,7 @@ a {
 /* ---- Layout ---- */
 
 .container {
-	background: url(<%= asset_path('waiting.gif') %>) -9999px -9999px no-repeat; // pre-load
+	background: image-url('waiting.gif') -9999px -9999px no-repeat; // pre-load
 	margin: 0 auto;
 	width: 340px;
 }
@@ -361,7 +361,7 @@ a {
 
 .options {
 	a {
-		background: url(<%= asset_path('sprite.png') %>) no-repeat;
+		background: image-url('sprite.png') no-repeat;
 		display: block;
 		float: left;
 		margin-left: 10px;
@@ -465,7 +465,7 @@ a.add-show {
 	}
 
 	button {
-		@include gradient-with-image(#666, $dark-gray-1, $dark-gray-1, url(<%= asset_path('sprite.png') %>) -48px -49px no-repeat);
+		@include gradient-with-image(#666, $dark-gray-1, $dark-gray-1, image-url('sprite.png') -48px -49px no-repeat);
 		@extend .rounded-right;
 	@include radius(0 3px 3px 0);
 		border: $single-border $dark-gray-1;
@@ -477,13 +477,13 @@ a.add-show {
 
 		&:hover,
 		&:focus {
-			@include gradient-with-image(#777, #444, #444, url(<%= asset_path('sprite.png') %>) -48px -49px no-repeat);
+			@include gradient-with-image(#777, #444, #444, image-url('sprite.png') -48px -49px no-repeat);
 		}
 	}
 }
 
 .waiting {
-	background: $light-gray-2 url(<%= asset_path('waiting.gif') %>) 50% 65% no-repeat;
+	background: $light-gray-2 image-url('waiting.gif') 50% 65% no-repeat;
 	color: #666;
 	height: 60px;
 	text-align: center;
@@ -649,7 +649,7 @@ a.add-show {
 }
 
 	a.close-notice {
-		background: url(<%= asset_path('sprite.png') %>) 0 -50px no-repeat;
+		background: image-url('sprite.png') 0 -50px no-repeat;
 		display: block;
 		outline: none;
 		position: absolute;
