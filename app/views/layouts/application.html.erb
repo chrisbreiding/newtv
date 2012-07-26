@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>TV Episodes</title>
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <meta charset="UTF-8">
+  <title>TV Episodes</title>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
   <meta name='robots' content='noindex,nofollow' />
-	<%= stylesheet_link_tag "application", :media => "all" %>
-	<%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width; initial-scale=1.0">
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= csrf_meta_tags %>
 </head>
 <body>
   <%= flash_notice(notice, 'message') if notice %>
   <%= flash_notice(alert, 'error') if alert %>
 
-	<%= yield %>
+  <%= yield %>
 
-	<%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "application" %>
 </body>
 </html>
