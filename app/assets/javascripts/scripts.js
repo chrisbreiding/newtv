@@ -116,8 +116,6 @@
 						notice : 'Show could not be added. Please close this message and try again.',
 						type : 'error'
 					});
-
-					console && console.log(results);
 				}
 			});
 
@@ -154,7 +152,7 @@
 				dataType : 'json',
 				data : $this.serialize(),
 				success : function (results) {
-					$('#show-' + id).find('.name').html( $('#name').val() );
+					$('#show-' + id).find('.name').html( results.name );
 					$('#edit-show-form').remove();
 				}
 			});

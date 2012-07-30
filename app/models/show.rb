@@ -2,6 +2,7 @@ class Show < ActiveRecord::Base
 	validates_presence_of :name, :tvrage_id
 	has_many :episodes, dependent: :destroy
   attr_accessible :name, :tvrage_id, :seasons
+  before_validation :clean_input
 
   def self.upcoming
     includes(:episodes).where('episodes.airdate > ?', 3.days.ago.to_date).sort! do |a,b|
@@ -51,5 +52,11 @@ class Show < ActiveRecord::Base
       i += 1
     end
     episodes[i].airdate
+  end
+
+  private
+
+  def clean_input
+    self.name = ActionController::Base.helpers.strip_tags self.name
   end
 end

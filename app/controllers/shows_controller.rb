@@ -39,7 +39,7 @@ class ShowsController < ActionController::Base
 		respond_to do |format|
 			if @show.update_attributes({ name: params[:name] })
 				format.html { redirect_to @show }
-				format.json { head :no_content }
+				format.json { render json: @show }
 			else
 				format.html { render :edit }
 				format.json { render json: @show.errors, status: :unprocessable_entity }
