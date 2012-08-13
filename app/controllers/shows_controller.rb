@@ -3,11 +3,11 @@ class ShowsController < ActionController::Base
 
 	def index
 		@shows = Show.upcoming
-    @off_air = Show.off_air(@shows)
+    @off_air = Show.off_air
 	end
 
 	def show
-		@episodes = Show.all_episodes(params[:id])
+		@episodes = Show.find(params[:id]).episodes_by_season
 
 		respond_to do |format|
 			format.html

@@ -34,8 +34,8 @@ describe Show do
     it { should_not be_valid }
   end
 
-  describe "input cleaning" do
-    it "should strip out tags from name" do
+  describe "when name has tags in it" do
+    it "strips out tags" do
       @show.name = '<script src="malicious">code</script>'
       @show.save
       @show.name.should == 'code'
@@ -43,56 +43,98 @@ describe Show do
   end
 
   describe "associated episodes" do
-    FactoryGirl.create_list(:episode, 3, show: @show)
+    before { Show.destroy_all }
 
-    it "should destroy associated episodes" do
-      episodes = @show.episodes
-      @show.destroy
+    let!(:show1) { FactoryGirl.create(:show) }
+    let!(:year_old_episode) do
+      FactoryGirl.create(
+        :episode,
+        show: show1,
+        season: 1,
+        airdate: 1.year.ago.to_date
+      )
+    end
+    let!(:day_old_episode) do
+      FactoryGirl.create(
+        :episode,
+        show: show1,
+        season: 2,
+        airdate: 1.day.ago.to_date
+      )
+    end
+    let!(:episode_airing_in_2_days) do
+      FactoryGirl.create(
+        :episode,
+        show: show1,
+        season: 2,
+        airdate: 2.days.from_now.to_date
+      )
+    end
+
+    let!(:show2) { FactoryGirl.create(:show) }
+    let!(:episode_airing_tomorrow) do
+      FactoryGirl.create(
+        :episode,
+        show: show2,
+        airdate: Date.today
+      )
+    end
+
+    let!(:show3) { FactoryGirl.create(:show) }
+    let!(:months_old_episode) do
+      FactoryGirl.create(
+        :episode,
+        show: show3,
+        airdate: 5.months.ago.to_date
+      )
+    end
+
+    it "destroys associated episodes" do
+      episodes = show1.episodes
+      show1.destroy
       episodes.each do |episode|
         Episode.find_by_id(episode.id).should be_nil
       end
     end
-  end
 
-  describe "with upcoming episodes" do
-    let!(:show) { FactoryGirl.create(:show) }
-    let!(:old_episode) do
-      FactoryGirl.create(
-        :episode,
-        show: show,
-        airdate: 1.year.ago.to_date
-      )
-    end
-    let!(:recent_episode) do
-      FactoryGirl.create(
-        :episode,
-        show: show,
-        airdate: 1.day.ago.to_date
-      )
-    end
-    let!(:upcoming_episode) do
-      FactoryGirl.create(
-        :episode,
-        show: show,
-        airdate: 1.day.from_now.to_date
-      )
+    context "that are upcoming" do
+      it "has episodes 3 days old or newer in correct order" do
+        Show.upcoming[1].episodes.should == [day_old_episode, episode_airing_in_2_days]
+      end
+
+      it "orders shows by next episode" do
+        Show.upcoming.should == [show2, show1]
+      end
     end
 
-    it "should have episodes 3 days old or newer" do
-      Show.upcoming.first.episodes.should_not include(old_episode)
+    context "that are not upcoming" do
+      it "has shows with only old episodes" do
+        Show.off_air.should == [show3]
+      end
+    end
+
+    context "listing all" do
+      it "groups episodes by season" do
+        show1.episodes_by_season.should == {
+          1 => [year_old_episode],
+          2 => [day_old_episode, episode_airing_in_2_days]
+        }
+      end
     end
   end
 
-  describe "with no upcoming episodes" do
-    pending
-  end
+  describe "search" do
+    it "returns an array" do
+      Show.search('Cheers').should be_a_kind_of(Array)
+    end
 
-  describe "with all episodes" do
-    pending
-  end
+    it "returns an array of hashes" do
+      Show.search('Cheers')[0].should be_a_kind_of(Hash)
+    end
 
-  describe "search TVRage" do
-    pending
+    it "returns an array of hashes with the right keys" do
+      Show.search('Cheers')[0].keys.should =~ %w{showid country name started seasons classification}
+    end
   end
 
   describe "next episode's airdate" do
