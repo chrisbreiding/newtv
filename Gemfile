@@ -8,7 +8,7 @@ gem 'devise'
 gem 'ejs'
 gem 'nokogiri'
 gem 'whenever', :require => false
-gem 'capistrano'
+gem 'rvm-capistrano'
 
 group :development, :test do
   gem 'rspec-rails'
