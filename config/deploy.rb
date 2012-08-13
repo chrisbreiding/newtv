@@ -23,6 +23,8 @@ set :user, "root"
 set :scm_username, "chrisbreiding"
 set :use_sudo, false
 
+set :rvm_type, :system
+
 set :stages, ["production"]
 set :default_stage, "production"
 
