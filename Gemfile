@@ -5,6 +5,7 @@ gem 'rake'
 gem 'sqlite3'
 gem 'devise'
 
+gem 'ffaker'
 gem 'ejs'
 gem 'nokogiri'
 gem 'whenever', :require => false
