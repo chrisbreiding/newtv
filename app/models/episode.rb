@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: episodes
+#
+#  id             :integer          not null, primary key
+#  season         :integer
+#  episode_number :string(255)
+#  title          :string(255)
+#  show_id        :integer
+#  airdate        :date
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+
 class Episode < ActiveRecord::Base
 	belongs_to :show
   attr_accessible :season, :episode_number, :title, :show_id, :airdate

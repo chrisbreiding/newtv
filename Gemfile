@@ -1,33 +1,39 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.2'
+gem 'rails', '3.2.8'
+gem 'rake'
 gem 'sqlite3'
-
-gem 'rake', '0.9.2.2'
-
 gem 'devise'
 
-# Gems used only for assets and not required
-# in production environments by default.
+gem 'ejs'
+gem 'nokogiri'
+gem 'whenever', :require => false
+gem 'capistrano'
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'growl'
+end
+
+group :development do
+  gem 'annotate'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'rb-fsevent'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+  gem 'factory_girl_rails'
+end
+
 group :assets do
-  #  gem 'coffee-rails', '~> 3.2.1'
   gem 'sass-rails'
   gem 'jquery-rails'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer'
   gem 'execjs'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier'
 end
 
-# JS templates
-gem 'ejs'
 
-# Deploy with Capistrano
-gem 'capistrano'
-
-# for XML parsing
-gem 'nokogiri'
-
-# cron jobs
-gem 'whenever', :require => false

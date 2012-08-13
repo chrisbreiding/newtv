@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: shows
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  tvrage_id  :string(255)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  seasons    :integer
+#
+
 class Show < ActiveRecord::Base
 	validates_presence_of :name, :tvrage_id
 	has_many :episodes, dependent: :destroy
@@ -56,7 +68,8 @@ class Show < ActiveRecord::Base
 
   private
 
-  def clean_input
-    self.name = ActionController::Base.helpers.strip_tags self.name
-  end
+    def clean_input
+      self.name = ActionController::Base.helpers.strip_tags self.name
+    end
+
 end
