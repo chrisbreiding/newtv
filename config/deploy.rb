@@ -1,6 +1,6 @@
 require "bundler/capistrano"
 
-$:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory to the load path.
+# $:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory to the load path.
 require "rvm/capistrano" # Load RVM's capistrano plugin.
 
 # whenever cron jobs
@@ -25,10 +25,6 @@ set :use_sudo, false
 
 set :stages, ["production"]
 set :default_stage, "production"
-
-# set :rvm_ruby_string, "ruby-1.9.3-p125@newtv"
-# set :rvm_type, :user
-# set :rvm_type, :system
 
 # fixes issue with assets precompile
 default_run_options[:pty] = true
