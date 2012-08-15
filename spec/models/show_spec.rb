@@ -43,81 +43,56 @@ describe Show do
   end
 
   describe "associated episodes" do
-    before { Show.destroy_all }
+    before do
+      Show.destroy_all
 
-    let!(:show1) { FactoryGirl.create(:show) }
-    let!(:year_old_episode) do
-      FactoryGirl.create(
-        :episode,
-        show: show1,
-        season: 1,
-        airdate: 1.year.ago.to_date
-      )
-    end
-    let!(:day_old_episode) do
-      FactoryGirl.create(
-        :episode,
-        show: show1,
-        season: 2,
-        airdate: 1.day.ago.to_date
-      )
-    end
-    let!(:episode_airing_in_2_days) do
-      FactoryGirl.create(
-        :episode,
-        show: show1,
-        season: 2,
-        airdate: 2.days.from_now.to_date
-      )
-    end
-
-    let!(:show2) { FactoryGirl.create(:show) }
-    let!(:episode_airing_tomorrow) do
-      FactoryGirl.create(
-        :episode,
-        show: show2,
-        airdate: Date.today
-      )
-    end
-
-    let!(:show3) { FactoryGirl.create(:show) }
-    let!(:months_old_episode) do
-      FactoryGirl.create(
-        :episode,
-        show: show3,
-        airdate: 5.months.ago.to_date
-      )
+      @show1 = FactoryGirl.create(:show, name: "Show 1")
+      @year_old_episode = FactoryGirl.create(:year_old_episode, show: @show1, season: 1)
+      @two_day_old_episode = FactoryGirl.create(:two_day_old_episode, show: @show1, season: 2)
+      @episode_airing_in_2_days = FactoryGirl.create(:episode_airing_in_2_days, show: @show1, season: 2)
     end
 
     it "destroys associated episodes" do
-      episodes = show1.episodes
-      show1.destroy
+      episodes = @show1.episodes
+      @show1.destroy
       episodes.each do |episode|
         Episode.find_by_id(episode.id).should be_nil
       end
     end
 
     context "that are upcoming" do
-      it "has episodes 3 days old or newer in correct order" do
-        Show.upcoming[1].episodes.should == [day_old_episode, episode_airing_in_2_days]
+      it "has episodes 3 days old or newer" do
+        Show.upcoming.first.episodes.should == [@two_day_old_episode, @episode_airing_in_2_days]
+      end
+    end
+
+    context "that are upcoming" do
+      before do
+        @show2 = FactoryGirl.create(:show)
+        @episode_airing_tomorrow = FactoryGirl.create(:episode_airing_tomorrow, show: @show2)
       end
 
       it "orders shows by next episode" do
-        Show.upcoming.should == [show2, show1]
+        Show.upcoming.should == [@show2, @show1]
       end
     end
 
     context "that are not upcoming" do
+      before do
+        @show3 = FactoryGirl.create(:show)
+        @months_old_episode = FactoryGirl.create(:months_old_episode, show: @show3)
+      end
+
       it "has shows with only old episodes" do
-        Show.off_air.should == [show3]
+        Show.off_air.should == [@show3]
       end
     end
 
     context "listing all" do
       it "groups episodes by season" do
-        show1.episodes_by_season.should == {
-          1 => [year_old_episode],
-          2 => [day_old_episode, episode_airing_in_2_days]
+        @show1.episodes_by_season.should == {
+          1 => [@year_old_episode],
+          2 => [@two_day_old_episode, @episode_airing_in_2_days]
         }
       end
     end

@@ -18,8 +18,8 @@ class Show < ActiveRecord::Base
 
   def self.upcoming
     includes(:episodes).where('episodes.airdate > ?', 4.days.ago.to_date).sort! do |a,b|
-      a.next_episodes_airdate <=> b.next_episodes_airdate
-    end
+        a.next_episodes_airdate <=> b.next_episodes_airdate
+      end
   end
 
   def self.off_air

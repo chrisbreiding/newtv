@@ -12,7 +12,7 @@ module TvRage
  			url = "http://services.tvrage.com/feeds/episode_list.php?sid=#{show[:tvrage_id]}"
  			file = false
 
-			puts show.name 
+			puts show.name
 			begin
 				Timeout::timeout(20) do
 					puts "... grabbing xml - attempt ##{retries + 1}"
@@ -29,7 +29,7 @@ module TvRage
 			end
 
 			if file
-				if !show.episodes.empty?
+				if show.episodes.any?
 			    puts "... deleting episodes"
 					show.episodes.delete_all
 				end
@@ -49,13 +49,15 @@ module TvRage
 							details[detail.name] = detail.text
 						end
 
-						Episode.create(
-							show_id: show[:id],
-							season: season.get_attribute('no').to_i,
-							episode_number: details['seasonnum'],
-							title: details['title'],
-							airdate: details['airdate']
-						) unless details['title'].nil?
+            unless details['title'].nil?
+  						Episode.create(
+  							show_id: show[:id],
+  							season: season.get_attribute('no').to_i,
+  							episode_number: details['seasonnum'],
+  							title: details['title'],
+  							airdate: details['airdate']
+  						)
+            end
 					end
 				end
 			end
