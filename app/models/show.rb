@@ -30,7 +30,7 @@ class Show < ActiveRecord::Base
   end
 
   def self.search show_name
-    tvrage_xml = self.search_tvrage(show_name)
+    tvrage_xml = search_tvrage(show_name)
 
     attributes = %w{showid country name started seasons classification}
 

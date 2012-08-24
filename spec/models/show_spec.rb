@@ -21,6 +21,7 @@ describe Show do
   it { should respond_to(:tvrage_id) }
   it { should respond_to(:seasons) }
   it { should respond_to(:episodes) }
+  it { should respond_to(:next_episodes_airdate) }
 
   it { should be_valid }
 
@@ -113,18 +114,30 @@ describe Show do
   end
 
   describe "next episode's airdate" do
-    describe "when there is a recently aired episode" do
-      describe "with future episodes" do
-        pending
+    context "when there is a recently aired episode" do
+      before { FactoryGirl.create(:two_day_old_episode, show: @show) }
+
+      context "with future episodes" do
+        before { FactoryGirl.create(:episode_airing_tomorrow, show: @show) }
+        its(:next_episodes_airdate) { should == 1.day.from_now.to_date }
       end
 
-      describe "with no future episodes" do
-        pending
+      context "with no future episodes" do
+        its(:next_episodes_airdate) { should == 1.month.from_now.to_date }
       end
     end
 
-    describe "when there are no recently aired episodes" do
-      pending
+    context "when there are no recently aired episodes" do
+      before { FactoryGirl.create(:year_old_episode, show: @show) }
+
+      context "with future episodes" do
+        before { FactoryGirl.create(:episode_airing_tomorrow, show: @show) }
+        its(:next_episodes_airdate) { should == 1.day.from_now.to_date }
+      end
+
+      context "with no future episodes" do
+        its(:next_episodes_airdate) { should == 1.month.from_now.to_date }
+      end
     end
   end
 

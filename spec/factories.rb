@@ -17,7 +17,7 @@ FactoryGirl.define do
     sequence(:title) {|n| "Episode#{n}" }
     season           1
     episode_number   { generate(:ep_num) }
-    airdate          3.years.ago.to_date..Date.today
+    airdate          5.days.from_now.to_date
     show
 
     factory :year_old_episode do
