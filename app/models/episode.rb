@@ -20,10 +20,19 @@ class Episode < ActiveRecord::Base
     season.to_s + episode_number
   end
 
+  def filesafe_title
+    title
+      .gsub(/[\/]/, '-')
+      .gsub(/\:\s+/, ' - ')
+      .gsub(/\&/, 'and')
+      .gsub(/[\.\!\?\@\#\$\%\^\*\:]/, '')
+  end
+
   def proper_title
     lowercase = %w{Of of Etc etc And and By by The the For for Is is At at To to But but Nor nor Or or A a An an Via via}
-    uppercase = %{TBA tba}
-    title.split(' ').each_with_index.collect { |word, i|
+    uppercase = %{TBA tba II ii III iii IV iv}
+
+    filesafe_title.split(' ').each_with_index.collect { |word, i|
       if lowercase.include?(word) && i > 0
         word.downcase
       elsif uppercase.include?(word)
@@ -32,10 +41,6 @@ class Episode < ActiveRecord::Base
         word.capitalize
       end
     }.join(' ')
-  end
-
-  def filesafe_title
-      proper_title.gsub(/[\.\!\?\@\#\$\%\^\&\*]/, '')
   end
 
 end
