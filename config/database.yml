@@ -30,7 +30,7 @@ production:
   adapter: postgresql
   encoding: unicode
   host: localhost
-  database: newtv
+  database: newtv_production
   pool: 5
   username: chrisbreiding
   password:
