@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 gem 'rake'
-gem 'sqlite3'
+gem 'pg'
 gem 'devise'
 
 gem 'ffaker'
@@ -36,5 +36,3 @@ group :assets do
   gem 'execjs'
   gem 'uglifier'
 end
-
-
