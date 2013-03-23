@@ -11,6 +11,7 @@ gem 'ejs'
 gem 'nokogiri'
 gem 'whenever', :require => false
 gem 'rvm-capistrano'
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'rspec-rails'
