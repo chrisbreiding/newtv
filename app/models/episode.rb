@@ -15,6 +15,8 @@
 class Episode < ActiveRecord::Base
 	belongs_to :show
   attr_accessible :season, :episode_number, :title, :show_id, :airdate
+  scope :upcoming, -> { where('airdate > ?', 4.days.ago.to_date) }
+  scope :ordered, order: 'airdate ASC'
 
   def epnum
     season.to_s + episode_number
