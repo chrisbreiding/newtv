@@ -1,35 +1,35 @@
 /* ---- Mixins ---- */
 
 @mixin radius($rad) {
-	-moz-border-radius: $rad;
-	-webkit-border-radius: $rad;
-	border-radius: $rad;
+  -moz-border-radius: $rad;
+  -webkit-border-radius: $rad;
+  border-radius: $rad;
 }
 
 @mixin gradient($top, $middle, $bottom) {
-	background: $middle;
-	background: -webkit-gradient(linear, left top, left bottom, from($top), to($bottom));
-	background: -webkit-linear-gradient(top, $top, $bottom);
-	background: -moz-linear-gradient(top, $top, $bottom);
-	background: -o-linear-gradient(top, $top, $bottom);
-	background: -ms-linear-gradient(top, $top, $bottom);
-	background: linear-gradient(top, $top, $bottom);
+  background: $middle;
+  background: -webkit-gradient(linear, left top, left bottom, from($top), to($bottom));
+  background: -webkit-linear-gradient(top, $top, $bottom);
+  background: -moz-linear-gradient(top, $top, $bottom);
+  background: -o-linear-gradient(top, $top, $bottom);
+  background: -ms-linear-gradient(top, $top, $bottom);
+  background: linear-gradient(top, $top, $bottom);
 }
 
 @mixin gradient-with-image($top, $middle, $bottom, $image) {
-	background: $middle $image;
-	background: $image, -webkit-gradient(linear, left top, left bottom, from($top), to($bottom));
-	background: $image, -webkit-linear-gradient(top, $top, $bottom);
-	background: $image, -moz-linear-gradient(top, $top, $bottom);
-	background: $image, -o-linear-gradient(top, $top, $bottom);
-	background: $image, -ms-linear-gradient(top, $top, $bottom);
-	background: $image, linear-gradient(top, $top, $bottom);
+  background: $middle $image;
+  background: $image, -webkit-gradient(linear, left top, left bottom, from($top), to($bottom));
+  background: $image, -webkit-linear-gradient(top, $top, $bottom);
+  background: $image, -moz-linear-gradient(top, $top, $bottom);
+  background: $image, -o-linear-gradient(top, $top, $bottom);
+  background: $image, -ms-linear-gradient(top, $top, $bottom);
+  background: $image, linear-gradient(top, $top, $bottom);
 }
 
 @mixin shadow($settings) {
-	-moz-box-shadow: $settings;
-	-webkit-box-shadow: $settings;
-	box-shadow: $settings;
+  -moz-box-shadow: $settings;
+  -webkit-box-shadow: $settings;
+  box-shadow: $settings;
 }
 
 
@@ -50,688 +50,722 @@ $single-border: solid 1px;
 /* ---- Parents ---- */
 
 .rounded {
-	@include radius(3px);
+  @include radius(3px);
 }
 
 .rounded-left {
-	@include radius(3px 0 0 3px);
+  @include radius(3px 0 0 3px);
 }
 
 .rounded-right {
-	@include radius(0 3px 3px 0);
+  @include radius(0 3px 3px 0);
 }
 
 
 /* ---- General ---- */
 
 body {
-	background: $light-gray-2;
-	color: $dark-gray-1;
-	font: {
-		family: "Helvetica Neue", Arial, sans-serif;
-		size: 14px;
-	}
+  background: $light-gray-2;
+  color: $dark-gray-1;
+  font: {
+    family: "Helvetica Neue", Arial, sans-serif;
+    size: 14px;
+  }
 
-	&.showing-all {
-		overflow: hidden;
-	}
+  &.showing-all {
+    overflow: hidden;
+  }
 }
 
 h2 {
-	text-shadow: 0 1px 2px #FFF;
+  text-shadow: 0 1px 2px #FFF;
 }
 
 a {
-	color: #22517D;
+  color: #22517D;
 
-	&:link,
-	&:visited {
-		text-decoration: none;
-	}
+  &:link,
+  &:visited {
+    text-decoration: none;
+  }
 
-	&:hover,
-	&:focus,
-	&:active {
-		text-decoration: underline;
-	}
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: underline;
+  }
 
-	&:active {
-		-moz-transform: translate(0,1px);
-		-ms-transform: translate(0,1px);
-		-o-transform: translate(0,1px);
-		-webkit-transform: translate(0,1px);
-		transform: translate(0,1px);
-	}
+  &:active {
+    -moz-transform: translate(0,1px);
+    -ms-transform: translate(0,1px);
+    -o-transform: translate(0,1px);
+    -webkit-transform: translate(0,1px);
+    transform: translate(0,1px);
+  }
 }
 
 
 /* ---- Helper Classes ---- */
 
 .clearfix {
-	&:before, &:after { content:""; display:table; }
-	&:after { clear:both; }
-	zoom:1; /* For IE 6/7 */
+  &:before, &:after { content:""; display:table; }
+  &:after { clear:both; }
+  zoom:1; /* For IE 6/7 */
 }
 
 /* ---- Layout ---- */
 
 .container {
-	background: image-url('waiting.gif') -9999px -9999px no-repeat; // pre-load
-	margin: 0 auto;
-	width: 340px;
+  background: image-url('waiting.gif') -9999px -9999px no-repeat; // pre-load
+  margin: 0 auto;
+  width: 340px;
 }
 
 .main {
-	background: $light-gray-1;
-	border-top: solid 2px $dark-gray-1;
-	padding-bottom: 20px;
+  background: $light-gray-1;
+  border-top: solid 2px $dark-gray-1;
+  padding-bottom: 20px;
 }
 
 .footer {
-	background: $light-gray-2;
-	border-top: $single-border $light-gray-3;
-	padding: 10px 20px;
+  background: $light-gray-2;
+  border-top: $single-border $light-gray-3;
+  padding: 10px 20px;
 }
 
 /* ---- Active Shows ---- */
 
-.main h2 {
-	color: #000;
-	float: left;
-	font-weight: normal;
-	margin: 20px 0 0;
-	padding-bottom: 5px;
-	position: relative;
-	text-align: right;
-	width: 200px;
+.upcoming-shows {
+  float: left;
+  width: 660px;
 
-	&:hover {
-		z-index: 10;
-	}
+  h2 {
+    color: #000;
+    float: left;
+    font-weight: normal;
+    margin: 20px 0 0;
+    padding-bottom: 5px;
+    position: relative;
+    text-align: right;
+    width: 200px;
 
-	.name {
-		display: block;
-	}
+    &:hover {
+      z-index: 10;
+    }
+
+    .name {
+      display: block;
+    }
+  }
+}
+
+.recent-shows {
+  border: solid 1px $light-gray-3;
+  border-radius: 3px;
+  float: left;
+  margin: 20px 0 0 20px;
+  padding-bottom: 10px;
+  width: 440px;
+
+  h2 {
+    background: $light-gray-3;
+    border-radius: 3px 3px 0 0;
+    font-size: 1.3em;
+    font-weight: normal;
+    margin: 0;
+    padding: 5px 10px;
+    text-shadow: none;
+  }
+
+  h3 {
+    font-weight: normal;
+    margin: 10px;
+  }
 }
 
 .showing-all {
-	.main h2 {
-		opacity: 0.2;
-	}
+  .upcoming-shows h2 {
+    opacity: 0.2;
+  }
 
-	.active h2 {
-		opacity: 1;
-	}
+  .active h2 {
+    opacity: 1;
+  }
 }
 
 .main ul,
 .all-episodes {
-	float: left;
-	list-style: none;
-	margin: 20px 0;
-	padding-left: 20px;
-	width: 420px;
+  float: left;
+  list-style: none;
+  margin: 20px 0;
+  padding-left: 20px;
+  width: 420px;
 
-	li {
-		margin-bottom: 5px;
-		position: relative;
-		&:hover {
-			z-index: 10;
-		}
+  li {
+    margin-bottom: 5px;
+    position: relative;
+    &:hover {
+      z-index: 10;
+    }
 
-		span {
-			display: block;
-		}
-	}
+    span {
+      display: block;
+    }
+  }
 }
 
-		.epnum,
-		.airdate {
-			float: left;
-		}
+.recent-shows ul {
+  margin: 0 10px;
+  padding: 0;
+}
 
-		.airdate,
-		.title,
-		.file-name {
-			padding-left: 20px;
-		}
+    .epnum,
+    .airdate {
+      float: left;
+    }
 
-		.airdate,
-		.title,
-		.file-name {
-			padding: {
-				top: 3px;
-				bottom: 3px;
-			}
-		}
+    .airdate,
+    .title,
+    .file-name {
+      padding-left: 20px;
+    }
 
-		.epnum {
-			background: $brown;
-			@extend .rounded;
-			color: #FFF;
-			padding: 3px 0;
-			text-align: center;
-			width: 45px;
-		}
+    .airdate,
+    .title,
+    .file-name {
+      padding: {
+        top: 3px;
+        bottom: 3px;
+      }
+    }
 
-		.airdate {
-			color: $brown;
-			width: 75px;
-		}
+    .epnum {
+      background: $brown;
+      @extend .rounded;
+      color: #FFF;
+      padding: 3px 0;
+      text-align: center;
+      width: 45px;
+    }
 
-		.title {
-			padding-right: 10px;
-			margin-left: 140px;
-			position: relative;
-		}
+    .airdate {
+      color: $brown;
+      width: 75px;
+    }
 
-	.main li,
-	.all-episodes li {
-		.file-name {
-			background: $light-gray-1;
-			display: none;
-			padding-right: 10px;
-			position: absolute;
-				left: 0;
-				top: 0;
-			width: 250px;
-		}
+    .title {
+      padding-right: 10px;
+      margin-left: 140px;
+      position: relative;
+    }
 
-		.title:hover .file-name {
-			display: block;
-		}
-	}
+  .main li,
+  .all-episodes li {
+    .file-name {
+      background: $light-gray-1;
+      display: none;
+      padding-right: 10px;
+      position: absolute;
+        left: 0;
+        top: 0;
+      width: 250px;
+    }
 
-	.aired {
-		opacity: 0.5;
-	}
+    .title:hover .file-name {
+      display: block;
+    }
+  }
 
-		.airs-today .epnum {
-			@extend .rounded-left;
-		}
+  .aired {
+    opacity: 0.5;
+  }
 
-		.airs-today .airdate,
-		.airs-today .title,
-		.main .airs-today .file-name {
-			background: $light-gray-2;
-		}
+    .airs-today .epnum {
+      @extend .rounded-left;
+    }
 
-		.airs-today .title,
-		.main .airs-today .file-name {
-			@extend .rounded-right;
-	@include radius(0 3px 3px 0);
-		}
+    .airs-today .airdate,
+    .airs-today .title,
+    .main .airs-today .file-name {
+      background: $light-gray-2;
+    }
 
-		.far-future .epnum {
-			background: #999;
-		}
+    .airs-today .title,
+    .main .airs-today .file-name {
+      @extend .rounded-right;
+      @include radius(0 3px 3px 0);
+    }
 
-		.far-future .airdate,
-		.far-future .title,
-		.main .far-future .file-name {
-			color: #999;
-		}
+    .far-future .epnum {
+      background: #999;
+    }
+
+    .far-future .airdate,
+    .far-future .title,
+    .main .far-future .file-name {
+      color: #999;
+    }
 
 
 /* ---- Off Air ---- */
 
 .off-air li {
-	line-height: 1.5em;
+  line-height: 1.5em;
 
-	> span {
-		position: relative;
+  > span {
+    position: relative;
 
-		&:hover {
-		z-index: 10;
-		}
-	}
+    &:hover {
+    z-index: 10;
+    }
+  }
 }
 
 
 /* ---- All Episodes ---- */
 
 .all-episodes {
-	background: $light-gray-2;
-	border-left: $single-border $light-gray-4;
-	overflow-y: auto;
-	margin: 0;
-	padding: 15px 20px 10px;
-	position: fixed;
-		top: 0;
-		left: 210px;
-	width: 500px;
+  background: $light-gray-2;
+  border-left: $single-border $light-gray-4;
+  overflow-y: auto;
+  margin: 0;
+  padding: 15px 20px 10px;
+  position: fixed;
+    top: 0;
+    left: 210px;
+  width: 500px;
 
-	h3 {
-		border-top: $single-border $light-gray-4;
-		margin: 0;
-		padding-top: 10px;
+  h3 {
+    border-top: $single-border $light-gray-4;
+    margin: 0;
+    padding-top: 10px;
 
-		&:first-child {
-			border-top: none;
-			padding-top: 0;
-		}
-	}
+    &:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+  }
 
-	ul {
-		float: none;
-		list-style: none;
-		margin: 5px 0;
-		padding: 5px 0;
-	}
+  ul {
+    float: none;
+    list-style: none;
+    margin: 5px 0;
+    padding: 5px 0;
+  }
 
-		li .title {
-			&:hover {
-				color: $light-gray-2;
+    li .title {
+      &:hover {
+        color: $light-gray-2;
 
-				.file-name {
-					background: none;
-					color: $dark-gray-1;
-				}
-			}
-		}
+        .file-name {
+          background: none;
+          color: $dark-gray-1;
+        }
+      }
+    }
 }
 
 
 /* ---- Options ---- */
 
 .options {
-	background: $light-gray-1;
-	@extend .rounded;
-	border: $single-border $light-gray-3;
-	display: none;
-	padding: 5px;
-	position: absolute;
-		top: 100%;
-		right: 0;
-	width: 95px;
+  background: $light-gray-1;
+  @extend .rounded;
+  border: $single-border $light-gray-3;
+  display: none;
+  padding: 5px;
+  position: absolute;
+    top: 100%;
+    right: 0;
+  width: 95px;
 }
 
 .off-air li .options {
-	top: -10px;
-	right: auto;
-	left: 100%;
+  top: -10px;
+  right: auto;
+  left: 100%;
 }
 
 .show h2,
 .off-air li {
-	&:hover .options {
-		display: block;
-	}
+  &:hover .options {
+    display: block;
+  }
 }
 
 .options {
-	a {
-		background: image-url('sprite.png') no-repeat;
-		display: block;
-		float: left;
-		margin-left: 10px;
-		outline: none;
-		text: {
-			align: left;
-			indent: -9999px;
-		}
-		width: 25px;
-		height: 25px;
+  a {
+    background: image-url('sprite.png') no-repeat;
+    display: block;
+    float: left;
+    margin-left: 10px;
+    outline: none;
+    text: {
+      align: left;
+      indent: -9999px;
+    }
+    width: 25px;
+    height: 25px;
 
-		&:first-child {
-			margin-left: 0;
-		}
-	}
+    &:first-child {
+      margin-left: 0;
+    }
+  }
 
-	a.p-bay {
-		background-position: 0 0;
+  a.p-bay {
+    background-position: 0 0;
 
-		&:hover {
-			background-position: 0 -25px;
-		}
-	}
+    &:hover {
+      background-position: 0 -25px;
+    }
+  }
 
-	a.edit-show {
-		background-position: -25px 0;
+  a.edit-show {
+    background-position: -25px 0;
 
-		&:hover {
-			background-position: -25px -25px;
-		}
-	}
+    &:hover {
+      background-position: -25px -25px;
+    }
+  }
 
-	a.show-all-episodes {
-		background-position: -50px 0;
+  a.show-all-episodes {
+    background-position: -50px 0;
 
-		&:hover {
-			background-position: -50px -25px;
-		}
-	}
+    &:hover {
+      background-position: -50px -25px;
+    }
+  }
 }
 
 /* ---- Add Show ---- */
 
 a.add-show {
-	outline: none;
-	overflow: hidden;
-	position: absolute;
-		top: 5px;
-		right: 5px;
-	text-decoration: none;
-	height: 2em;
+  outline: none;
+  overflow: hidden;
+  position: absolute;
+    top: 5px;
+    right: 5px;
+  text-decoration: none;
+  height: 2em;
 
-	&:before {
-		content: '+';
-		display: block;
-		font: {
-			size: 2em;
-			weight: bold;
-		}
-		text-align: right;
-		width: 2em;
-		height: 2em;
-	}
+  &:before {
+    content: '+';
+    display: block;
+    font: {
+      size: 2em;
+      weight: bold;
+    }
+    text-align: right;
+    width: 2em;
+    height: 2em;
+  }
 
-	&:hover:before,
-	&:focus:before {
-		color: #B4961C;
-	}
+  &:hover:before,
+  &:focus:before {
+    color: #B4961C;
+  }
 }
 
 .add-show-form {
-	background: $light-gray-2;
-	border: {
-		left: $single-border $light-gray-3;
-		bottom: $single-border $light-gray-3;
-	}
-	padding: 20px;
-	position: absolute;
-		top: 0;
-		right: 0;
-	width: 300px;
+  background: $light-gray-2;
+  border: {
+    left: $single-border $light-gray-3;
+    bottom: $single-border $light-gray-3;
+  }
+  padding: 20px;
+  position: absolute;
+    top: 0;
+    right: 0;
+  width: 300px;
 }
 
 .add-show-form {
-	label {
-		position: absolute;
-		left: -9999px;
-	}
+  label {
+    position: absolute;
+    left: -9999px;
+  }
 
-	input[type=text] {
-		background: #FFF;
-		@extend .rounded-left;
-		border: $single-border $light-gray-4;
-		border-right: none;
-		display: block;
-		float: left;
-		height: 20px;
-		line-height: 20px;
-		padding: 5px 10px;
-		width: 245px;
-	}
+  input[type=text] {
+    background: #FFF;
+    @extend .rounded-left;
+    border: $single-border $light-gray-4;
+    border-right: none;
+    display: block;
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    padding: 5px 10px;
+    width: 245px;
+  }
 
-	button {
-		@include gradient-with-image(#666, $dark-gray-1, $dark-gray-1, image-url('sprite.png') -48px -49px no-repeat);
-		@extend .rounded-right;
-	@include radius(0 3px 3px 0);
-		border: $single-border $dark-gray-1;
-		display: block;
-		float: left;
-		text-indent: -9999px;
-		width: 32px;
-		height: 32px;
+  button {
+    @include gradient-with-image(#666, $dark-gray-1, $dark-gray-1, image-url('sprite.png') -48px -49px no-repeat);
+    @extend .rounded-right;
+    @include radius(0 3px 3px 0);
+    border: $single-border $dark-gray-1;
+    display: block;
+    float: left;
+    text-indent: -9999px;
+    width: 32px;
+    height: 32px;
 
-		&:hover,
-		&:focus {
-			@include gradient-with-image(#777, #444, #444, image-url('sprite.png') -48px -49px no-repeat);
-		}
-	}
+    &:hover,
+    &:focus {
+      @include gradient-with-image(#777, #444, #444, image-url('sprite.png') -48px -49px no-repeat);
+    }
+  }
 }
 
 .waiting {
-	background: $light-gray-2 image-url('waiting.gif') 50% 65% no-repeat;
-	color: #666;
-	height: 60px;
-	text-align: center;
+  background: $light-gray-2 image-url('waiting.gif') 50% 65% no-repeat;
+  color: #666;
+  height: 60px;
+  text-align: center;
 
-	input,
-	button {
-		display: none !important;
-	}
+  input,
+  button {
+    display: none !important;
+  }
 }
 
 .search-results {
-	background: $light-gray-2;
-	border: {
-		left: $single-border $light-gray-3;
-		bottom: $single-border $light-gray-3;
-	}
-	padding: 20px;
-	position: absolute;
-		top: 0;
-		right: 0;
-	width: 300px;
+  background: $light-gray-2;
+  border: {
+    left: $single-border $light-gray-3;
+    bottom: $single-border $light-gray-3;
+  }
+  padding: 20px;
+  position: absolute;
+    top: 0;
+    right: 0;
+  width: 300px;
 
-	h3 {
-		margin-top: 0;
-	}
+  h3 {
+    margin-top: 0;
+  }
 
-	.results-show {
-		border-top: $single-border $light-gray-3;
-		padding-top: 1px;
-		position: relative;
-	}
+  .results-show {
+    border-top: $single-border $light-gray-3;
+    padding-top: 1px;
+    position: relative;
+  }
 
-		h4 {
-			color: $brown;
-		}
+    h4 {
+      color: $brown;
+    }
 
-		dl {
-			font-size: .9em;
-		}
+    dl {
+      font-size: .9em;
+    }
 
-			dt {
-				font-weight: bold;
-				float: left;
-				width: 110px;
-			}
+      dt {
+        font-weight: bold;
+        float: left;
+        width: 110px;
+      }
 
-			dd {
-				margin-bottom: 5px;
-			}
+      dd {
+        margin-bottom: 5px;
+      }
 }
 
-		a.create-show {
-			@include gradient( $brown, $brown, #583215);
-			@extend .rounded;
-			border: $single-border $brown;
-			@include shadow(inset 0 0 2px rgba(255,255,255,0.8));
-			color: #FFF;
-			display: block;
-			font-size: .7em;
-			padding: 6px;
-			position: absolute;
-				top: 1.33em;
-				right: 5px;
-			text-decoration: none;
+    a.create-show {
+      @include gradient( $brown, $brown, #583215);
+      @extend .rounded;
+      border: $single-border $brown;
+      @include shadow(inset 0 0 2px rgba(255,255,255,0.8));
+      color: #FFF;
+      display: block;
+      font-size: .7em;
+      padding: 6px;
+      position: absolute;
+        top: 1.33em;
+        right: 5px;
+      text-decoration: none;
 
-			&:before {
-				content: '+ ';
-			}
+      &:before {
+        content: '+ ';
+      }
 
-			&:hover {
-				@include gradient(#995D2F, #995D2F, #794924);
-			}
-		}
+      &:hover {
+        @include gradient(#995D2F, #995D2F, #794924);
+      }
+    }
 
 .no-search-results p {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 
 /* ---- Edit Show ---- */
 
 .edit-show-form {
-	background: $light-gray-2;
-	@extend .rounded;
-	border: $single-border $light-gray-4;
-	@include shadow(0 0 10px rgba(0,0,0,0.5));
-	margin-left: -200px;
-	padding: 50px;
-	position: fixed;
-		top: 50%;
-		left: 50%;
-	width: 300px;
+  background: $light-gray-2;
+  @extend .rounded;
+  border: $single-border $light-gray-4;
+  @include shadow(0 0 10px rgba(0,0,0,0.5));
+  margin-left: -200px;
+  padding: 50px;
+  position: fixed;
+    top: 50%;
+    left: 50%;
+  width: 300px;
 
-	label {
-		display: block;
-		font-weight: bold;
-		margin-bottom: 5px;
-	}
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
 
-	input[type=text] {
-		background: #FFF;
-		@extend .rounded;
-		border: $single-border $light-gray-3;
-		margin-bottom: 20px;
-		padding: 10px;
-		width: 280px;
-	}
+  input[type=text] {
+    background: #FFF;
+    @extend .rounded;
+    border: $single-border $light-gray-3;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 280px;
+  }
 
-	a.delete-show {
-		color: #900;
-	}
+  a.delete-show {
+    color: #900;
+  }
 
-	button {
-		@include gradient(#666, $dark-gray-1, $dark-gray-1);
-		@extend .rounded;
-		border: $single-border $dark-gray-1;
-		color: $light-gray-2;
-		display: block;
-		float: right;
-		padding: 7px 10px 5px;
+  button {
+    @include gradient(#666, $dark-gray-1, $dark-gray-1);
+    @extend .rounded;
+    border: $single-border $dark-gray-1;
+    color: $light-gray-2;
+    display: block;
+    float: right;
+    padding: 7px 10px 5px;
 
-		&:hover,
-		&:focus {
-			@include gradient(#777, #444, #444);
-		}
-	}
+    &:hover,
+    &:focus {
+      @include gradient(#777, #444, #444);
+    }
+  }
 }
 
 
 /* ---- Notices ---- */
 
 .notice {
-	background: #555;
-	border-bottom: solid 2px $dark-gray-1;
-	color: $light-gray-2;
-	padding: 12px 0;
-	position: relative;
-	width: 100%;
-	z-index: 10;
+  background: #555;
+  border-bottom: solid 2px $dark-gray-1;
+  color: $light-gray-2;
+  padding: 12px 0;
+  position: relative;
+  width: 100%;
+  z-index: 10;
 
-	p {
-		border-left: solid 5px;
-		margin: 0 20px;
-		padding: {
-			right: 20px;
-			left: 8px;
-		}
-	}
+  p {
+    border-left: solid 5px;
+    margin: 0 20px;
+    padding: {
+      right: 20px;
+      left: 8px;
+    }
+  }
 
-		a {
-			color: #A0B9CF;
-		}
+    a {
+      color: #A0B9CF;
+    }
 }
 
 .message,
 .message p {
-	border-color: #bada55;
+  border-color: #bada55;
 }
 
 .error,
 .error p {
-	border-color: #BB4141;
+  border-color: #BB4141;
 }
 
-	a.close-notice {
-		background: image-url('sprite.png') 0 -50px no-repeat;
-		display: block;
-		outline: none;
-		position: absolute;
-			top: 11px;
-			right: 11px;
-		text-indent: -9999px;
-		width: 18px;
-		height: 18px;
+  a.close-notice {
+    background: image-url('sprite.png') 0 -50px no-repeat;
+    display: block;
+    outline: none;
+    position: absolute;
+      top: 11px;
+      right: 11px;
+    text-indent: -9999px;
+    width: 18px;
+    height: 18px;
 
-		&:hover,
-		&:focus {
-			background-position: -25px -50px;
-		}
-	}
+    &:hover,
+    &:focus {
+      background-position: -25px -50px;
+    }
+  }
 
 
 /* ---- Login ---- */
 
 .login-container h2 {
-	text-align: center;
+  text-align: center;
 }
 
 .new_user {
-	background: $light-gray-1;
-	@extend .rounded;
-	border: $single-border $light-gray-4;
-	margin: 10px auto 20px;
-	padding: 20px;
+  background: $light-gray-1;
+  @extend .rounded;
+  border: $single-border $light-gray-4;
+  margin: 10px auto 20px;
+  padding: 20px;
 
-	div {
-		margin: 8px 0;
-	}
+  div {
+    margin: 8px 0;
+  }
 }
 
-		.text-input {
-			label {
-				display: block;
-				float: left;
-				height: 32px;
-				line-height: 32px;
-				width: 70px;
-				text-align: right;
-			}
+    .text-input {
+      label {
+        display: block;
+        float: left;
+        height: 32px;
+        line-height: 32px;
+        width: 70px;
+        text-align: right;
+      }
 
-			input {
-				background: #FFF;
-				border: $single-border $light-gray-3;
-				@extend .rounded;
-				display: block;
-				float: left;
-				height: 22px;
-				line-height: 22px;
-				margin-left: 10px;
-				padding: 5px 10px;
-				width: 196px;
-			}
+      input {
+        background: #FFF;
+        border: $single-border $light-gray-3;
+        @extend .rounded;
+        display: block;
+        float: left;
+        height: 22px;
+        line-height: 22px;
+        margin-left: 10px;
+        padding: 5px 10px;
+        width: 196px;
+      }
 
-			input:focus {
-				border-color: #b3b3b3;
-			}
-		}
+      input:focus {
+        border-color: #b3b3b3;
+      }
+    }
 
-	.checkbox-input {
-		padding-left: 80px;
+  .checkbox-input {
+    padding-left: 80px;
 
-		label {
-			margin-left: 3px;
-		}
-	}
+    label {
+      margin-left: 3px;
+    }
+  }
 
-	.submit input {
-		@include gradient(#5D5A64, #44414B, #44414B);
-		@extend .rounded;
-		border: $single-border $light-gray-3;
-		color: #FFF;
-		float: right;
-		margin-top: 10px;
-		padding: 10px 14px;
+  .submit input {
+    @include gradient(#5D5A64, #44414B, #44414B);
+    @extend .rounded;
+    border: $single-border $light-gray-3;
+    color: #FFF;
+    float: right;
+    margin-top: 10px;
+    padding: 10px 14px;
 
-		&:hover,
-		&:focus {
-			@include gradient(#726F7A, #5E5B64, #5B5763);
-			cursor: pointer;
-		}
-	}
+    &:hover,
+    &:focus {
+      @include gradient(#726F7A, #5E5B64, #5B5763);
+      cursor: pointer;
+    }
+  }

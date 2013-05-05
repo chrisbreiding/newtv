@@ -20,11 +20,8 @@ module TvHelper
 	end
 
   def episode_status_class airdate
-    today = Date.today
-    if airdate == today
+    if airdate == Date.today
       ' airs-today'
-    elsif airdate < today
-      ' aired'
     elsif airdate > 2.months.from_now.to_date
       ' far-future'
     end

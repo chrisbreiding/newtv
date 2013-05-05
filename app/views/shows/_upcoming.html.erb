@@ -1,0 +1,16 @@
+<div class="upcoming-shows">
+  <% upcoming.each do |show| %>
+    <div id="show-<%= show.id %>" class="show clearfix" data-id="<%= show.id %>">
+
+      <h2>
+        <%= content_tag :span, show.name, class: 'name' %>
+        <%= options show if user_signed_in? %>
+      </h2>
+
+      <ul>
+        <%= render show.episodes %>
+      </ul>
+
+    </div>
+  <% end %>
+</div>

@@ -2,7 +2,8 @@ class ShowsController < ActionController::Base
 	layout 'application'
 
 	def index
-		@shows = Show.upcoming
+		@upcoming = Show.upcoming
+    @recent = Show.recent
     @off_air = Show.off_air
 	end
 

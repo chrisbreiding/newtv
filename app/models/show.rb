@@ -17,9 +17,13 @@ class Show < ActiveRecord::Base
   before_validation :clean_input
 
   def self.upcoming
-    includes(:episodes).where('episodes.airdate > ?', 4.days.ago.to_date).sort! do |a,b|
+    includes(:episodes).where('episodes.airdate > ?', 1.day.ago).sort! do |a,b|
         a.next_episodes_airdate <=> b.next_episodes_airdate
       end
+  end
+
+  def self.recent
+    includes(:episodes).where('episodes.airdate > ? AND episodes.airdate < ?', 4.days.ago, Date.today).order 'episodes.airdate ASC'
   end
 
   def self.off_air
@@ -52,8 +56,9 @@ class Show < ActiveRecord::Base
   end
 
   def next_episodes_airdate
+    episodes.sort_by! &:airdate
     i = 0
-    while episodes[i] && episodes[i].airdate < Date.today
+    while episodes[i] && episodes[i].airdate < 1.day.ago.to_date
       # if there was a recently aired episode, but no scheduled future episodes
       return 1.month.from_now.to_date if !episodes[i + 1]
       i += 1

@@ -1,0 +1,19 @@
+<% if recent.any? %>
+  <div class="recent-shows">
+
+    <h2>Recently Aired</h2>
+
+    <% recent.each do |show| %>
+      <div id="show-<%= show.id %>" class="show clearfix">
+
+        <h3><%= show.name %></h3>
+
+        <ul>
+          <%= render show.episodes %>
+        </ul>
+
+      </div>
+    <% end %>
+
+  </div>
+<% end %>
