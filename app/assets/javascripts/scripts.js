@@ -129,7 +129,7 @@
 			var $this = $(this),
 				template = JST['templates/edit_show'],
 				data = {
-					name : $this.parent().siblings('.name').text(),
+					name : $this.closest('.show').data('name'),
 					id : $this.closest('.show').data('id')
 				};
 
@@ -152,7 +152,7 @@
 				dataType : 'json',
 				data : $this.serialize(),
 				success : function (results) {
-					$('#show-' + id).find('.name').html( results.name );
+					$('.show-' + id).data('name', results.name).find('.name').html( results.name );
 					$('#edit-show-form').remove();
 				}
 			});

@@ -4,7 +4,7 @@
 
 	<ul class="off-air">
 		<% off_air.each do |show| %>
-			<li id="show-<%= show.id %>" class="show" data-id="<%= show.id %>">
+			<li class="show-<%= show.id %> show" data-id="<%= show.id %>" data-name="<%= show.name %>">
 				<%= content_tag :span do %>
 					<%= content_tag :span, show.name, class: 'name' %>
 					<%= options show if user_signed_in? %>

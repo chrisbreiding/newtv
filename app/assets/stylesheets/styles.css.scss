@@ -180,6 +180,10 @@ a {
   h3 {
     font-weight: normal;
     margin: 10px;
+
+    .name {
+      position: relative;
+    }
   }
 }
 
@@ -380,13 +384,15 @@ a {
   width: 95px;
 }
 
+.recent-shows .options,
 .off-air li .options {
   top: -10px;
   right: auto;
-  left: 100%;
+  left: 110%;
 }
 
 .show h2,
+.show h3,
 .off-air li {
   &:hover .options {
     display: block;

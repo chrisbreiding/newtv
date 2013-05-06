@@ -1,6 +1,6 @@
 <div class="upcoming-shows">
   <% upcoming.each do |show| %>
-    <div id="show-<%= show.id %>" class="show clearfix" data-id="<%= show.id %>">
+    <div class="show-<%= show.id %> show clearfix" data-id="<%= show.id %>" data-name="<%= show.name %>">
 
       <h2>
         <%= content_tag :span, show.name, class: 'name' %>
