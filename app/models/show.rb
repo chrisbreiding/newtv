@@ -17,13 +17,13 @@ class Show < ActiveRecord::Base
   before_validation :clean_input
 
   def self.upcoming
-    includes(:episodes).where('episodes.airdate > ?', 2.days.ago.to_date).sort! do |a,b|
+    includes(:episodes).where('episodes.airdate > ?', 1.day.ago.to_date).sort! do |a,b|
         a.next_episodes_airdate <=> b.next_episodes_airdate
       end
   end
 
   def self.recent
-    includes(:episodes).where('episodes.airdate > ? AND episodes.airdate < ?', 5.days.ago.to_date, Date.today).order 'episodes.airdate ASC'
+    includes(:episodes).where('episodes.airdate > ? AND episodes.airdate < ?', 4.days.ago.to_date, Date.today).order 'episodes.airdate ASC'
   end
 
   def self.off_air
