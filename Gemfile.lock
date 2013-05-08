@@ -48,7 +48,14 @@ GEM
     childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
     chronic (0.9.1)
+    chunky_png (1.2.8)
     coderay (1.0.9)
+    compass (0.12.2)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
+    compass-rails (1.0.3)
+      compass (>= 0.12.2, < 0.14)
     daemons (1.1.9)
     devise (2.2.3)
       bcrypt-ruby (~> 3.0)
@@ -66,9 +73,9 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
-    ffaker (1.16.1)
     ffi (1.8.1)
     formatador (0.2.4)
+    fssm (0.2.10)
     growl (1.0.3)
     guard (1.8.0)
       formatador (>= 0.2.4)
@@ -209,11 +216,11 @@ PLATFORMS
 DEPENDENCIES
   annotate
   capybara
+  compass-rails
   devise
   ejs
   execjs
   factory_girl_rails
-  ffaker
   growl
   guard-rspec
   guard-spork

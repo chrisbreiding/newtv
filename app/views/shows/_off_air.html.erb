@@ -1,16 +1,24 @@
-<% if !off_air.empty? %>
+<div class="shows off-air-shows">
 
-	<h2>Off Air</h2>
+  <h2>Off Air</h2>
 
-	<ul class="off-air">
-		<% off_air.each do |show| %>
-			<li class="show-<%= show.id %> show" data-id="<%= show.id %>" data-name="<%= show.name %>">
-				<%= content_tag :span do %>
-					<%= content_tag :span, show.name, class: 'name' %>
-					<%= options show if user_signed_in? %>
-				<% end %>
-			</li>
-		<% end %>
-	</ul>
+  <% if off_air.any? %>
 
-<% end %>
+    <% off_air.each do |show| %>
+      <div class="show-<%= show.id %> show clearfix" data-id="<%= show.id %>" data-name="<%= show.name %>">
+        <h3>
+          <span class="name">
+            <%= show.name %>
+            <%= options show if user_signed_in? %>
+          </span>
+        </h3>
+      </div>
+    <% end %>
+
+  <% else %>
+
+    <p class="none-message">No Off Air Shows</p>
+
+  <% end %>
+
+</div>

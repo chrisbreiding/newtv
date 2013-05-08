@@ -18,7 +18,7 @@ class Episode < ActiveRecord::Base
 
   default_scope order: 'airdate ASC'
   scope :upcoming, -> { where('airdate > ?', 1.day.ago.to_date) }
-  scope :recent, -> { where('airdate > ? AND airdate < ?', 4.days.ago.to_date, Date.today) }
+  scope :recent, -> { where('airdate > ? AND airdate < ?', 5.days.ago.to_date, Date.today) }
 
   def epnum
     season.to_s + episode_number

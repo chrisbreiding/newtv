@@ -23,7 +23,7 @@ class Show < ActiveRecord::Base
   end
 
   def self.recent
-    includes(:episodes).where('episodes.airdate > ? AND episodes.airdate < ?', 4.days.ago.to_date, Date.today).order 'episodes.airdate ASC'
+    includes(:episodes).where('episodes.airdate > ? AND episodes.airdate < ?', 5.days.ago.to_date, Date.today).order 'episodes.airdate ASC'
   end
 
   def self.off_air

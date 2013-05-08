@@ -1,24 +1,15 @@
-<% if recent.any? %>
-  <div class="recent-shows">
+<div class="shows recent-shows episode-list">
 
-    <h2>Recently Aired</h2>
+  <h2>Recent</h2>
 
-    <% recent.each do |show| %>
-      <div class="show-<%= show.id %> show clearfix" data-id="<%= show.id %>" data-name="<%= show.name %>">
+  <% if recent.any? %>
 
-        <h3>
-          <span class="name">
-            <%= show.name %>
-            <%= options show if user_signed_in? %>
-          </span>
-        </h3>
+    <%= render recent %>
 
-        <ul>
-          <%= render show.episodes %>
-        </ul>
+  <% else %>
 
-      </div>
-    <% end %>
+    <p class="none-message">No Recent Shows</p>
 
-  </div>
-<% end %>
+  <% end %>
+
+</div>

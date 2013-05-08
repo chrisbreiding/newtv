@@ -1,10 +1,7 @@
-/* ---- Mixins ---- */
+@import "compass";
+@import "compass/css3";
 
-@mixin radius($rad) {
-  -moz-border-radius: $rad;
-  -webkit-border-radius: $rad;
-  border-radius: $rad;
-}
+/* ---- Mixins ---- */
 
 @mixin gradient($top, $middle, $bottom) {
   background: $middle;
@@ -36,37 +33,24 @@
 /* ---- Variables ---- */
 
 $light-gray-1: #f8f8f8;
-$light-gray-2: #e3e3e3;
-$light-gray-3: #d3d3d3;
-$light-gray-4: #c7c7c7;
+$light-gray-2: #d3d3d3;
+$light-gray-3: #a2a2a2;
 
-$dark-gray-1: #333;
+$dark-gray-1: #191919;
+$dark-gray-2: #242424;
+$dark-gray-3: #414141;
 
-$brown: #7E4A22;
+$recent-color: #5c7fb8;
+$upcoming-color: #74914F;
 
 $single-border: solid 1px;
-
-
-/* ---- Parents ---- */
-
-.rounded {
-  @include radius(3px);
-}
-
-.rounded-left {
-  @include radius(3px 0 0 3px);
-}
-
-.rounded-right {
-  @include radius(0 3px 3px 0);
-}
 
 
 /* ---- General ---- */
 
 body {
-  background: $light-gray-2;
-  color: $dark-gray-1;
+  background: $dark-gray-2 image-url('bg-border.png') 40% 0 repeat-y;
+  color: $light-gray-2;
   font: {
     family: "Helvetica Neue", Arial, sans-serif;
     size: 14px;
@@ -75,14 +59,27 @@ body {
   &.showing-all {
     overflow: hidden;
   }
+  width: 100%;
+  height: 100%;
+}
+
+.wrap {
+  background: image-url('bg-border.png') 80% 0 repeat-y;
 }
 
 h2 {
-  text-shadow: 0 1px 2px #FFF;
+  color: $light-gray-3;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.3em;
 }
 
 a {
-  color: #22517D;
+  color: $recent-color;
 
   &:link,
   &:visited {
@@ -92,6 +89,7 @@ a {
   &:hover,
   &:focus,
   &:active {
+    color: $upcoming-color;
     text-decoration: underline;
   }
 
@@ -113,73 +111,28 @@ a {
   zoom:1; /* For IE 6/7 */
 }
 
-/* ---- Layout ---- */
 
-.container {
+/* ---- Shows ---- */
+
+.shows {
   background: image-url('waiting.gif') -9999px -9999px no-repeat; // pre-load
-  margin: 0 auto;
-  width: 340px;
-}
-
-.main {
-  background: $light-gray-1;
-  border-top: solid 2px $dark-gray-1;
-  padding-bottom: 20px;
-}
-
-.footer {
-  background: $light-gray-2;
-  border-top: $single-border $light-gray-3;
-  padding: 10px 20px;
-}
-
-/* ---- Active Shows ---- */
-
-.upcoming-shows {
+  @include box-sizing(border-box);
   float: left;
-  width: 660px;
+  padding: 20px;
+}
 
-  h2 {
-    color: #000;
-    float: left;
-    font-weight: normal;
-    margin: 20px 0 0;
-    padding-bottom: 5px;
-    position: relative;
-    text-align: right;
-    width: 200px;
+.episode-list {
+  width: 40%;
+}
+
+.show {
+  h3 {
+    color: $light-gray-1;
+    margin: 10px 0;
 
     &:hover {
       z-index: 10;
     }
-
-    .name {
-      display: block;
-    }
-  }
-}
-
-.recent-shows {
-  border: solid 1px $light-gray-3;
-  border-radius: 3px;
-  float: left;
-  margin: 20px 0 0 20px;
-  padding-bottom: 10px;
-  width: 440px;
-
-  h2 {
-    background: $light-gray-3;
-    border-radius: 3px 3px 0 0;
-    font-size: 1.3em;
-    font-weight: normal;
-    margin: 0;
-    padding: 5px 10px;
-    text-shadow: none;
-  }
-
-  h3 {
-    font-weight: normal;
-    margin: 10px;
 
     .name {
       position: relative;
@@ -187,40 +140,39 @@ a {
   }
 }
 
-.showing-all {
-  .upcoming-shows h2 {
-    opacity: 0.2;
-  }
+.off-air-shows {
+  width: 20%;
 
-  .active h2 {
-    opacity: 1;
+  h3 {
+    color: $light-gray-3;
+    font-size: 1.1em;
+    margin: 5px 0;
   }
 }
 
-.main ul,
+.recent-shows ul,
+.upcoming-shows ul,
 .all-episodes {
-  float: left;
   list-style: none;
-  margin: 20px 0;
-  padding-left: 20px;
-  width: 420px;
+  margin: 10px 0;
 
   li {
-    margin-bottom: 5px;
+    border-radius: 3px;
+    padding: 7px;
     position: relative;
+
     &:hover {
       z-index: 10;
+    }
+
+    &.airs-today {
+      background: $dark-gray-1;
     }
 
     span {
       display: block;
     }
   }
-}
-
-.recent-shows ul {
-  margin: 0 10px;
-  padding: 0;
 }
 
     .epnum,
@@ -244,17 +196,31 @@ a {
     }
 
     .epnum {
-      background: $brown;
-      @extend .rounded;
+      border-radius: 3px;
       color: #FFF;
       padding: 3px 0;
       text-align: center;
       width: 45px;
+
+      .recent-shows & {
+        background: $recent-color;
+      }
+
+      .upcoming-shows & {
+        background: $upcoming-color;
+      }
     }
 
     .airdate {
-      color: $brown;
       width: 75px;
+
+      .recent-shows & {
+        color: $recent-color;
+      }
+
+      .upcoming-shows & {
+        color: $upcoming-color;
+      }
     }
 
     .title {
@@ -263,10 +229,11 @@ a {
       position: relative;
     }
 
-  .main li,
+  .episode-list li,
   .all-episodes li {
     .file-name {
-      background: $light-gray-1;
+      $dark-gray-1: $dark-gray-1;
+      background: $dark-gray-2;
       display: none;
       padding-right: 10px;
       position: absolute;
@@ -284,53 +251,26 @@ a {
     opacity: 0.5;
   }
 
-    .airs-today .epnum {
-      @extend .rounded-left;
-    }
-
-    .airs-today .airdate,
-    .airs-today .title,
-    .main .airs-today .file-name {
-      background: $light-gray-2;
-    }
-
-    .airs-today .title,
-    .main .airs-today .file-name {
-      @extend .rounded-right;
-      @include radius(0 3px 3px 0);
-    }
-
     .far-future .epnum {
-      background: #999;
+      background: $light-gray-3;
+    }
+
+    .episode-list .airs-today .file-name {
+      background: $dark-gray-1;
     }
 
     .far-future .airdate,
     .far-future .title,
-    .main .far-future .file-name {
-      color: #999;
+    .episode-list .far-future .file-name {
+      color: $light-gray-3;
     }
-
-
-/* ---- Off Air ---- */
-
-.off-air li {
-  line-height: 1.5em;
-
-  > span {
-    position: relative;
-
-    &:hover {
-    z-index: 10;
-    }
-  }
-}
 
 
 /* ---- All Episodes ---- */
 
 .all-episodes {
   background: $light-gray-2;
-  border-left: $single-border $light-gray-4;
+  border-left: $single-border $light-gray-3;
   overflow-y: auto;
   margin: 0;
   padding: 15px 20px 10px;
@@ -340,7 +280,7 @@ a {
   width: 500px;
 
   h3 {
-    border-top: $single-border $light-gray-4;
+    border-top: $single-border $light-gray-3;
     margin: 0;
     padding-top: 10px;
 
@@ -363,7 +303,8 @@ a {
 
         .file-name {
           background: none;
-          color: $dark-gray-1;
+          $dark-gray-1: $dark-gray-1;
+          color: $dark-gray-2;
         }
       }
     }
@@ -373,27 +314,18 @@ a {
 /* ---- Options ---- */
 
 .options {
-  background: $light-gray-1;
-  @extend .rounded;
-  border: $single-border $light-gray-3;
+  background: $dark-gray-1;
+  border-radius: 3px;
+  border: $single-border #000;
   display: none;
   padding: 5px;
   position: absolute;
-    top: 100%;
-    right: 0;
+    top: -10px;
+    left: 110%;
   width: 95px;
 }
 
-.recent-shows .options,
-.off-air li .options {
-  top: -10px;
-  right: auto;
-  left: 110%;
-}
-
-.show h2,
-.show h3,
-.off-air li {
+.show h3 {
   &:hover .options {
     display: block;
   }
@@ -468,7 +400,7 @@ a.add-show {
 
   &:hover:before,
   &:focus:before {
-    color: #B4961C;
+    color: $upcoming-color;
   }
 }
 
@@ -493,8 +425,8 @@ a.add-show {
 
   input[type=text] {
     background: #FFF;
-    @extend .rounded-left;
-    border: $single-border $light-gray-4;
+    border-radius: 3px-left;
+    border: $single-border $light-gray-3;
     border-right: none;
     display: block;
     float: left;
@@ -505,10 +437,12 @@ a.add-show {
   }
 
   button {
-    @include gradient-with-image(#666, $dark-gray-1, $dark-gray-1, image-url('sprite.png') -48px -49px no-repeat);
-    @extend .rounded-right;
-    @include radius(0 3px 3px 0);
-    border: $single-border $dark-gray-1;
+    $dark-gray-1: $dark-gray-1;
+    @include gradient-with-image(#666, $dark-gray-2, $dark-gray-2, image-url('sprite.png') -48px -49px no-repeat);
+    border-radius: 3px-right;
+    border-radius: 0 3px 3px 0;
+    $dark-gray-1: $dark-gray-1;
+    border: $single-border $dark-gray-2;
     display: block;
     float: left;
     text-indent: -9999px;
@@ -557,7 +491,8 @@ a.add-show {
   }
 
     h4 {
-      color: $brown;
+      $dark-gray-1: $dark-gray-1;
+      color: $dark-gray-2;
     }
 
     dl {
@@ -576,9 +511,11 @@ a.add-show {
 }
 
     a.create-show {
-      @include gradient( $brown, $brown, #583215);
-      @extend .rounded;
-      border: $single-border $brown;
+      $dark-gray-1: $dark-gray-1;
+      @include gradient( $dark-gray-2, $dark-gray-2, #583215);
+      border-radius: 3px;
+      $dark-gray-1: $dark-gray-1;
+      border: $single-border $dark-gray-2;
       @include shadow(inset 0 0 2px rgba(255,255,255,0.8));
       color: #FFF;
       display: block;
@@ -607,8 +544,8 @@ a.add-show {
 
 .edit-show-form {
   background: $light-gray-2;
-  @extend .rounded;
-  border: $single-border $light-gray-4;
+  border-radius: 3px;
+  border: $single-border $light-gray-3;
   @include shadow(0 0 10px rgba(0,0,0,0.5));
   margin-left: -200px;
   padding: 50px;
@@ -625,7 +562,7 @@ a.add-show {
 
   input[type=text] {
     background: #FFF;
-    @extend .rounded;
+    border-radius: 3px;
     border: $single-border $light-gray-3;
     margin-bottom: 20px;
     padding: 10px;
@@ -637,9 +574,11 @@ a.add-show {
   }
 
   button {
-    @include gradient(#666, $dark-gray-1, $dark-gray-1);
-    @extend .rounded;
-    border: $single-border $dark-gray-1;
+    $dark-gray-1: $dark-gray-1;
+    @include gradient(#666, $dark-gray-2, $dark-gray-2);
+    border-radius: 3px;
+    $dark-gray-1: $dark-gray-1;
+    border: $single-border $dark-gray-2;
     color: $light-gray-2;
     display: block;
     float: right;
@@ -657,7 +596,8 @@ a.add-show {
 
 .notice {
   background: #555;
-  border-bottom: solid 2px $dark-gray-1;
+  $dark-gray-1: $dark-gray-1;
+  border-bottom: solid 2px $dark-gray-2;
   color: $light-gray-2;
   padding: 12px 0;
   position: relative;
@@ -709,13 +649,14 @@ a.add-show {
 /* ---- Login ---- */
 
 .login-container h2 {
+  margin: 20px 0;
   text-align: center;
 }
 
 .new_user {
-  background: $light-gray-1;
-  @extend .rounded;
-  border: $single-border $light-gray-4;
+  background: $dark-gray-1;
+  border-radius: 3px;
+  border: $single-border #000;
   margin: 10px auto 20px;
   padding: 20px;
 
@@ -737,7 +678,7 @@ a.add-show {
       input {
         background: #FFF;
         border: $single-border $light-gray-3;
-        @extend .rounded;
+        border-radius: 3px;
         display: block;
         float: left;
         height: 22px;
@@ -762,8 +703,8 @@ a.add-show {
 
   .submit input {
     @include gradient(#5D5A64, #44414B, #44414B);
-    @extend .rounded;
-    border: $single-border $light-gray-3;
+    border-radius: 3px;
+    border: $single-border $dark-gray-2;
     color: #FFF;
     float: right;
     margin-top: 10px;

@@ -6,7 +6,6 @@ gem 'rake'
 gem 'pg'
 gem 'devise'
 
-gem 'ffaker'
 gem 'ejs'
 gem 'nokogiri'
 gem 'whenever', :require => false
@@ -32,6 +31,7 @@ end
 
 group :assets do
   gem 'sass-rails'
+  gem 'compass-rails'
   gem 'jquery-rails'
 
   gem 'therubyracer'
