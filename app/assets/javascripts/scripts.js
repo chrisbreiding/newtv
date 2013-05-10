@@ -262,7 +262,7 @@
 
     closeNoticeTimed : function () {
       var self = this,
-        $notice = $('#notice');
+          $notice = $('#notice');
       if( $notice.length ) {
         setTimeout(function () {
           self.closeNotice.apply($notice);
@@ -280,12 +280,6 @@
   $(function() {
 
     App.init();
-
-    App.notice({
-      notice : 'this is a notice',
-      type   : 'error'
-    });
-
 
   });
 

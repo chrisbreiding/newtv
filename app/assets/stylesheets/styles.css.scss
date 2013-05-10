@@ -416,10 +416,10 @@ a.add-show {
 }
 
 .add-show-form {
-  background: $light-gray-2;
+  background: $dark-gray-1;
   border: {
-    left: $single-border $light-gray-2;
-    bottom: $single-border $light-gray-2;
+    left: $single-border $dark-gray-3;
+    bottom: $single-border $dark-gray-3;
   }
   padding: 20px;
   position: absolute;
@@ -435,25 +435,30 @@ a.add-show {
   }
 
   input[type=text] {
-    background: #FFF;
-    border-radius: 3px-left;
-    border: $single-border $light-gray-2;
+    background: #000;
+    border: $single-border $dark-gray-2;
     border-right: none;
+    border-radius: 3px 0 0 3px;
+    color: $light-gray-1;
     display: block;
     float: left;
+    font-size: .9em;
     height: 20px;
     line-height: 20px;
+    outline: none;
     padding: 5px 10px;
     width: 245px;
+
+    &:focus {
+      border-color: $primary-color;
+    }
   }
 
   button {
-    background: $dark-gray-1;
-    @include gradient-with-image(#666, $dark-gray-2, $dark-gray-2, image-url('sprite.png') -48px -49px no-repeat);
-    border-radius: 3px-right;
+    background: $primary-color image-url('sprite.png') -47px -47px no-repeat;
     border-radius: 0 3px 3px 0;
-    background: $dark-gray-1;
-    border: $single-border $dark-gray-2;
+    border: none;
+    cursor: pointer;
     display: block;
     float: left;
     text-indent: -9999px;
@@ -462,14 +467,15 @@ a.add-show {
 
     &:hover,
     &:focus {
-      @include gradient-with-image(#777, #444, #444, image-url('sprite.png') -48px -49px no-repeat);
+      background-color: $secondary-color;
     }
   }
 }
 
 .waiting {
-  background: $light-gray-2 image-url('waiting.gif') 50% 65% no-repeat;
-  color: #666;
+  background: $dark-gray-1 image-url('waiting.gif') 50% 65% no-repeat;
+  border-radius: 0 0 0 3px;
+  color: $light-gray-2;
   height: 60px;
   text-align: center;
 
@@ -480,10 +486,10 @@ a.add-show {
 }
 
 .search-results {
-  background: $light-gray-2;
+  background: $dark-gray-1;
   border: {
-    left: $single-border $light-gray-2;
-    bottom: $single-border $light-gray-2;
+    left: $single-border $dark-gray-3;
+    bottom: $single-border $dark-gray-3;
   }
   padding: 20px;
   position: absolute;
@@ -496,14 +502,16 @@ a.add-show {
   }
 
   .results-show {
-    border-top: $single-border $light-gray-2;
+    border-top: $single-border $dark-gray-3;
     padding-top: 1px;
+    margin: 15px 0;
     position: relative;
   }
 
     h4 {
       background: $dark-gray-1;
-      color: $dark-gray-2;
+      color: $light-gray-1;
+      padding: 10px 0;
     }
 
     dl {
@@ -522,11 +530,8 @@ a.add-show {
 }
 
     a.create-show {
-      background: $dark-gray-1;
-      @include gradient( $dark-gray-2, $dark-gray-2, #583215);
+      background: $primary-color;
       border-radius: 3px;
-      border: $single-border $dark-gray-2;
-      @include shadow(inset 0 0 2px rgba(255,255,255,0.8));
       color: #FFF;
       display: block;
       font-size: .7em;
@@ -540,8 +545,9 @@ a.add-show {
         content: '+ ';
       }
 
-      &:hover {
-        @include gradient(#995D2F, #995D2F, #794924);
+      &:hover,
+      &:focus {
+        background: $secondary-color;
       }
     }
 
@@ -571,17 +577,24 @@ a.add-show {
   }
 
   input[type=text] {
-    background: #FFF;
+    background: #000;
     border-radius: 3px;
-    border: $single-border $light-gray-2;
+    border: $single-border $dark-gray-2;
+    color: $light-gray-1;
     font-size: .9em;
     margin-bottom: 20px;
     padding: 10px;
+    outline: none;
     width: 280px;
+
+    &:focus {
+      border-color: $primary-color;
+    }
   }
 
   a.delete-show {
     color: $warning-color;
+    margin-left: 15px;
   }
 
   button {
