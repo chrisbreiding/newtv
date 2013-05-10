@@ -1,32 +1,23 @@
-// @media all and (max-width: 1120px) {
+@media all and (max-width: 1120px) {
 
-//   .upcoming-shows {
-//     float: none;
-//     width: 100%;
-//   }
+  body {
+    background-position: 50% 0;
+  }
 
-//   .recent-shows {
-//     float: none;
-//     margin: 20px;
-//     width: auto;
-//     max-width: 618px;
-//   }
+  .wrap {
+    background: none;
+  }
 
-// }
+  .episode-list {
+    width: 50%;
+  }
 
-// @media all and (max-width: 662px) {
+  .off-air-shows {
+    background: #242424;
+    border-top: solid 1px #363636;
+    clear: both;
+    float: none;
+    width: auto;
+  }
 
-// 	.show h2 {
-// 		float: none;
-// 		text-align: left;
-// 		padding: 0 20px 5px;
-// 		min-width: 400px;
-// 	}
-
-// 	.options {
-// 		right: auto;
-// 		left: 20px;
-// 	}
-
-// }
-
+}

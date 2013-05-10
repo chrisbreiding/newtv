@@ -56,6 +56,7 @@ body {
     family: "Helvetica Neue", Arial, sans-serif;
     size: 14px;
   }
+  @include transition(background-position 1s ease);
 
   &.login {
     background: $dark-gray-2;
@@ -135,6 +136,7 @@ a {
 }
 
 .episode-list {
+  @include transition(width 1s ease);
   width: 40%;
 }
 
