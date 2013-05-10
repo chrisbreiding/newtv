@@ -22,10 +22,10 @@
         .on('click', '#delete-show', this.destroy)
 
         .on('click', '.show-all-episodes', this.all)
-        .on('click', '#all-episodes', this.clearAllEpisodes)
+        .on('click', '#shadowbox', this.clear)
 
         .on('click', this.clear)
-        .on('click', '#add-show, #show-search-form, #search-results, .edit-show, #edit-show-form, #all-episodes-container', this.stopClear);
+        .on('click', '#add-show, #show-search-form, #search-results, .edit-show, #edit-show-form, #all-episodes', this.stopClear);
 
     },
 
@@ -135,9 +135,7 @@
         };
 
       $(template(data))
-        .hide()
-        .appendTo( $(document.body) )
-        .center()
+        .appendTo( $(document.body).addClass('shadowboxed') )
         .fadeIn('fast');
     },
 
@@ -154,7 +152,7 @@
         data : $this.serialize(),
         success : function (results) {
           $('.show-' + id).data('name', results.name).find('.name').html( results.name );
-          $('#edit-show-form').remove();
+          $('#shadowbox').remove();
         }
       });
     },
@@ -206,8 +204,8 @@
           };
 
           $(template(data))
-            .appendTo( $(document.body).addClass('showing-all') )
-            .slideDown();
+            .appendTo( $(document.body).addClass('shadowboxed') )
+            .fadeIn('fast');
         }
       });
     },
@@ -215,12 +213,8 @@
     clear : function () {
       $('#show-search-form').remove();
       $('#search-results').remove();
-      $('#edit-show-form').remove();
-    },
-
-    clearAllEpisodes : function () {
-      $('#all-episodes').remove();
-      $(document.body).removeClass('showing-all');
+      $('#shadowbox').remove();
+      $(document.body).removeClass('shadowboxed');
     },
 
     stopClear : function (e) {

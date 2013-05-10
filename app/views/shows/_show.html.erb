@@ -1,8 +1,8 @@
 <div class="show-<%= show.id %> show clearfix" data-id="<%= show.id %>" data-name="<%= show.name %>">
 
   <h3>
-    <span class="name">
-      <%= show.name %>
+    <span class="name-wrap">
+      <span class="name"><%= show.name %></span>
       <%= options show if user_signed_in? %>
     </span>
   </h3>
