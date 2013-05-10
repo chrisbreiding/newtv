@@ -9,7 +9,7 @@
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= yield :body_class %>">
   <%= flash_notice(notice, 'message') if notice %>
   <%= flash_notice(alert, 'error') if alert %>
 

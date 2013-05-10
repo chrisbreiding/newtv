@@ -57,6 +57,10 @@ body {
     size: 14px;
   }
 
+  &.login {
+    background: $dark-gray-2;
+  }
+
   &.shadowboxed {
     overflow: hidden;
   }
@@ -682,15 +686,20 @@ a.add-show {
 
 /* ---- Login ---- */
 
-.login-container h2 {
-  margin: 20px 0;
-  text-align: center;
+.login-container {
+  margin: 0 auto;
+  width: 340px;
+
+  h2 {
+    margin: 20px 0;
+    text-align: center;
+  }
 }
 
 .new_user {
   background: $dark-gray-1;
   border-radius: 3px;
-  border: $single-border #000;
+  border: $single-border $dark-gray-3;
   margin: 10px auto 20px;
   padding: 20px;
 
@@ -710,9 +719,10 @@ a.add-show {
       }
 
       input {
-        background: #FFF;
-        border: $single-border $light-gray-2;
+        background: #000;
+        border: $single-border $dark-gray-2;
         border-radius: 3px;
+        color: $light-gray-1;
         display: block;
         float: left;
         height: 22px;
@@ -720,10 +730,10 @@ a.add-show {
         margin-left: 10px;
         padding: 5px 10px;
         width: 196px;
-      }
 
-      input:focus {
-        border-color: #b3b3b3;
+        &:focus {
+          border-color: $primary-color;
+        }
       }
     }
 
@@ -736,17 +746,17 @@ a.add-show {
   }
 
   .submit input {
-    @include gradient(#5D5A64, #44414B, #44414B);
+    background: $primary-color;
+    border: none;
     border-radius: 3px;
-    border: $single-border $dark-gray-2;
     color: #FFF;
+    cursor: pointer;
     float: right;
     margin-top: 10px;
     padding: 10px 14px;
 
     &:hover,
     &:focus {
-      @include gradient(#726F7A, #5E5B64, #5B5763);
-      cursor: pointer;
+      background: $secondary-color;
     }
   }
