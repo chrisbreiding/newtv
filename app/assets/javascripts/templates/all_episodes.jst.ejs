@@ -1,25 +1,28 @@
-<div id="all-episodes" class="all-episodes clearfix">
+<div id="all-episodes" class="all-episodes">
+  <div id="all-episodes-container" class="all-episodes-container">
 
-	<% for( var season in seasons) { var episodes = seasons[season]; %>
-		<h3>Season <%= season %></h3>
+    <% for( var season in seasons) { var episodes = seasons[season]; %>
 
-		<ul>
-			<% for( var i = 0, len = episodes.length; i < len; i++ ) { var episode = episodes[i]; %>
-				<li class="clearfix">
-					<span class="epnum">
-						<%= episode.season %><%= episode.episode_number %>
-					</span>
-					<span class="airdate">
-						<%= episode.airdate %>
-					</span>
-					<span class="title">
-						<%= episode.title %>
-						<span class="file-name"><%= show %> - <%= episode.season %><%= episode.episode_number %> - <%= episode.title %></span>
-					</span>
-				</li>
-			<% } %>
-		</ul>
+      <h3>Season <%= season %></h3>
 
-	<% } %>
+      <ul>
+        <% for( var i = 0, len = episodes.length; i < len; i++ ) { var episode = episodes[i]; %>
+          <li class="clearfix">
+            <span class="epnum">
+              <%= episode.season %><%= episode.episode_number %>
+            </span>
+            <span class="airdate">
+              <%= episode.airdate %>
+            </span>
+            <span class="title">
+              <%= episode.title %>
+              <span class="file-name"><%= show %> - <%= episode.season %><%= episode.episode_number %> - <%= episode.title %></span>
+            </span>
+          </li>
+        <% } %>
+      </ul>
 
+    <% } %>
+
+  </div>
 </div>
