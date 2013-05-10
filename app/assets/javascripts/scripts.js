@@ -281,6 +281,12 @@
 
     App.init();
 
+    App.notice({
+      notice : 'this is a notice',
+      type   : 'error'
+    });
+
+
   });
 
 }());

@@ -40,8 +40,9 @@ $dark-gray-1: #191919;
 $dark-gray-2: #242424;
 $dark-gray-3: #414141;
 
-$recent-color: #5c7fb8;
-$upcoming-color: #74914F;
+$primary-color: #5c7fb8;
+$secondary-color: #74914F;
+$warning-color: #A74444;
 
 $single-border: solid 1px;
 
@@ -90,7 +91,7 @@ h3 {
 }
 
 a {
-  color: $recent-color;
+  color: $primary-color;
 
   &:link,
   &:visited {
@@ -100,7 +101,7 @@ a {
   &:hover,
   &:focus,
   &:active {
-    color: $upcoming-color;
+    color: $secondary-color;
     text-decoration: underline;
   }
 
@@ -211,11 +212,11 @@ a {
       width: 45px;
 
       .recent-shows & {
-        background: $recent-color;
+        background: $primary-color;
       }
 
       .upcoming-shows & {
-        background: $upcoming-color;
+        background: $secondary-color;
       }
     }
 
@@ -223,11 +224,11 @@ a {
       width: 75px;
 
       .recent-shows & {
-        color: $recent-color;
+        color: $primary-color;
       }
 
       .upcoming-shows & {
-        color: $upcoming-color;
+        color: $secondary-color;
       }
     }
 
@@ -410,7 +411,7 @@ a.add-show {
 
   &:hover:before,
   &:focus:before {
-    color: $upcoming-color;
+    color: $secondary-color;
   }
 }
 
@@ -580,11 +581,11 @@ a.add-show {
   }
 
   a.delete-show {
-    color: #A74444;
+    color: $warning-color;
   }
 
   button {
-    background: $recent-color;
+    background: $primary-color;
     border-radius: 3px;
     border: $single-border $dark-gray-2;
     color: #FFF;
@@ -596,7 +597,7 @@ a.add-show {
 
     &:hover,
     &:focus {
-      background: $upcoming-color;
+      background: $secondary-color;
     }
   }
 }
@@ -605,9 +606,8 @@ a.add-show {
 /* ---- Notices ---- */
 
 .notice {
-  background: #555;
   background: $dark-gray-1;
-  border-bottom: solid 2px $dark-gray-2;
+  border-bottom: solid 2px $dark-gray-3;
   color: $light-gray-2;
   padding: 12px 0;
   position: relative;
@@ -615,27 +615,38 @@ a.add-show {
   z-index: 10;
 
   p {
-    border-left: solid 5px;
-    margin: 0 20px;
-    padding: {
-      right: 20px;
-      left: 8px;
-    }
+    margin: 0 10px;
+    padding-right: 20px;
   }
 
+    .notice-dot {
+      border-radius: 3px;
+      display: block;
+      float: left;
+      margin-right: 10px;
+      width: 15px;
+      height: 15px;
+    }
+
     a {
-      color: #A0B9CF;
+      color: $primary-color;
     }
 }
 
-.message,
-.message p {
-  border-color: #bada55;
+.message {
+  border-color: $secondary-color;
 }
 
-.error,
-.error p {
-  border-color: #BB4141;
+.message .notice-dot {
+  background: $secondary-color;
+}
+
+.error {
+  border-color: $warning-color;
+}
+
+.error .notice-dot {
+  background: $warning-color;
 }
 
   a.close-notice {
