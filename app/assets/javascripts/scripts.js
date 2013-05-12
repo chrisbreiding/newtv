@@ -1,5 +1,7 @@
 (function () {
 
+  $body = $(document.body);
+
   var Shows = {
 
     init : function () {
@@ -9,7 +11,7 @@
     events : function () {
       $('#add-show').on('click', this.add);
 
-      $(document.body)
+      $body
         .on('click', '.file-name', this.selectText)
 
         .on('submit', '#show-search-form', this.search)
@@ -35,14 +37,18 @@
 
     add : function (e) {
       e.preventDefault();
-      $(document.body).append( JST['templates/add_show'] );
+      $(JST['templates/add_show']())
+        .appendTo( $body.addClass('shadowboxed') )
+        .fadeIn('fast');
+      $('#show-search-name').focus();
     },
 
     search : function (e) {
       e.preventDefault();
 
-      $('#show-search-form').addClass('waiting');
-      $('#search-notice').html('searching&hellip;');
+      $('#search-results-wrap, #no-search-results').hide();
+      $searchNotice = $('#search-notice');
+      $searchNotice.show().find('h3').text('searching...');
 
       $.ajax({
         url : '/shows/search.json',
@@ -50,24 +56,22 @@
         dataType : 'json',
         data : $(this).serialize(),
         success : function (results) {
+          $searchNotice.hide();
 
-          var template = JST['templates/search_results'];
+          if( results.length ) {
 
-          if( !results.length ) {
-            template = JST['templates/no_search_results'];
-            $(template)
-              .hide()
-              .appendTo( $(document.body) )
+            $('#no-search-results').hide();
+            $( JST['templates/search_results']({ shows: results }) )
+              .appendTo( $('#search-results') )
               .slideDown();
+            $('#search-results-wrap').slideDown();
 
-            return;
+          } else {
+
+            $('#search-results-wrap').hide();
+            $('#no-search-results').show();
+
           }
-
-          $(template({ shows : results }))
-            .hide()
-            .appendTo( $(document.body) )
-            .slideDown();
-
         },
         error : function (results) {
           App.notice({
@@ -90,9 +94,8 @@
 
       var $this = $(this);
 
-      $('#search-results').slideUp();
-      $('#show-search-form').addClass('waiting');
-      $('#search-notice').html('adding show and episodes&hellip;');
+      $('#search-results-wrap').slideUp('fast');
+      $('#search-notice').show().find('h3').text('adding show and episodes...');
 
       $.ajax({
         url : '/shows.json',
@@ -135,7 +138,7 @@
         };
 
       $(template(data))
-        .appendTo( $(document.body).addClass('shadowboxed') )
+        .appendTo( $body.addClass('shadowboxed') )
         .fadeIn('fast');
     },
 
@@ -152,7 +155,7 @@
         data : $this.serialize(),
         success : function (results) {
           $('.show-' + id).data('name', results.name).find('.name').html( results.name );
-          $('#shadowbox').remove();
+          App.removeShadowbox();
         }
       });
     },
@@ -171,10 +174,8 @@
           dataType : 'json',
           data : $form.serialize(),
           success : function (results) {
-            $('.show-' + id).fadeOut(function (){
-              $(this).remove();
-            });
-            $('#edit-show-form').remove();
+            $('.show-' + id).remove();
+            App.removeShadowbox();
             App.notice({
               notice : name + ' has been deleted.',
               type : 'message'
@@ -204,17 +205,14 @@
           };
 
           $(template(data))
-            .appendTo( $(document.body).addClass('shadowboxed') )
+            .appendTo( $body.addClass('shadowboxed') )
             .fadeIn('fast');
         }
       });
     },
 
     clear : function () {
-      $('#show-search-form').remove();
-      $('#search-results').remove();
-      $('#shadowbox').remove();
-      $(document.body).removeClass('shadowboxed');
+      App.removeShadowbox();
     },
 
     stopClear : function (e) {
@@ -236,7 +234,7 @@
     },
 
     events : function () {
-      $(document.body)
+      $body
         .on('click', '#close-notice', this.closeNotice)
         .on('click', '#refresh-page', this.refresh);
     },
@@ -246,7 +244,7 @@
       $('#notice').remove();
       $(this.noticeTemplate(config))
         .hide()
-        .prependTo($(document.body))
+        .prependTo($body)
         .slideDown('fast', function () {
           self.closeNoticeTimed();
         });
@@ -273,6 +271,11 @@
     refresh : function (e) {
       e.preventDefault();
       window.location.reload(true);
+    },
+
+    removeShadowbox : function () {
+      $('#shadowbox').remove();
+      $body.removeClass('shadowboxed');
     }
 
   };

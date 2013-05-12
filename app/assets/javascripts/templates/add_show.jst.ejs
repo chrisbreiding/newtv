@@ -1,13 +1,29 @@
-<form id="show-search-form" class="add-show-form clearfix">
+<div id="shadowbox" class="shadowbox">
 
-  <label for="name">Show Name</label>
-  <input type="text" name="name" placeholder="Show name" tabindex="1" />
+  <form id="show-search-form" class="show-search-form clearfix">
 
-  <button type="submit">
-    <i class="icon-search"></i>
-    <span class="label">Search</span>
-  </button>
+    <label for="name">Show Name</label>
+    <input id="show-search-name" type="text" name="name" placeholder="Show name" tabindex="1" />
 
-  <div id="search-notice"></div>
+    <button type="submit" tabindex="2">
+      <i class="icon-search"></i>
+      <span class="label">Search</span>
+    </button>
 
-</form>
+    <div id="search-notice" class="search-notice">
+      <h3></h3>
+    </div>
+
+  </form>
+
+  <div id="search-results-wrap" class="search-results-wrap">
+    <h3>Results</h3>
+
+    <div id="search-results" class="search-results"></div>
+  </div>
+
+  <div id="no-search-results" class="no-search-results">
+    <h3>No Shows Found</h3>
+  </div>
+
+</div>

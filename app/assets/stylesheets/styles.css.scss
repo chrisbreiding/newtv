@@ -46,7 +46,7 @@ body {
 }
 
 .shadowbox {
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.8);
   display: none;
   margin: 0;
   position: fixed;
@@ -381,20 +381,16 @@ a.add-show {
   }
 }
 
-.add-show-form {
+.show-search-form {
   background: $dark-gray-1;
-  border: {
-    left: $single-border $dark-gray-3;
-    bottom: $single-border $dark-gray-3;
-  }
+  border: $single-border $dark-gray-3;
+  border-radius: 3px;
   padding: 20px;
-  position: absolute;
-    top: 0;
-    right: 0;
+  margin: 20px auto;
   width: 300px;
 }
 
-.add-show-form {
+.show-search-form {
   label {
     position: absolute;
     left: -9999px;
@@ -428,6 +424,7 @@ a.add-show {
     cursor: pointer;
     display: block;
     float: left;
+    outline: none;
     width: 32px;
     height: 32px;
 
@@ -452,46 +449,56 @@ a.add-show {
   }
 }
 
-.waiting {
-  background: $dark-gray-1 image-url('waiting.gif') 50% 65% no-repeat;
-  border-radius: 0 0 0 3px;
+.search-notice {
+  background: image-url('waiting.gif') 50% 50px no-repeat;
   color: $light-gray-2;
-  height: 60px;
+  clear: both;
+  display: none;
+  padding: 20px 0 30px;
   text-align: center;
+}
 
-  input,
-  button {
-    display: none !important;
+.search-results-wrap,
+.no-search-results {
+  display: none;
+  margin-top: 10px;
+
+  h3 {
+    color: #FFF;
+    text-align: center;
+    margin: 20px 0 10px;
   }
 }
 
-.search-results {
+.search-results-wrap {
   background: $dark-gray-1;
-  border: {
-    left: $single-border $dark-gray-3;
-    bottom: $single-border $dark-gray-3;
-  }
-  padding: 20px;
+  border-top: $single-border $dark-gray-3;
+  overflow-y: auto;
   position: absolute;
-    top: 0;
+    top: 104px;
     right: 0;
-  width: 300px;
+    bottom: 0;
+    left: 0;
+}
 
-  h3 {
-    margin-top: 0;
-  }
+.search-results {
+  text-align: center;
 
   .results-show {
-    border-top: $single-border $dark-gray-3;
-    padding-top: 1px;
-    margin: 15px 0;
+    background: #000;
+    border: $single-border $dark-gray-2;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 15px;
+    margin: 10px;
+    text-align: left;
+    width: 200px;
     position: relative;
   }
 
     h4 {
-      background: $dark-gray-1;
       color: $light-gray-1;
-      padding: 10px 0;
+      margin-bottom: 10px;
     }
 
     dl {
@@ -511,29 +518,25 @@ a.add-show {
 
     a.create-show {
       background: $primary-color;
-      border-radius: 3px;
-      color: #FFF;
+      border-radius: 0 3px 0 3px;
+      color: #000;
       display: block;
-      font-size: .7em;
-      padding: 6px;
+      font-size: 1.7em;
+      font-weight: bold;
+      line-height: 1;
       position: absolute;
-        top: 1.33em;
-        right: 5px;
+        top: 0;
+        right: 0;
+      text-align: center;
       text-decoration: none;
-
-      &:before {
-        content: '+ ';
-      }
+      width: 28px;
+      height: 28px;
 
       &:hover,
       &:focus {
         background: $secondary-color;
       }
     }
-
-.no-search-results p {
-  margin-bottom: 0;
-}
 
 
 /* ---- Edit Show ---- */
