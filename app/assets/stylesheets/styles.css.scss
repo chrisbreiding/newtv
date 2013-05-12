@@ -1,34 +1,6 @@
 @import "compass";
 @import "compass/css3";
 
-/* ---- Mixins ---- */
-
-@mixin gradient($top, $middle, $bottom) {
-  background: $middle;
-  background: -webkit-gradient(linear, left top, left bottom, from($top), to($bottom));
-  background: -webkit-linear-gradient(top, $top, $bottom);
-  background: -moz-linear-gradient(top, $top, $bottom);
-  background: -o-linear-gradient(top, $top, $bottom);
-  background: -ms-linear-gradient(top, $top, $bottom);
-  background: linear-gradient(top, $top, $bottom);
-}
-
-@mixin gradient-with-image($top, $middle, $bottom, $image) {
-  background: $middle $image;
-  background: $image, -webkit-gradient(linear, left top, left bottom, from($top), to($bottom));
-  background: $image, -webkit-linear-gradient(top, $top, $bottom);
-  background: $image, -moz-linear-gradient(top, $top, $bottom);
-  background: $image, -o-linear-gradient(top, $top, $bottom);
-  background: $image, -ms-linear-gradient(top, $top, $bottom);
-  background: $image, linear-gradient(top, $top, $bottom);
-}
-
-@mixin shadow($settings) {
-  -moz-box-shadow: $settings;
-  -webkit-box-shadow: $settings;
-  box-shadow: $settings;
-}
-
 
 /* ---- Variables ---- */
 
