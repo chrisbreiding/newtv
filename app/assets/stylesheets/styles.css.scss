@@ -631,7 +631,9 @@ a.add-show {
   border-bottom: solid 2px $dark-gray-3;
   color: $light-gray-2;
   padding: 12px 0;
-  position: relative;
+  position: absolute;
+    left: 0;
+    top: 0;
   width: 100%;
   z-index: 10;
 
