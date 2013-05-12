@@ -67,4 +67,10 @@ Newtv::Application.configure do
 
   # Devise mailer host
   config.action_mailer.default_url_options = { :host => 'chrisbreiding.com' }
+
+  # Add the fonts path
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
+  # Precompile additional assets
+  config.assets.precompile += %w(.svg .eot .woff .ttf .otf)
 end

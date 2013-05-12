@@ -3,7 +3,7 @@
   <h3>
     <span class="name-wrap">
       <span class="name"><%= show.name %></span>
-      <%= options show if user_signed_in? %>
+      <%= render 'options', show: show if user_signed_in? %>
     </span>
   </h3>
 

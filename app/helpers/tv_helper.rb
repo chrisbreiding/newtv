@@ -11,18 +11,6 @@ module TvHelper
     raw content
   end
 
-	def options show
-		content = content_tag(:span, class: 'options') do
-			all = link_to('Show All Episodes', show_path(show), class: 'show-all-episodes', title: 'Show All Episodes')
-			edit = link_to('Edit', edit_show_path(show), class: 'edit-show', title: 'Edit Show')
-			pb = link_to('Pirate Bay', "http://thepiratebay.se/search/#{show.name}", class: 'p-bay', target: '_blank', title: 'Pirate Bay Search')
-
-      all + edit + pb
-		end
-
-    raw content
-	end
-
   def episode_status_class airdate
     if airdate == Date.today
       ' airs-today'
