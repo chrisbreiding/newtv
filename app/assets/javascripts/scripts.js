@@ -27,6 +27,7 @@
         .on('click', '#shadowbox', this.clear)
 
         .on('click', this.clear)
+        .on('keyup', this.clearOnEsc)
         .on('click', '#add-show, #show-search-form, #search-results, .edit-show, #edit-show-form, #all-episodes', this.stopClear);
 
     },
@@ -213,6 +214,12 @@
 
     clear : function () {
       App.removeShadowbox();
+    },
+
+    clearOnEsc : function (e) {
+      if (e.keyCode === 27) {
+        App.removeShadowbox();
+      }
     },
 
     stopClear : function (e) {
