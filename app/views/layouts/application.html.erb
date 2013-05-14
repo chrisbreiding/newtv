@@ -10,8 +10,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= yield :body_class %>">
-  <%= flash_notice(notice, 'message') if notice %>
-  <%= flash_notice(alert, 'error') if alert %>
+  <%= render 'general/notice', notice: notice, type: 'message' if notice %>
+  <%= render 'general/notice', notice: alert, type: 'error' if alert %>
 
   <%= yield %>
 
