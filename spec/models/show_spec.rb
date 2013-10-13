@@ -2,12 +2,12 @@
 #
 # Table name: shows
 #
-#  id         :integer          not null, primary key
-#  name       :string(255)
-#  tvrage_id  :string(255)
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  seasons    :integer
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  tvsource_id :string(255)
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  seasons     :integer
 #
 
 require 'spec_helper'

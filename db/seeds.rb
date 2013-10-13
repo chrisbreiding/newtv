@@ -13,13 +13,13 @@ User.create({
 })
 
 shows = Show.create([
-  { name: 'Airing Show 1', tvrage_id: 1 },
-  { name: 'Airing Show 2', tvrage_id: 2 },
-  { name: 'Airing Show 3', tvrage_id: 3 },
-  { name: 'Airing Show 4', tvrage_id: 4 },
-  { name: 'Far Future Show 1', tvrage_id: 5 },
-  { name: 'Off Air Show 1', tvrage_id: 6 },
-  { name: 'Off Air Show 2', tvrage_id: 7 }
+  { name: 'Airing Show 1', tvsource_id: 1 },
+  { name: 'Airing Show 2', tvsource_id: 2 },
+  { name: 'Airing Show 3', tvsource_id: 3 },
+  { name: 'Airing Show 4', tvsource_id: 4 },
+  { name: 'Far Future Show 1', tvsource_id: 5 },
+  { name: 'Off Air Show 1', tvsource_id: 6 },
+  { name: 'Off Air Show 2', tvsource_id: 7 }
 ])
 
 # Episodes for Airing Show 1

@@ -1,4 +1,6 @@
-module TvRage
+module TvSource
+
+  BASE_URL = "http://services.tvrage.com/feeds/"
 
 	def self.sync(new_show = nil)
 		require 'open-uri'
@@ -9,7 +11,7 @@ module TvRage
  		shows.each do |show|
  			retries = 0
 
- 			url = "http://services.tvrage.com/feeds/episode_list.php?sid=#{show[:tvrage_id]}"
+ 			url = "#{BASE_URL}episode_list.php?sid=#{show[:tvsource_id]}"
  			file = false
 
 			puts show.name
@@ -63,5 +65,26 @@ module TvRage
 			end
 		end
 	end
+
+  def self.search(show_name)
+    require 'open-uri'
+
+    url = "#{BASE_URL}search.php?show=#{URI.escape(show_name)}"
+    tvxml = Nokogiri::XML(open(url))
+
+    attributes = %w{showid country name started seasons classification}
+
+    tvxml.xpath('//show').collect do |show|
+      details = {}
+
+      show.children.each do |detail|
+        if attributes.index detail.name
+          details[detail.name] = detail.text
+        end
+      end
+
+      details
+    end
+  end
 
 end

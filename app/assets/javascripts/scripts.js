@@ -105,7 +105,7 @@
         data : {
           show : {
             name : $this.siblings('h4').text(),
-            tvrage_id : $this.closest('.results-show').data('showid')
+            tvsource_id : $this.closest('.results-show').data('showid')
           }
         },
         success : function (results) {

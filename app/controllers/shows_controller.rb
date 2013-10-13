@@ -17,11 +17,11 @@ class ShowsController < ActionController::Base
 	end
 
 	def create
-    require 'tvrage'
+    require 'tvsource'
 
 		@show = Show.new(params[:show])
 
-    TvRage.sync @show
+    TvSource.sync @show
 
 		respond_to do |format|
 			if @show.save

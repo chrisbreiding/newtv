@@ -1,8 +1,8 @@
 namespace :cron do
-	
-	task :sync => :environment do
-		require 'tvrage'		
-		TvRage.sync
-	end
+
+  task :sync => :environment do
+    require 'tvsource'
+    TvSource.sync
+  end
 
 end

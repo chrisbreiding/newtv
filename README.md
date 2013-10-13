@@ -1,3 +1,3 @@
 ## New TV
 
-Pulls in lists of upcoming TV shows through the [TVRage API](http://services.tvrage.com/info.php?page=main).
+Pulls in lists of upcoming TV shows through the [thervdb API](http://thetvdb.com/wiki/index.php?title=Programmers_API).

@@ -2,18 +2,18 @@
 #
 # Table name: shows
 #
-#  id         :integer          not null, primary key
-#  name       :string(255)
-#  tvrage_id  :string(255)
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  seasons    :integer
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  tvsource_id :string(255)
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  seasons     :integer
 #
 
 class Show < ActiveRecord::Base
-	validates_presence_of :name, :tvrage_id
+	validates_presence_of :name, :tvsource_id
 	has_many :episodes, dependent: :destroy
-  attr_accessible :name, :tvrage_id, :seasons
+  attr_accessible :name, :tvsource_id, :seasons
   before_validation :clean_input
 
   def self.upcoming
@@ -34,21 +34,8 @@ class Show < ActiveRecord::Base
   end
 
   def self.search show_name
-    tvrage_xml = search_tvrage(show_name)
-
-    attributes = %w{showid country name started seasons classification}
-
-    tvrage_xml.xpath('//show').collect do |show|
-      details = {}
-
-      show.children.each do |detail|
-        if attributes.index detail.name
-          details[detail.name] = detail.text
-        end
-      end
-
-      details
-    end
+    require 'tvsource'
+    TvSource.search(show_name)
   end
 
   def episodes_by_season
@@ -67,12 +54,6 @@ class Show < ActiveRecord::Base
   end
 
   private
-
-    def self.search_tvrage show_name
-      require 'open-uri'
-      url = "http://services.tvrage.com/feeds/search.php?show=#{URI.escape(show_name)}"
-      Nokogiri::XML(open(url))
-    end
 
     def clean_input
       self.name = ActionController::Base.helpers.strip_tags self.name
