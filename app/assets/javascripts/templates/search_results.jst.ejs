@@ -3,23 +3,20 @@
 
     <% var show = shows[i]; %>
 
-    <div class="results-show" data-showid="<%= show.showid %>">
+    <div class="results-show" data-showid="<%= show.id %>">
 
       <h4><%= show.name %></h4>
 
       <dl>
 
-        <dt>Country</dt>
-        <dd><%= show.country %></dd>
+        <dt>Overview</dt>
+        <dd><%= show.overview %></dd>
 
         <dt>Started</dt>
         <dd><%= show.started %></dd>
 
-        <dt>Seasons</dt>
-        <dd><%= show.seasons %></dd>
-
-        <dt>Classification</dt>
-        <dd><%= show.classification %></dd>
+        <dt>Network</dt>
+        <dd><%= show.network %></dd>
 
       </dl>
 

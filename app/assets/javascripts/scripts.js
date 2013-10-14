@@ -50,6 +50,7 @@
       $('#search-results-wrap, #no-search-results').hide();
       $searchNotice = $('#search-notice');
       $searchNotice.show().find('h3').text('searching...');
+      $searchResults = $('#search-results');
 
       $.ajax({
         url : '/shows/search.json',
@@ -62,8 +63,9 @@
           if( results.length ) {
 
             $('#no-search-results').hide();
+            $searchResults.empty();
             $( JST['templates/search_results']({ shows: results }) )
-              .appendTo( $('#search-results') )
+              .appendTo( $searchResults )
               .slideDown();
             $('#search-results-wrap').slideDown();
 
