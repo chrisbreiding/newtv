@@ -7,7 +7,6 @@
 #  tvsource_id :string(255)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  seasons     :integer
 #
 
 class Show < ActiveRecord::Base

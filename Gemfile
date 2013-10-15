@@ -11,6 +11,7 @@ gem 'nokogiri'
 gem 'whenever', :require => false
 gem 'rvm-capistrano'
 gem 'newrelic_rpm'
+gem 'rubyzip', '~> 1.0.0'
 
 group :development, :test do
   gem 'rspec-rails'

@@ -16,6 +16,7 @@ class Episode < ActiveRecord::Base
 	belongs_to :show
   attr_accessible :season, :episode_number, :title, :show_id, :airdate
 
+  before_save :adjust_episode_number
   default_scope order: 'airdate ASC'
   scope :upcoming, -> { where('airdate > ?', 1.day.ago.to_date) }
   scope :recent, -> { where('airdate > ? AND airdate < ?', 5.days.ago.to_date, Date.today) }
@@ -46,5 +47,13 @@ class Episode < ActiveRecord::Base
       end
     }.join(' ')
   end
+
+  private
+
+    def adjust_episode_number
+      if self.episode_number.to_i < 10
+        self.episode_number = "0#{self.episode_number}"
+      end
+    end
 
 end
