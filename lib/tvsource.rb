@@ -44,8 +44,12 @@ module TvSource
     url = URLS[:show_search].sub(/:show_name/, show_name)
     xml = Nokogiri::XML(open(URI.escape(url)))
 
-   xml.xpath('//Series').collect do |show|
+    shows = xml.xpath('//Series').collect do |show|
       details_for_show(show)
+    end
+
+    shows.sort do |a, b|
+      Date.parse(b[:started]) <=> Date.parse(a[:started])
     end
   end
 
@@ -79,21 +83,21 @@ module TvSource
 
     def self.details_for_show(show)
       attributes = [
-        { selector: 'seriesid',   property: 'id',       default: ''        },
-        { selector: 'SeriesName', property: 'name',     default: 'Unknown' },
-        { selector: 'Overview',   property: 'overview', default: ''        },
-        { selector: 'FirstAired', property: 'started',  default: ''        },
-        { selector: 'Network',    property: 'network',  default: ''        }
+        { selector: 'seriesid',   property: :id,       default: ''           },
+        { selector: 'SeriesName', property: :name,     default: 'Unknown'    },
+        { selector: 'Overview',   property: :overview, default: ''           },
+        { selector: 'FirstAired', property: :started,  default: '1970-01-01' },
+        { selector: 'Network',    property: :network,  default: ''           }
       ]
       details_for_node(show, attributes)
     end
 
     def self.details_for_episode(episode)
       attributes = [
-        { selector: 'SeasonNumber',  property: 'season',         default: 0            },
-        { selector: 'EpisodeNumber', property: 'episode_number', default: '00'         },
-        { selector: 'EpisodeName',   property: 'title',          default: ''           },
-        { selector: 'FirstAired',    property: 'airdate',        default: '1970-01-01' }
+        { selector: 'SeasonNumber',  property: :season,         default: 0            },
+        { selector: 'EpisodeNumber', property: :episode_number, default: '00'         },
+        { selector: 'EpisodeName',   property: :title,          default: ''           },
+        { selector: 'FirstAired',    property: :airdate,        default: '1970-01-01' }
       ]
       details_for_node(episode, attributes)
     end
