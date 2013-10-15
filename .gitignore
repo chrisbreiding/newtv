@@ -11,3 +11,4 @@ doc/
 *.sublime-workspace
 development.log
 bundler_stubs
+*.zip
