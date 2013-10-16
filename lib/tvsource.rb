@@ -5,8 +5,9 @@ module TvSource
   API_KEY = "41066016732D1E20"
 
   URLS = {
-    show_search: "#{BASE_URL}GetSeries.php?seriesname=:show_name",
-    show_zip: "#{BASE_URL}#{API_KEY}/series/:show_id/all/en.zip"
+    show_search:  "#{BASE_URL}GetSeries.php?seriesname=:show_name",
+    show_zip:     "#{BASE_URL}#{API_KEY}/series/:show_id/all/en.zip",
+    current_time: "#{BASE_URL}/Updates.php?type=none"
   }
 
   def self.sync
@@ -38,6 +39,8 @@ module TvSource
     else
       Rails.logger.debug "!.. xml was nil"
     end
+
+    update_last_updated
   end
 
   def self.search(show_name)
@@ -113,6 +116,11 @@ module TvSource
           end
         end
         details
+    end
+
+    def self.update_last_updated
+      xml = Nokogiri::XML(open(URI.escape(URLS[:current_time])))
+      Tvsource.update(xml.css('Time')[0].text.to_i)
     end
 
 end
