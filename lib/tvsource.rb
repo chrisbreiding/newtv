@@ -5,15 +5,20 @@ module TvSource
   API_KEY = "41066016732D1E20"
 
   URLS = {
-    show_search:  "#{BASE_URL}GetSeries.php?seriesname=:show_name",
-    show_zip:     "#{BASE_URL}#{API_KEY}/series/:show_id/all/en.zip",
-    current_time: "#{BASE_URL}/Updates.php?type=none"
+    show_search:        "#{BASE_URL}GetSeries.php?seriesname=:show_name",
+    show_zip:           "#{BASE_URL}#{API_KEY}/series/:show_id/all/en.zip",
+    current_time:       "#{BASE_URL}/Updates.php?type=none",
+    updated_since_time: "#{BASE_URL}/Updates.php?type=all&time=:last_updated"
   }
 
   def self.sync
+    updated_show_ids, time = updated_shows_and_time.values_at(:show_ids, :time)
     Show.all.each do |show|
-      add_episodes_for_show(show)
+      if updated_show_ids.include?(show.tvsource_id)
+        add_episodes_for_show(show)
+      end
     end
+    Tvsource.update(time)
   end
 
   def self.update_episodes_for_show(show)
@@ -39,8 +44,6 @@ module TvSource
     else
       Rails.logger.debug "!.. xml was nil"
     end
-
-    update_last_updated
   end
 
   def self.search(show_name)
@@ -54,6 +57,11 @@ module TvSource
     shows.sort do |a, b|
       Date.parse(b[:started]) <=> Date.parse(a[:started])
     end
+  end
+
+  def self.set_initial_tvsource_time
+    xml = Nokogiri::XML(open(URI.escape(URLS[:current_time])))
+    Tvsource.update(xml.css('Time')[0].text.to_i)
   end
 
   private
@@ -118,9 +126,13 @@ module TvSource
         details
     end
 
-    def self.update_last_updated
-      xml = Nokogiri::XML(open(URI.escape(URLS[:current_time])))
-      Tvsource.update(xml.css('Time')[0].text.to_i)
+    def self.updated_shows_and_time
+      url = URLS[:updated_since_time].sub(/:last_updated/, Tvsource.first.last_updated.to_s)
+      xml = Nokogiri::XML(open(URI.escape(url)))
+      {
+        show_ids: xml.css('Series').collect(&:text),
+        time:      xml.css('Time')[0].text.to_i
+      }
     end
 
 end
