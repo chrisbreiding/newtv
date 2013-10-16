@@ -18,7 +18,7 @@ module TvSource
         add_episodes_for_show(show)
       end
     end
-    Tvsource.update(time)
+    AppData.update(time)
   end
 
   def self.update_episodes_for_show(show)
@@ -61,7 +61,7 @@ module TvSource
 
   def self.set_initial_tvsource_time
     xml = Nokogiri::XML(open(URI.escape(URLS[:current_time])))
-    Tvsource.update(xml.css('Time')[0].text.to_i)
+    AppDate.update(xml.css('Time')[0].text.to_i)
   end
 
   private
@@ -127,7 +127,7 @@ module TvSource
     end
 
     def self.updated_shows_and_time
-      url = URLS[:updated_since_time].sub(/:last_updated/, Tvsource.first.last_updated.to_s)
+      url = URLS[:updated_since_time].sub(/:last_updated/, AppData.last_updated.to_s)
       xml = Nokogiri::XML(open(URI.escape(url)))
       {
         show_ids: xml.css('Series').collect(&:text),
