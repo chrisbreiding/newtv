@@ -15,7 +15,7 @@ module TvSource
     updated_show_ids, time = updated_shows_and_time.values_at(:show_ids, :time)
     Show.all.each do |show|
       if updated_show_ids.include?(show.tvsource_id)
-        add_episodes_for_show(show)
+        update_episodes_for_show(show)
       end
     end
     AppData.update(time)
