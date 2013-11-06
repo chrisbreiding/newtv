@@ -8,4 +8,9 @@ module TvHelper
     end
   end
 
+  def format_timestamp timestamp
+    date_time = DateTime.strptime("1318996912",'%s')
+    date_time.strftime("%b %e, %Y %l:%M%P")
+  end
+
 end

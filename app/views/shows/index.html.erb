@@ -5,3 +5,7 @@
 </div>
 
 <%= link_to('Add Show', new_show_path, id: 'add-show', class: 'add-show') if user_signed_in? %>
+
+<span class="last-updated">
+  Last updated: <%= format_timestamp @last_updated %>
+</span>

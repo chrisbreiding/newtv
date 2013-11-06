@@ -5,6 +5,7 @@ class ShowsController < ActionController::Base
     @upcoming = Show.upcoming
     @recent = Show.recent
     @off_air = Show.off_air
+    @last_updated = AppData.last_updated.to_s
   end
 
   def show
