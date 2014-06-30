@@ -1,12 +1,13 @@
 <li class="clearfix<%= episode_status_class episode.airdate %>">
 
-	<span class="epnum"><%= episode.epnum %></span>
+	<span class="epnum"><%= epnum_short episode.season, episode.episode_number %></span>
 
 	<span class="airdate"><%= episode.airdate.to_s %></span>
 
 	<span class="title">
 		<%= episode.proper_title %>
-		<span class="file-name"><%= episode.show.name %> - <%= episode.epnum %> - <%= episode.filesafe_title %></span>
+    - <%= episode.episode_number %>
+		<span class="file-name"><%= episode.show.name %> - <%= epnum_long episode.season, episode.episode_number %> - <%= episode.filesafe_title %></span>
 	</span>
 
 </li>

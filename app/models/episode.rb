@@ -21,10 +21,6 @@ class Episode < ActiveRecord::Base
   scope :upcoming, -> { where('airdate > ?', 1.day.ago.to_date) }
   scope :recent, -> { where('airdate > ? AND airdate < ?', 5.days.ago.to_date, Date.today) }
 
-  def epnum
-    season.to_s + episode_number
-  end
-
   def filesafe_title
     title
       .gsub(/[\/]/, '-')
@@ -51,7 +47,7 @@ class Episode < ActiveRecord::Base
   private
 
     def adjust_episode_number
-      if self.episode_number.to_i < 10
+      if self.episode_number.length < 2
         self.episode_number = "0#{self.episode_number}"
       end
     end

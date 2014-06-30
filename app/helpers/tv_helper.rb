@@ -1,5 +1,18 @@
 module TvHelper
 
+  def epnum_short season, episode_number
+    season.to_s + episode_number
+  end
+
+  def epnum_long season, episode_number
+    season_string = season.to_s
+    if season_string.length < 2
+      season_string = "0#{season_string}"
+    end
+
+    "s#{season_string}e#{episode_number}"
+  end
+
   def episode_status_class airdate
     if airdate == Date.today
       ' airs-today'

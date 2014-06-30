@@ -6,7 +6,11 @@
       <h3>Season <%= season %></h3>
 
       <ul>
-        <% for( var i = 0, len = episodes.length; i < len; i++ ) { var episode = episodes[i]; %>
+        <% for( var i = 0, len = episodes.length; i < len; i++ ) {
+          var episode = episodes[i];
+          var seasonLong = episode.season;
+          if (seasonLong < 10) seasonLong = '0' + episode.season;
+        %>
           <li class="clearfix">
             <span class="epnum">
               <%= episode.season %><%= episode.episode_number %>
@@ -16,7 +20,7 @@
             </span>
             <span class="title">
               <%= episode.title %>
-              <span class="file-name"><%= show %> - <%= episode.season %><%= episode.episode_number %> - <%= episode.title %></span>
+              <span class="file-name"><%= show %> - s<%= seasonLong %>e<%= episode.episode_number %> - <%= episode.title %></span>
             </span>
           </li>
         <% } %>
