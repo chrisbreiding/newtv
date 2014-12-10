@@ -11,6 +11,7 @@ Newtv::Application.routes.draw do
 
   root :to => 'shows#index'
   match '/shows/search' => 'shows#search'
+  put '/app/update', to: 'app_data#update'
 
 
   # The priority is based upon order of creation:

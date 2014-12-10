@@ -17,8 +17,8 @@ class Show < ActiveRecord::Base
 
   def self.upcoming
     includes(:episodes).where('episodes.airdate > ?', 1.day.ago.to_date).sort! do |a,b|
-        a.next_episodes_airdate <=> b.next_episodes_airdate
-      end
+      a.next_episodes_airdate <=> b.next_episodes_airdate
+    end
   end
 
   def self.recent
@@ -50,6 +50,10 @@ class Show < ActiveRecord::Base
       i += 1
     end
     episodes[i].airdate
+  end
+
+  def download_link
+    AppData.download_link.gsub(/%s/, name)
   end
 
   private

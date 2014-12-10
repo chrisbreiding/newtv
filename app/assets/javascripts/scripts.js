@@ -23,13 +23,7 @@
 
         .on('click', '#delete-show', this.destroy)
 
-        .on('click', '.show-all-episodes', this.all)
-        .on('click', '#shadowbox', this.clear)
-
-        .on('click', this.clear)
-        .on('keyup', this.clearOnEsc)
-        .on('click', '#add-show, #show-search-form, #search-results, .edit-show, #edit-show-form, #all-episodes', this.stopClear);
-
+        .on('click', '.show-all-episodes', this.all);
     },
 
     selectText : function () {
@@ -149,7 +143,7 @@
       e.preventDefault();
 
       var $this = $(this),
-        id = $('#id').val();
+          id = $('#id').val();
 
       $.ajax({
         url : '/shows/' + id + '.json',
@@ -158,7 +152,7 @@
         data : $this.serialize(),
         success : function (results) {
           $('.show-' + id).data('name', results.name).find('.name').html( results.name );
-          App.removeShadowbox();
+          App.clear();
         }
       });
     },
@@ -178,7 +172,7 @@
           data : $form.serialize(),
           success : function (results) {
             $('.show-' + id).remove();
-            App.removeShadowbox();
+            App.clear();
             App.notice({
               notice : name + ' has been deleted.',
               type : 'message'
@@ -212,20 +206,32 @@
             .fadeIn('fast');
         }
       });
+    }
+
+  };
+
+  var Settings = {
+
+    init: function () {
+      $('#settings').on('submit', this.save);
     },
 
-    clear : function () {
-      App.removeShadowbox();
-    },
+    save: function (e) {
+      e.preventDefault();
 
-    clearOnEsc : function (e) {
-      if (e.keyCode === 27) {
-        App.removeShadowbox();
-      }
-    },
-
-    stopClear : function (e) {
-      e.stopPropagation();
+      $.ajax({
+        url : '/app/update.json',
+        type: 'PUT',
+        dataType : 'json',
+        data : $(this).serialize(),
+        success : function (results) {
+          App.closeSettings();
+          App.notice({
+            notice : 'Settings updated. Please <a href="#" id="refresh-page">refresh the page</a>.',
+            type : 'message'
+          });
+        }
+      });
     }
 
   };
@@ -237,6 +243,7 @@
       this.$window = $(window);
 
       Shows.init();
+      Settings.init();
       this.events();
 
       this.closeNoticeTimed();
@@ -244,8 +251,27 @@
 
     events : function () {
       $body
+        .on('click', '#open-settings', this.openSettings)
         .on('click', '#close-notice', this.closeNotice)
-        .on('click', '#refresh-page', this.refresh);
+        .on('click', '#refresh-page', this.refresh)
+
+        .on('click', '#shadowbox', this.clear)
+        .on('click', '#settings-shadowbox', this.closeSettings)
+        .on('click', this.clear)
+        .on('keyup', this.clearOnEsc)
+        .on('click', '#open-settings, #settings, #add-show, #show-search-form, #search-results, .edit-show, #edit-show-form, #all-episodes', this.stopClear);
+    },
+
+    openSettings: function (e) {
+      e.preventDefault();
+
+      $('#settings-shadowbox').fadeIn('fast');
+      $body.addClass('shadowboxed');
+    },
+
+    closeSettings: function () {
+      $('#settings-shadowbox').fadeOut('fast');
+      $body.removeClass('shadowboxed');
     },
 
     notice : function (config) {
@@ -285,6 +311,20 @@
     removeShadowbox : function () {
       $('#shadowbox').remove();
       $body.removeClass('shadowboxed');
+    },
+
+    clear : function () {
+      App.removeShadowbox();
+    },
+
+    clearOnEsc : function (e) {
+      if (e.keyCode === 27) {
+        App.clear();
+      }
+    },
+
+    stopClear : function (e) {
+      e.stopPropagation();
     }
 
   };

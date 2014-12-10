@@ -11,6 +11,7 @@
 
 class AppData < ActiveRecord::Base
   attr_accessible :last_updated, :download_link
+  before_validation :clean_input
 
   def self.update_time(time)
     self.instance.update_attributes(last_updated: time)
@@ -32,6 +33,10 @@ class AppData < ActiveRecord::Base
 
     def self.instance
       self.first || self.new
+    end
+
+    def clean_input
+      self.download_link = ActionController::Base.helpers.strip_tags self.download_link
     end
 
 end

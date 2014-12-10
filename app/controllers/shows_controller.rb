@@ -6,6 +6,7 @@ class ShowsController < ActionController::Base
     @recent = Show.recent
     @off_air = Show.off_air
     @last_updated = AppData.last_updated.to_s
+    @download_link = AppData.download_link
   end
 
   def show

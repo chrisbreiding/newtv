@@ -4,8 +4,22 @@
 	<%= render 'off_air', off_air: @off_air %>
 </div>
 
-<%= link_to('Add Show', new_show_path, id: 'add-show', class: 'add-show') if user_signed_in? %>
+<% if user_signed_in? %>
+  <div class="app-options">
+    <%= link_to(raw('<i class="icon-cog"></i>'), '#', id: 'open-settings', class: 'open-settings') %>
+    <%= link_to(raw('<i class="icon-plus"></i>'), new_show_path, id: 'add-show', class: 'add-show') %>
+  </div>
+<% end %>
 
-<span class="last-updated">
-  Last updated: <%= format_timestamp @last_updated %>
-</span>
+<div id="settings-shadowbox" class="shadowbox">
+  <form id="settings" class="settings">
+    <label for="download_link">Download Link:</label>
+    <input id="download-link" name="download_link" type="text" value="<%= @download_link %>">
+
+    <button id="save-settings" type="submit">Save</button>
+
+    <p class="last-updated">
+      Last updated: <%= format_timestamp @last_updated %>
+    </p>
+  </form>
+</div>

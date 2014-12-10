@@ -89,6 +89,45 @@ a {
   }
 }
 
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type=text] {
+  background: #000;
+  border-radius: 3px;
+  border: $single-border $dark-gray-2;
+  color: $light-gray-1;
+  font-size: .9em;
+  margin-bottom: 20px;
+  padding: 10px;
+  outline: none;
+  width: 280px;
+
+  &:focus {
+    border-color: $primary-color;
+  }
+}
+
+button {
+  background: $primary-color;
+  border-radius: 3px;
+  border: $single-border $dark-gray-2;
+  color: #FFF;
+  cursor: pointer;
+  display: block;
+  float: right;
+  font-size: .9em;
+  padding: 8px 12px 8px;
+
+  &:hover,
+  &:focus {
+    background: $secondary-color;
+  }
+}
+
 
 /* ---- Helper Classes ---- */
 
@@ -354,33 +393,6 @@ a {
 
 /* ---- Add Show ---- */
 
-a.add-show {
-  outline: none;
-  overflow: hidden;
-  position: absolute;
-    top: 5px;
-    right: 5px;
-  text-decoration: none;
-  height: 2em;
-
-  &:before {
-    content: '+';
-    display: block;
-    font: {
-      size: 2em;
-      weight: bold;
-    }
-    text-align: right;
-    width: 2em;
-    height: 2em;
-  }
-
-  &:hover:before,
-  &:focus:before {
-    color: $secondary-color;
-  }
-}
-
 .show-search-form {
   background: $dark-gray-1;
   border: $single-border $dark-gray-3;
@@ -388,9 +400,7 @@ a.add-show {
   padding: 20px;
   margin: 20px auto;
   width: 300px;
-}
 
-.show-search-form {
   label {
     position: absolute;
     left: -9999px;
@@ -424,7 +434,9 @@ a.add-show {
     cursor: pointer;
     display: block;
     float: left;
+    font-size: .8em;
     outline: none;
+    padding: 0;
     width: 32px;
     height: 32px;
 
@@ -553,48 +565,9 @@ a.add-show {
   width: 300px;
   z-index: 100;
 
-  label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-
-  input[type=text] {
-    background: #000;
-    border-radius: 3px;
-    border: $single-border $dark-gray-2;
-    color: $light-gray-1;
-    font-size: .9em;
-    margin-bottom: 20px;
-    padding: 10px;
-    outline: none;
-    width: 280px;
-
-    &:focus {
-      border-color: $primary-color;
-    }
-  }
-
   a.delete-show {
     color: $warning-color;
     margin-left: 15px;
-  }
-
-  button {
-    background: $primary-color;
-    border-radius: 3px;
-    border: $single-border $dark-gray-2;
-    color: #FFF;
-    cursor: pointer;
-    display: block;
-    float: right;
-    font-size: .9em;
-    padding: 8px 12px 8px;
-
-    &:hover,
-    &:focus {
-      background: $secondary-color;
-    }
   }
 }
 
@@ -769,11 +742,40 @@ a.add-show {
   }
 
 
-/* ---- Last Updated ---- */
+/* ---- App Options ---- */
+
+.app-options {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  a {
+    float: right;
+    font-size: 1.5em;
+    outline: none;
+    padding: 10px;
+    text-decoration: none;
+  }
+}
+
+
+/* ---- Settings ---- */
+
+.settings {
+  background: $dark-gray-1;
+  border: $single-border $dark-gray-3;
+  border-radius: 3px;
+  padding: 30px 50px 15px;
+  margin: 20% auto 0;
+  width: 300px;
+}
 
 .last-updated {
-  color: #525252;
-  position: fixed;
-  right: 5px;
-  bottom: 5px;
+  color: #767676;
+}
+
+.settings p {
+  clear: both;
+  padding-top: 30px;
+  text-align: center;
 }
