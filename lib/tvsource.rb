@@ -18,7 +18,7 @@ module TvSource
         update_episodes_for_show(show)
       end
     end
-    AppData.update(time)
+    AppData.update_time(time)
   end
 
   def self.update_episodes_for_show(show)

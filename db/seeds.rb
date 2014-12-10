@@ -7,7 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 AppData.create({
-  last_updated: '1383748653'
+  last_updated: '1383748653',
+  download_link: 'http://example.com?s=%s'
 })
 
 User.create({
