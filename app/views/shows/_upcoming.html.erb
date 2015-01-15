@@ -4,7 +4,7 @@
 
   <% if upcoming.any? %>
 
-    <%= render upcoming %>
+    <%= render partial: 'shows/show', collection: upcoming, locals: { show_episodes: true } %>
 
   <% else %>
 

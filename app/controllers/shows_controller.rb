@@ -39,7 +39,11 @@ class ShowsController < ActionController::Base
     @show = Show.find(params[:id])
 
     respond_to do |format|
-      if @show.update_attributes({ name: params[:name] })
+      if @show.update_attributes({
+        display_name: params[:display_name],
+        search_name: params[:search_name],
+        file_name: params[:file_name]
+      })
         format.html { redirect_to @show }
         format.json { render json: @show }
       else

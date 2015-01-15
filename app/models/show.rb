@@ -2,17 +2,19 @@
 #
 # Table name: shows
 #
-#  id          :integer          not null, primary key
-#  name        :string(255)
-#  tvsource_id :string(255)
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id           :integer          not null, primary key
+#  display_name :string(255)
+#  tvsource_id  :string(255)
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  search_name  :text
+#  file_name    :text
 #
 
 class Show < ActiveRecord::Base
-	validates_presence_of :name, :tvsource_id
+	validates_presence_of :display_name, :search_name, :file_name, :tvsource_id
 	has_many :episodes, dependent: :destroy
-  attr_accessible :name, :tvsource_id, :seasons
+  attr_accessible :display_name, :search_name, :file_name, :tvsource_id, :seasons
   before_validation :clean_input
 
   def self.upcoming
@@ -27,8 +29,8 @@ class Show < ActiveRecord::Base
 
   def self.off_air
     upcoming_shows = Show.upcoming
-    @off_air = Show.order('name').keep_if do |show|
-      upcoming_shows.select { |s| s.name == show.name }.empty?
+    @off_air = Show.order('display_name').keep_if do |show|
+      upcoming_shows.select { |s| s.id == show.id }.empty?
     end
   end
 
@@ -53,13 +55,15 @@ class Show < ActiveRecord::Base
   end
 
   def download_link
-    AppData.download_link.gsub(/%s/, name)
+    AppData.download_link.gsub(/%s/, search_name)
   end
 
   private
 
     def clean_input
-      self.name = ActionController::Base.helpers.strip_tags self.name
+      self.display_name = ActionController::Base.helpers.strip_tags self.display_name
+      self.search_name = ActionController::Base.helpers.strip_tags self.search_name
+      self.file_name = ActionController::Base.helpers.strip_tags self.file_name
     end
 
 end

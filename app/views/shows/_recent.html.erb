@@ -4,7 +4,7 @@
 
   <% if recent.any? %>
 
-    <%= render recent %>
+    <%= render partial: 'shows/show', collection: recent, locals: { show_episodes: true } %>
 
   <% else %>
 

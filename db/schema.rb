@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141209124100) do
+ActiveRecord::Schema.define(:version => 20150115162506) do
 
   create_table "app_data", :force => true do |t|
     t.integer  "last_updated"
@@ -34,10 +34,12 @@ ActiveRecord::Schema.define(:version => 20141209124100) do
   add_index "episodes", ["show_id"], :name => "index_episodes_on_show_id"
 
   create_table "shows", :force => true do |t|
-    t.string   "name"
+    t.string   "display_name"
     t.string   "tvsource_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.text     "search_name"
+    t.text     "file_name"
   end
 
   create_table "users", :force => true do |t|

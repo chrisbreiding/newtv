@@ -89,7 +89,8 @@
     create : function (e) {
       e.preventDefault();
 
-      var $this = $(this);
+      var $this = $(this),
+          name = $this.siblings('h4').text();
 
       $('#search-results-wrap').slideUp('fast');
       $('#search-notice').show().find('h3').text('adding show and episodes...');
@@ -100,22 +101,24 @@
         dataType : 'json',
         data : {
           show : {
-            name : $this.siblings('h4').text(),
-            tvsource_id : $this.closest('.results-show').data('showid')
+            display_name: name,
+            search_name: name,
+            file_name: name,
+            tvsource_id: $this.closest('.results-show').data('showid')
           }
         },
-        success : function (results) {
+        success: function (results) {
           App.notice({
-            notice : 'Show successfully added. Please <a href="#" id="refresh-page">refresh the page</a> to see upcoming episodes.',
-            type : 'message'
+            notice: 'Show successfully added. Please <a href="#" id="refresh-page">refresh the page</a> to see upcoming episodes.',
+            type: 'message'
           });
 
-          Shows.clear();
+          App.clear();
         },
-        error : function (results) {
+        error: function (results) {
           App.notice({
-            notice : 'Show could not be added. Please close this message and try again.',
-            type : 'error'
+            notice: 'Show could not be added. Please close this message and try again.',
+            type: 'error'
           });
         }
       });
@@ -128,11 +131,13 @@
       $('#edit-show-form').remove();
 
       var $this = $(this),
-        template = JST['templates/edit_show'],
-        data = {
-          name : $this.closest('.show').data('name'),
-          id : $this.closest('.show').data('id')
-        };
+          template = JST['templates/edit_show'],
+          data = {
+            displayName : $this.closest('.show').data('display-name'),
+            searchName : $this.closest('.show').data('search-name'),
+            fileName : $this.closest('.show').data('file-name'),
+            id : $this.closest('.show').data('id')
+          };
 
       $(template(data))
         .appendTo( $body.addClass('shadowboxed') )
@@ -151,7 +156,11 @@
         dataType : 'json',
         data : $this.serialize(),
         success : function (results) {
-          $('.show-' + id).data('name', results.name).find('.name').html( results.name );
+          $('.show-' + id)
+            .data('display-name', results.display_name)
+            .data('search-name', results.search_name)
+            .data('file-name', results.file_name)
+            .find('.name').html( results.display_name );
           App.clear();
         }
       });
@@ -162,7 +171,7 @@
 
       var $form = $('#edit-show-form'),
         id = $('#id').val(),
-        name = $('.show-' + id).data('name');
+        name = $('.show-' + id).data('display-name');
 
       if( confirm('Are you sure you wish to delete ' + name + '?') ) {
         $.ajax({
@@ -197,7 +206,7 @@
         dataType : 'json',
         success : function (results) {
           var data = {
-            show : $('.show-' + id).data('name'),
+            show : $('.show-' + id).data('file-name'),
             seasons : results
           };
 

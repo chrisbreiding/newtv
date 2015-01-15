@@ -24,7 +24,7 @@ module TvSource
   def self.update_episodes_for_show(show)
     require 'timeout'
 
-    Rails.logger.debug show.name
+    Rails.logger.debug show.display_name
 
     download_url( URLS[:show_zip].sub(/:show_id/, show[:tvsource_id]) )
     xml = Nokogiri::XML(show_xml_from_zip)

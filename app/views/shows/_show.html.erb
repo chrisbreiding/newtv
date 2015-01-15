@@ -1,14 +1,20 @@
-<div class="show-<%= show.id %> show clearfix" data-id="<%= show.id %>" data-name="<%= show.name %>">
+<div class="show-<%= show.id %> show clearfix"
+     data-id="<%= show.id %>"
+     data-display-name="<%= show.display_name %>"
+     data-search-name="<%= show.search_name %>"
+     data-file-name="<%= show.file_name %>">
 
   <h3>
     <span class="name-wrap">
-      <span class="name"><%= show.name %></span>
+      <span class="name"><%= show.display_name %></span>
       <%= render 'options', show: show if user_signed_in? %>
     </span>
   </h3>
 
-  <ul>
-    <%= render show.episodes %>
-  </ul>
+  <% if show_episodes %>
+    <ul>
+      <%= render show.episodes %>
+    </ul>
+  <% end %>
 
 </div>

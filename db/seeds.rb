@@ -18,13 +18,13 @@ User.create({
 })
 
 shows = Show.create([
-  { name: 'Airing Show 1', tvsource_id: 1 },
-  { name: 'Airing Show 2', tvsource_id: 2 },
-  { name: 'Airing Show 3', tvsource_id: 3 },
-  { name: 'Airing Show 4', tvsource_id: 4 },
-  { name: 'Far Future Show 1', tvsource_id: 5 },
-  { name: 'Off Air Show 1', tvsource_id: 6 },
-  { name: 'Off Air Show 2', tvsource_id: 7 }
+  { display_name: 'Airing Show 1', search_name: 'Airing Show 1', file_name: 'Airing Show 1', tvsource_id: 1 },
+  { display_name: 'Airing Show 2', search_name: 'Airing Show 2', file_name: 'Airing Show 2', tvsource_id: 2 },
+  { display_name: 'Airing Show 3', search_name: 'Airing Show 3', file_name: 'Airing Show 3', tvsource_id: 3 },
+  { display_name: 'Airing Show 4', search_name: 'Airing Show 4', file_name: 'Airing Show 4', tvsource_id: 4 },
+  { display_name: 'Far Future Show 1', search_name: 'Far Future Show 1', file_name: 'Far Future Show 1', tvsource_id: 5 },
+  { display_name: 'Off Air Show 1', search_name: 'Off Air Show 1', file_name: 'Off Air Show 1', tvsource_id: 6 },
+  { display_name: 'Off Air Show 2', search_name: 'Off Air Show 2', file_name: 'Off Air Show 2', tvsource_id: 7 }
 ])
 
 # Episodes for Airing Show 1
@@ -106,4 +106,4 @@ Episode.create([
   { title: '13 weeks ago', season: 2, episode_number: '02', show_id: shows[6].id, airdate: 13.weeks.ago.to_date },
   { title: '12 weeks ago', season: 2, episode_number: '03', show_id: shows[6].id, airdate: 12.weeks.ago.to_date },
   { title: '11 weeks ago', season: 2, episode_number: '04', show_id: shows[6].id, airdate: 11.weeks.ago.to_date }
-  ])
+])
